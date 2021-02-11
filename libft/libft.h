@@ -6,7 +6,7 @@
 /*   By: mlachheb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 09:17:25 by mlachheb          #+#    #+#             */
-/*   Updated: 2021/02/09 09:24:43 by mlachheb         ###   ########.fr       */
+/*   Updated: 2021/02/11 11:06:10 by mlachheb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ size_t			ft_strlcat(char *dst, char *src, size_t dstsize);
 char			*ft_strdup(const char *s1);
 char			*ft_strjoin(char const *s1, char const *s2);
 char			**ft_split(char const *s, char c);
+char			*ft_substr(char const *s, unsigned int start, size_t len);
 typedef struct	s_list
 {
 	void			*content;

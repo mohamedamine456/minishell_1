@@ -6,11 +6,11 @@
 #    By: mlachheb <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/14 15:20:16 by mlachheb          #+#    #+#              #
-#    Updated: 2021/02/09 10:00:53 by mlachheb         ###   ########.fr        #
+#    Updated: 2021/02/11 11:09:28 by mlachheb         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRC = fatal_error.c libft/*.c
+SRC = fatal_error.c libft/*.c get_next_line/get_next_line.c first_shell_test.c
 
 #SRCBONUS = 
 

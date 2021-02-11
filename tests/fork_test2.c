@@ -6,7 +6,7 @@
 /*   By: mlachheb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 11:28:32 by mlachheb          #+#    #+#             */
-/*   Updated: 2021/02/10 15:18:16 by mlachheb         ###   ########.fr       */
+/*   Updated: 2021/02/11 10:56:50 by mlachheb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,9 @@
 #include <string.h>
 #include <stdlib.h>
 #include <sys/types.h>
+#include <sys/wait.h>
 
-#define MAX_COUNT 200
+#define MAX_COUNT 100
 
 void		child_process()
 {
@@ -49,8 +50,14 @@ int main()
 
 	pid = fork();
 	if (pid == 0)
+	{
+		// with wait on parent child executed first
 		child_process();
+	}
 	else
+	{
+		wait(NULL);
 		parent_process();
+	}
 	return (0);
 }
