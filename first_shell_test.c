@@ -13,8 +13,7 @@ void		first_shell_test()
 			exit(0);
 		write(1, "\n", 1);
 		write(1, str, ft_strlen(str));
-		write(1, "\n", 1);
-		write(1, "MiniShell $> ", 13);
+		write(1, "\nMiniShell $> ", 14);
 		
 	}
 	free(str);
