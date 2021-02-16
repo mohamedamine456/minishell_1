@@ -28,7 +28,7 @@ void		first_shell_test()
 				i++;
 			}
 		}
-		write(1, "\nMiniShell $> ", 14);	
+		write(1, "MiniShell $> ", 14);	
 	}
 	free(str);
 }
