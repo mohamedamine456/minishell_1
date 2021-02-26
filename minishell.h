@@ -15,6 +15,8 @@
 # include "libft/libft.h"
 # include "get_next_line/get_next_line.h"
 # include <fcntl.h>
+# define TRUE 1
+# define FALSE 0
 
 void		fatal(char *error);
 void		*ec_malloc(unsigned int size);
