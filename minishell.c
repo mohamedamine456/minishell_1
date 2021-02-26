@@ -16,18 +16,15 @@ int main()
 {
 	char	*command_line;
 	char	*buffer;
-	//int		fd;
-	//int		i;
-	//int		j;
-	//fd = open("test.txt", O_RDONLY);
+
 	command_line = ft_strdup("");
 	while (TRUE)
 	{
 		write(1, "MiniShell $> ", 13);
 		if(get_next_line(1, &buffer) > 0)
+		{
 			command_line = ft_strjoin(command_line, buffer);
-		//command_line = ft_strjoin(command_line, buffer);
-		else		
-			write(1, "\n", 1);
+		}
+		
 	}
 }
