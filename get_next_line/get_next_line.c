@@ -22,7 +22,7 @@ int			get_next_line(int fd, char **line)
 	str = malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	if (grd == 0)
 		grd = ft_strdup("");
-	while (!(check_line(grd)))
+	while (!(check_end_line(grd)))
 	{
 		r = read(fd, str, BUFFER_SIZE);
 		str[r] = '\0';
@@ -44,12 +44,12 @@ int			make_line(char **grd, char **line)
 	char	*tmp;
 
 	i = 0;
-	if (check_line(*grd) != 0)
+	if (check_end_line(*grd) != 0)
 	{
 		while ((*grd)[i] != '\n')
 			i++;
 	}
-	if (check_line(*grd))
+	if (check_end_line(*grd))
 	{
 		tmp = *line;
 		*line = ft_substr(*grd, 0, i);
@@ -93,7 +93,7 @@ char		*ft_resize(char *s1, char *s2)
 	return (s);
 }
 
-int			check_line(char *str)
+int			check_end_line(char *str)
 {
 	int i;
 

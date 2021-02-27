@@ -16,7 +16,7 @@
 # define BUFFER_SIZE 100
 
 char	*ft_resize(char *s1, char *s2);
-int		check_line(char *str);
+int		check_end_line(char *str);
 int		make_line(char **str, char **grd);
 int		get_next_line(int fd, char **line);
 
