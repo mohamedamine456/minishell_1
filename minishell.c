@@ -86,9 +86,10 @@ int main()
 	while (TRUE)
 	{
 		write(1, "Minishell $> ", 13);
-		if (get_next_line(0, &command_line) >= 0)
+		if (get_next_line(0, &command_line) > 0)
 		{
-			pr = parse_command_line(command_line);
+			write(1, command_line, ft_strlen(command_line));
+			//pr = parse_command_line(command_line);
 			write(1, "\n", 1);
 		}
 	}

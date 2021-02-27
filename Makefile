@@ -38,3 +38,9 @@ clean:
 fclean:
 	/bin/rm -f $(NAME)
 re: fclean all
+
+sanitize:
+	gcc -Wall -Wextra -Werror -fsanitize=address -c $(SRC)
+	ar rc $(NAME) $(OBJSRC)
+	ranlib $(NAME)
+	gcc -g -Wall -Wextra -Werror -fsanitize=address minishell.c $(NAME) -o Minishell
