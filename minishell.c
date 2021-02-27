@@ -25,6 +25,8 @@ int main()
 		{
 			command_line = ft_strjoin(command_line, buffer);
 		}
-		
+		write(1, ">>>>> <<<<<\n", 12);
+		write(1, command_line, ft_strlen(command_line));
+		write(1, "\n>>>>> <<<<<\n", 13);
 	}
 }
