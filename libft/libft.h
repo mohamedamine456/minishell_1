@@ -18,6 +18,7 @@
 # include <ctype.h>
 
 int				ft_strlen(const char *s);
+void			ft_putnbr(int n);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
 int				ft_strcmp(const char *s1, const char *s2);
 size_t			ft_strlcpy(char *dst, const char *src, size_t dstsize);
