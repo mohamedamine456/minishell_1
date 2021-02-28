@@ -76,13 +76,38 @@ int		parse_command_line(char	*command_line)
 	// write(1, "\n-------------------------------------------------\n", 52);
 }
 
-int main()
+void		print_env_variables(char **env)
+{
+	int		i;
+
+	i = 0;
+	{
+		while (env[i] != NULL)
+		{
+			write(1, env[i], ft_strlen(env[i]));
+			write(1, "\n", 1);
+			i++;
+		}	
+	}
+}
+
+int main(int argc, char **argv, char **env)
 {
 	char	*command_line;
 	int		pr;
 
 	pr = 0;
-	command_line = ft_strdup("");
+	//command_line = ft_strdup("");
+	if (argc > 1)
+	{
+		fatal("This Shell requires no Arguments!!");
+	}
+	if (env == NULL)
+	{
+		fatal("Environment Variable!!");
+	}
+	//else
+	//	print_env_variables(env);
 	while (TRUE)
 	{
 		write(1, "Minishell $> ", 13);

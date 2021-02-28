@@ -13,7 +13,7 @@
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 # include "../libft/libft.h"
-# define BUFFER_SIZE 100
+# define BUFFER_SIZE 10
 
 char	*ft_resize(char *s1, char *s2);
 int		check_end_line(char *str);

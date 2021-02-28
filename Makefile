@@ -44,3 +44,9 @@ sanitize:
 	ar rc $(NAME) $(OBJSRC)
 	ranlib $(NAME)
 	gcc -g -Wall -Wextra -Werror -fsanitize=address minishell.c $(NAME) -o Minishell
+
+noflags:
+	gcc -Wall -Wextra -Werror -c $(SRC)
+	ar rc $(NAME) $(OBJSRC)
+	ranlib $(NAME)
+	gcc -g minishell.c $(NAME) -o Minishell

@@ -16,9 +16,9 @@ void		fatal(char *error)
 {
 	char	*error_message;
 
-	error_message = malloc(ft_strlen(error) + 18);
-	ft_strlcpy(error_message, "[!!] Fatal Error: ", 18);
-	ft_strlcat(error_message, error, ft_strlen(error));
+	error_message = malloc(ft_strlen(error) + 19);
+	ft_strlcpy(error_message, "[!!] Fatal Error: ", 19);
+	ft_strlcat(error_message + 18, error, ft_strlen(error));
 	write(1, error_message, ft_strlen(error_message));
 	free(error_message);
 	exit(-1);
