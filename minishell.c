@@ -94,9 +94,7 @@ void		print_env_variables(char **env)
 int main(int argc, char **argv, char **env)
 {
 	char	*command_line;
-	int		pr;
 
-	pr = 0;
 	//command_line = ft_strdup("");
 	if (argc > 1)
 	{
