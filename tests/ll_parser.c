@@ -2,6 +2,8 @@
 # include <unistd.h>
 # include <stdlib.h>
 
+enum 
+
 int main()
 {
 	int		i;
