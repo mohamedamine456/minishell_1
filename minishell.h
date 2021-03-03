@@ -30,7 +30,7 @@ void        initialize_commands(t_commands **commands);
 /**
  * command_parser.c to parse commands 
 */
-t_commands      *parse_command(char *line, t_commands **commands)
+t_commands      *parse_command(char *line, t_commands **commands);
 
 /*
  * functions for tests 
