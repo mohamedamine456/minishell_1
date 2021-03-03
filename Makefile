@@ -45,7 +45,7 @@ sanitize:
 	gcc -g -Wall -Wextra -Werror -fsanitize=address $(MAIN) $(NAME) -o Minishell
 
 noflags:
-	gcc -c $(SRC)
+	gcc -c -g $(SRC)
 	ar rc $(NAME) $(OBJSRC)
 	ranlib $(NAME)
 	gcc -g $(MAIN) $(NAME) -o Minishell

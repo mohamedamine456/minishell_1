@@ -26,7 +26,9 @@ void		*ec_malloc(unsigned int size);
 /**
  * command_parser.c to parse commands 
 */
-t_commands      *parse_command(char *line, t_commands *commands);
+t_commands		*parse_command(char *line, t_commands *commands);
+char			**split_command(char *line);
+void			put_elements_command(char **tab, t_commands **cmd);
 
 /*
  * functions for tests 
@@ -34,6 +36,6 @@ t_commands      *parse_command(char *line, t_commands *commands);
 
 int         check_line_errors(char *command);
 int         parse_command_line(char	*command_line);
-void        print_env_variables(char **env);
+void		print_env_variables(char **env);
 
 #endif
