@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-SRC = fatal_error.c test_functions.c libft/*.c get_next_line/get_next_line.c
+SRC = fatal_error.c test_functions.c initializer.c command_parser.c libft/*.c get_next_line/get_next_line.c lists/*.c
 
 #SRCBONUS = 
 
@@ -46,7 +46,7 @@ sanitize:
 	gcc -g -Wall -Wextra -Werror -fsanitize=address $(MAIN) $(NAME) -o Minishell
 
 noflags:
-	gcc -Wall -Wextra -Werror -c $(SRC)
+	gcc -c $(SRC)
 	ar rc $(NAME) $(OBJSRC)
 	ranlib $(NAME)
 	gcc -g $(MAIN) $(NAME) -o Minishell

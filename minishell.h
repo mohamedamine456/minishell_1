@@ -14,6 +14,7 @@
 # define MINISHELL_H
 # include "structs.h"
 # include "libft/libft.h"
+# include "lists/lists.h"
 # include "get_next_line/get_next_line.h"
 # include <fcntl.h>
 # define TRUE 1
@@ -25,12 +26,12 @@ void		*ec_malloc(unsigned int size);
 /**
  * initializer.c to initialize list of commands 
 */
-void        initialize_commands(t_commands **commands);
+t_commands      *initialize_commands();
 
 /**
  * command_parser.c to parse commands 
 */
-t_commands      *parse_command(char *line, t_commands **commands);
+t_commands      *parse_command(char *line, t_commands *commands);
 
 /*
  * functions for tests 

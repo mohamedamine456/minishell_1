@@ -1,12 +1,15 @@
 # include "minishell.h"
 
-void        initialize_commands(t_commands **commands)
+t_commands      *initialize_commands()
 {
-    *commands = (t_commands *)malloc(sizeof(t_commands));
-    (*commands)->name = NULL;
-    (*commands)->options = NULL;
-    (*commands)->arguments = NULL;
-    (*commands)->id_command_pipe = 0;
-    (*commands)->redirect = NULL;
-    (*commands)->next = NULL;
+    t_commands *command;
+
+    command = (t_commands *)malloc(sizeof(t_commands));
+    command->name = NULL;
+    command->options = NULL;
+    command->arguments = NULL;
+    command->id_command_pipe = 0;
+    command->redirect = NULL;
+    command->next = NULL;
+    return (command);
 }
