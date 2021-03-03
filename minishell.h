@@ -12,6 +12,7 @@
 
 #ifndef MINISHELL_H
 # define MINISHELL_H
+# include "structs.h"
 # include "libft/libft.h"
 # include "get_next_line/get_next_line.h"
 # include <fcntl.h>
@@ -20,6 +21,16 @@
 
 void		fatal(char *error);
 void		*ec_malloc(unsigned int size);
+
+/**
+ * initializer.c to initialize list of commands 
+*/
+void        initialize_commands(t_commands **commands);
+
+/**
+ * command_parser.c to parse commands 
+*/
+t_commands      *parse_command(char *line, t_commands **commands)
 
 /*
  * functions for tests 
