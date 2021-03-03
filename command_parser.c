@@ -4,10 +4,8 @@ t_commands      *parse_command(char *line, t_commands *commands)
 {
     char    **parts_of_command;
 
-    parts_of_command = ft_split(line, ' ');
     commands = last_command(commands);
-    commands = initialize_commands();
-    if (commands->name == NULL)
-        write(1, "null", 4);
+    commands = new_command();
+    //printf("\n%s, %s, %d, %s\n", commands->name, commands->options, commands->id_command_pipe, commands->redirect);
     return(commands);
 }

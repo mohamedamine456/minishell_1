@@ -10,14 +10,13 @@
 #                                                                              #
 # **************************************************************************** #
 
-SRC = fatal_error.c test_functions.c initializer.c command_parser.c libft/*.c get_next_line/get_next_line.c lists/*.c
+SRC = fatal_error.c test_functions.c command_parser.c libft/*.c get_next_line/get_next_line.c commands_list/*.c
 
 #SRCBONUS = 
 
 NAME = minishell.a
 
 OBJSRC = *.o
-#OBJSRCBONUS =
 
 all: $(NAME)
 

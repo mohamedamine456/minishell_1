@@ -1,0 +1,15 @@
+#ifndef LISTS_H
+# define LISTS_H
+# include <unistd.h>
+#include <stdlib.h>
+# include "../structs.h"
+# include "../libft/libft.h"
+
+t_commands      *new_command();
+t_commands      *last_command(t_commands *commands);
+int             size_commands(t_commands *commands);
+void            clear_commands(t_commands **commands);
+void            addback_commands(t_commands **commands, t_commands *new);
+void            addfront_commands(t_commands **commands, t_commands *new);
+
+#endif
