@@ -20,6 +20,13 @@
 
 void		fatal(char *error);
 void		*ec_malloc(unsigned int size);
-void		first_shell_test();
+
+/*
+ * functions for tests 
+*/
+
+int         check_line_errors(char *command);
+int         parse_command_line(char	*command_line);
+void        print_env_variables(char **env);
 
 #endif

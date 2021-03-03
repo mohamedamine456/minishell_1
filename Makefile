@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-SRC = fatal_error.c libft/*.c get_next_line/get_next_line.c
+SRC = fatal_error.c test_functions.c libft/*.c get_next_line/get_next_line.c
 
 #SRCBONUS = 
 
@@ -25,12 +25,12 @@ $(NAME):
 	gcc -Wall -Wextra -Werror -c $(SRC)
 	ar rc $(NAME) $(OBJSRC)
 	ranlib $(NAME)
-	gcc -g -Wall -Wextra -Werror minishell.c $(NAME) -o Minishell
+	gcc -g -Wall -Wextra -Werror $(MAIN) $(NAME) -o Minishell
 
 bonus:
 	gcc -Wall -Wextra -Werror -c $(SRC)
 	ar rc $(NAME) $(OBJSRC)
-	ranlib $(NAME)	
+	ranlib $(NAME)
 
 clean:
 	/bin/rm -f $(OBJSRC) 
@@ -43,10 +43,10 @@ sanitize:
 	gcc -Wall -Wextra -Werror -fsanitize=address -c $(SRC)
 	ar rc $(NAME) $(OBJSRC)
 	ranlib $(NAME)
-	gcc -g -Wall -Wextra -Werror -fsanitize=address minishell.c $(NAME) -o Minishell
+	gcc -g -Wall -Wextra -Werror -fsanitize=address $(MAIN) $(NAME) -o Minishell
 
 noflags:
 	gcc -Wall -Wextra -Werror -c $(SRC)
 	ar rc $(NAME) $(OBJSRC)
 	ranlib $(NAME)
-	gcc -g minishell.c $(NAME) -o Minishell
+	gcc -g $(MAIN) $(NAME) -o Minishell
