@@ -14,7 +14,16 @@ t_commands      *parse_command(char *line, t_commands *commands)
 
 char            **split_command(char *line)
 {
-    char    **tab;
+    t_commands  *cmd;
+    char        **tab;
+    int         i;
+
+    i = 0;
+    while (line[i] != '\0')
+    {
+        
+        i++;
+    }
 
     tab = ft_split(line, ' ');
     return (tab);
