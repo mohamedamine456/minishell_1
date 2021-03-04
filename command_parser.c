@@ -26,23 +26,31 @@ char			**split_line_commands(char *line)
 	fl.p_v = 0;
 	fl.d_q = 0;
 	fl.s_q = 0;
+	fl.b_s = 0;
 	tab = allocat_tab();
 	while (line[i] != '\0')
 	{
+		if (line[i] == '\\')
+		{
+			if (fl.b_s == 1)
+				fl.b_s = 0;
+			else
+				fl.b_s = 1;
+		}
 		if (line[i] == '\"')
-			fl.d_q = fl.d_q + 1;
+			fl.d_q++;
 		if (line[i] == '\'')
-			fl.s_q = fl.s_q + 1;
-		if (fl.s_q % 2 == 0 && fl.d_q % 2 == 0 && line[i] == ';')
+			fl.s_q++;
+		if (fl.s_q % 2 == 0 && fl.d_q % 2 == 0 && line[i] == ';' && fl.b_s == 0)
 		{
 			tab = resize_tab(tab, ft_substr(line, j, i - j));
 			j = i + 1;
-			fl.p_v = fl.p_v + 1;
+			fl.p_v++;
 		}
 		i++;
 	}
 	tab = resize_tab(tab, ft_substr(line, j, i));
-	fl.p_v = fl.p_v + 1;
+	fl.p_v++;
 	return (tab);
 }
 

@@ -27,6 +27,7 @@ typedef struct			s_flags
 	int		d_q;
 	int		s_q;
 	int		p_l;
+	int		b_s;
 }						t_flags;
 
 #endif

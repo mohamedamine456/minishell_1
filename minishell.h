@@ -40,6 +40,12 @@ char		**resize_tab(char **old, char *chaine);
 char		**allocat_tab();
 
 /*
+* check_flags.c
+*/
+
+int			check_bs(char *line, int i);
+
+/*
  * functions for tests 
 */
 
