@@ -29,7 +29,7 @@ char			**split_line_commands(char *line)
 	tab = allocat_tab();
 	while (line[i] != '\0')
 	{
-		if (line[i] == '\\')
+		if (line[i] == '\\' && fl.d_q % 2 == 0 && fl.s_q % 2 == 0)
 		{
 			if (fl.b_s == 1)
 				fl.b_s = 0;
@@ -57,6 +57,7 @@ char			**split_line_commands(char *line)
 
 char			**remove_backslash(char **tab)
 {
+	char	**new;
 	int		i;
 	int		j;
 	int		k;
@@ -64,10 +65,11 @@ char			**remove_backslash(char **tab)
 	char	*str;
 
 	i = 0;
+	new = (char **)malloc(sizeof(char *) * (ft_size_args(tab) + 1));
 	while (tab[i] != NULL)
 	{
 		fl = (t_flags){0, 0, 0, 0, 0};
-		str = (char *)malloc(ft_strlen(tab[i]) + 1);
+		new[i] = (char *)malloc(ft_strlen(tab[i]) + 1);
 		j = 0;
 		k = 0;
 		while (tab[i][j] != '\0')
@@ -86,17 +88,17 @@ char			**remove_backslash(char **tab)
 			if (!((tab[i][j] == '\'' || tab[i][j] == '\"' || tab[i][j] == '\\') && fl.b_s == 1) || (fl.d_q % 2 != 0 || fl.s_q % 2 != 0))
 			{
 				fl.b_s = 0;
-				str[k] = tab[i][j];
+				new[i][k] = tab[i][j];
 				k++;
 			}
 			j++;
 		}
-		str[k] = '\0';
-		free(tab[i]);
-		tab[i] = str;
+		new[i][k] = '\0';
 		i++;
 	}
-	return(tab);
+	new[i] = NULL;
+	ft_free_args(tab);
+	return(new);
 }
 
 void			put_elements_command(char **tab, t_commands **cmd)
