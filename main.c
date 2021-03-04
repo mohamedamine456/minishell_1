@@ -14,8 +14,8 @@ int     main(int argc, char **argv, char **env)
             if (get_next_line(0, &command_line) > 0)
             {
                 commands = parse_command(command_line, commands);
-                if (!ft_strcmp(commands->name, "echo"))
-                    write(1, commands->arguments[0], ft_strlen(commands->arguments[0]));
+                // if (!ft_strcmp(commands->name, "echo"))
+                //     write(1, commands->arguments[0], ft_strlen(commands->arguments[0]));
                 write(1, "\n", 1);
             }
         }

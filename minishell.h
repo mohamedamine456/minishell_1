@@ -37,6 +37,7 @@ void			put_elements_command(char **tab, t_commands **cmd);
 */
 
 char		**resize_tab(char **old, char *chaine);
+char		**allocat_tab();
 
 /*
  * functions for tests 
@@ -45,5 +46,6 @@ char		**resize_tab(char **old, char *chaine);
 int         check_line_errors(char *command);
 int         parse_command_line(char	*command_line);
 void		print_env_variables(char **env);
+void		print_commands(char **tab);
 
 #endif

@@ -15,7 +15,7 @@ void        clear_commands(t_commands **commands)
         if (cmd1->options != NULL)
             free(cmd1->options);
         if (cmd1->arguments != NULL)
-            free_args(cmd1->arguments);
+            ft_free_args(cmd1->arguments);
         if (cmd1->redirect != NULL)
             free(cmd1->redirect);
         cmd1 = NULL;

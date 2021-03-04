@@ -5,7 +5,7 @@ t_commands      *parse_command(char *line, t_commands *commands)
     char    **tab_commands;
 
     tab_commands = split_line_commands(line);
-	print_env_variables(tab_commands);
+	print_commands(tab_commands);
     // commands = last_command(commands);
     // commands = new_command();
     // tab_elements = split_command(line);
@@ -30,19 +30,19 @@ char			**split_line_commands(char *line)
 	while (line[i] != '\0')
 	{
 		if (line[i] == '\"')
-			fl.d_q += 1;
+			fl.d_q = fl.d_q + 1;
 		if (line[i] == '\'')
-			fl.s_q += 1;
-		if (fl.s_q % 2 != 1 && fl.d_q % 2 != 1 && line[i] == ';')
+			fl.s_q = fl.s_q + 1;
+		if (fl.s_q % 2 == 0 && fl.d_q % 2 == 0 && line[i] == ';')
 		{
-			tab = resize_tab(tab, ft_substr(line, j, i));
+			tab = resize_tab(tab, ft_substr(line, j, i - j));
 			j = i + 1;
-			fl.p_v += 1;
+			fl.p_v = fl.p_v + 1;
 		}
 		i++;
 	}
 	tab = resize_tab(tab, ft_substr(line, j, i));
-	fl.p_v += 1;
+	fl.p_v = fl.p_v + 1;
 	return (tab);
 }
 

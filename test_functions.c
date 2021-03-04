@@ -78,3 +78,20 @@ void		print_env_variables(char **env)
 		}	
 	}
 }
+
+void		print_commands(char **tab)
+{
+	int		i;
+
+	i = 0;
+	{
+		while (tab[i] != NULL)
+		{
+			write(1, ">>>>> command <<<<<\n", 21);
+			write(1, tab[i], ft_strlen(tab[i]));
+			write(1, "\n>>>>> end <<<<<", 17);
+			write(1, "\n", 1);
+			i++;
+		}	
+	}
+}
