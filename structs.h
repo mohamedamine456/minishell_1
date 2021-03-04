@@ -23,11 +23,11 @@ typedef struct			s_commands
 
 typedef struct			s_flags
 {
-	int		p_v;
-	int		d_q;
-	int		s_q;
-	int		p_l;
-	int		b_s;
+	int		p_v;		//comma
+	int		d_q;		//doublequote
+	int		s_q;		//singlequote
+	int		p_l;		//pipeline
+	int		b_s;		//backslash
 }						t_flags;
 
 #endif

@@ -5,6 +5,7 @@ t_commands      *parse_command(char *line, t_commands *commands)
     char    **tab_commands;
 
     tab_commands = split_line_commands(line);
+	//tab_commands = remove_flags(tab_commands);
 	print_commands(tab_commands);
     // commands = last_command(commands);
     // commands = new_command();
@@ -47,6 +48,8 @@ char			**split_line_commands(char *line)
 			j = i + 1;
 			fl.p_v++;
 		}
+		if (line[i] == ';' && fl.b_s == 1)
+			fl.b_s = 0;
 		i++;
 	}
 	tab = resize_tab(tab, ft_substr(line, j, i));
@@ -54,7 +57,17 @@ char			**split_line_commands(char *line)
 	return (tab);
 }
 
+char			**remove_flags(char **tab)
+{
+	int i;
 
+	i = 0;
+	while (tab[i] != NULL)
+	{
+		
+	}
+	return(tab);
+}
 
 void			put_elements_command(char **tab, t_commands **cmd)
 {
@@ -62,22 +75,4 @@ void			put_elements_command(char **tab, t_commands **cmd)
     (*cmd)->arguments = (char **)malloc(sizeof(char *) * 2);
     (*cmd)->arguments[0] = ft_strdup(tab[1] != NULL ? tab[1] : "");
     (*cmd)->arguments[1] = NULL;
-}
-
-char			**split_command(char *line)
-{
-    t_commands  *cmd;
-    char        **tab;
-    int         i;
-	
-
-    i = 0;
-    while (line[i] != '\0')
-    {
-        
-        i++;
-    }
-
-    tab = ft_split(line, ' ');
-    return (tab);
 }

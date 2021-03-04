@@ -28,8 +28,8 @@ void		*ec_malloc(unsigned int size);
 */
 t_commands		*parse_command(char *line, t_commands *commands);
 char			**split_line_commands(char *line);
-char			**split_command(char *line);
 void			put_elements_command(char **tab, t_commands **cmd);
+char			**remove_flags(char **tab);
 
 
 /*
@@ -40,10 +40,10 @@ char		**resize_tab(char **old, char *chaine);
 char		**allocat_tab();
 
 /*
-* check_flags.c
+*	check_flags.c
 */
 
-int			check_bs(char *line, int i);
+int			is_flag(char c);
 
 /*
  * functions for tests 

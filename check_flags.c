@@ -4,15 +4,9 @@
 *	This function to check if there is a '\' before ';' or not
 */
 
-int		check_bs(char *line, int i)
+int		is_flag(char c)
 {
-	if (i == 0)
-		return (0);
-	else
-	{
-		if (line[i - 1] == '\\')
-			return(1);
-		else
-			return (0);
-	}
+	if (c == '\\' || c == ';' || c == '\'' || c == '|' || c == '\"')
+		return (1);
+	return (0);
 }
