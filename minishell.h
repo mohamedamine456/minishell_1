@@ -29,7 +29,7 @@ void		*ec_malloc(unsigned int size);
 t_commands		*parse_command(char *line, t_commands *commands);
 char			**split_line_commands(char *line);
 void			put_elements_command(char **tab, t_commands **cmd);
-char			**remove_flags(char **tab);
+char			**remove_backslash(char **tab);
 
 
 /*

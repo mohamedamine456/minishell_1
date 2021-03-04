@@ -5,13 +5,14 @@ t_commands      *parse_command(char *line, t_commands *commands)
     char    **tab_commands;
 
     tab_commands = split_line_commands(line);
-	//tab_commands = remove_flags(tab_commands);
+	//tab_commands = remove_backslash(tab_commands);
 	print_commands(tab_commands);
     // commands = last_command(commands);
     // commands = new_command();
     // tab_elements = split_command(line);
     // put_elements_command(tab_elements, &commands);
     //printf("\n%s, %s, %d, %s\n", commands->name, commands->options, commands->id_command_pipe, commands->redirect);
+	ft_free_args(tab_commands);
     return(commands);
 }
 
@@ -38,9 +39,9 @@ char			**split_line_commands(char *line)
 			else
 				fl.b_s = 1;
 		}
-		if (line[i] == '\"')
+		if (line[i] == '\"' && fl.b_s == 0)
 			fl.d_q++;
-		if (line[i] == '\'')
+		if (line[i] == '\'' && fl.b_s == 0)
 			fl.s_q++;
 		if (fl.s_q % 2 == 0 && fl.d_q % 2 == 0 && line[i] == ';' && fl.b_s == 0)
 		{
@@ -48,7 +49,7 @@ char			**split_line_commands(char *line)
 			j = i + 1;
 			fl.p_v++;
 		}
-		if (line[i] == ';' && fl.b_s == 1)
+		if ((line[i] == ';' || line[i] == '\'' || line[i] == '\"') && fl.b_s == 1)
 			fl.b_s = 0;
 		i++;
 	}
@@ -57,14 +58,20 @@ char			**split_line_commands(char *line)
 	return (tab);
 }
 
-char			**remove_flags(char **tab)
+char			**remove_backslash(char **tab)
 {
 	int i;
+	int	j;
 
 	i = 0;
 	while (tab[i] != NULL)
 	{
-		
+		j = 0;
+		while (tab[i][j] != '\0')
+		{
+			j++;
+		}
+		i++;
 	}
 	return(tab);
 }

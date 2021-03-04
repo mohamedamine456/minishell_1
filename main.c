@@ -6,7 +6,7 @@ int     main(int argc, char **argv, char **env)
     t_commands  *commands;
 
     commands = NULL;
-    if (argc == 1)
+    if (argc == 1 && argv != NULL && env != NULL)
     {
         while (TRUE)
         {
