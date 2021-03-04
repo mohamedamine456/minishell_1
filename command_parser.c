@@ -25,10 +25,7 @@ char			**split_line_commands(char *line)
 
     i = 0;
 	j = 0;
-	fl.p_v = 0;
-	fl.d_q = 0;
-	fl.s_q = 0;
-	fl.b_s = 0;
+	fl = (t_flags){0, 0, 0, 0, 0};
 	tab = allocat_tab();
 	while (line[i] != '\0')
 	{
@@ -60,15 +57,22 @@ char			**split_line_commands(char *line)
 
 char			**remove_backslash(char **tab)
 {
-	int i;
-	int	j;
+	int		i;
+	int		j;
+	t_flags fl;
 
 	i = 0;
+	fl = (t_flags){0, 0, 0, 0, 0};
 	while (tab[i] != NULL)
 	{
 		j = 0;
 		while (tab[i][j] != '\0')
 		{
+			if (fl.b_s == 1)
+			{
+				/* code */
+			}
+			
 			j++;
 		}
 		i++;
