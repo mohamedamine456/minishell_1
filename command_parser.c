@@ -5,7 +5,7 @@ t_commands      *parse_command(char *line, t_commands *commands)
     char    **tab_commands;
 
     tab_commands = split_line_commands(line);
-	//tab_commands = remove_backslash(tab_commands);
+	tab_commands = remove_backslash(tab_commands);
 	print_commands(tab_commands);
     // commands = last_command(commands);
     // commands = new_command();
@@ -59,22 +59,41 @@ char			**remove_backslash(char **tab)
 {
 	int		i;
 	int		j;
+	int		k;
 	t_flags fl;
+	char	*str;
 
 	i = 0;
-	fl = (t_flags){0, 0, 0, 0, 0};
 	while (tab[i] != NULL)
 	{
+		fl = (t_flags){0, 0, 0, 0, 0};
+		str = (char *)malloc(ft_strlen(tab[i]) + 1);
 		j = 0;
+		k = 0;
 		while (tab[i][j] != '\0')
 		{
-			if (fl.b_s == 1)
+			if (tab[i][j] == '\\')
 			{
-				/* code */
+				if (fl.b_s == 1)
+					fl.b_s = 0;
+				else
+					fl.b_s = 1;
 			}
-			
+			if (tab[i][j] == '\"' && fl.b_s == 0)
+				fl.d_q++;
+			if (tab[i][j] == '\'' && fl.b_s == 0)
+				fl.s_q++;
+			if (!((tab[i][j] == '\'' || tab[i][j] == '\"' || tab[i][j] == '\\') && fl.b_s == 1))
+			{
+				fl.b_s = 0;
+				str[k] = tab[i][j];
+				k++;
+			}
 			j++;
 		}
+		str[k] = '\0';
+		free(tab[i]);
+		tab[i] = str;
 		i++;
 	}
 	return(tab);
