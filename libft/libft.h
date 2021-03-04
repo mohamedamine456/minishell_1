@@ -27,6 +27,7 @@ char			*ft_strdup(const char *s1);
 char			*ft_strjoin(char const *s1, char const *s2);
 char			**ft_split(char const *s, char c);
 char			*ft_substr(char const *s, unsigned int start, size_t len);
-void			free_args(char **args);
+void			ft_free_args(char **args);
+int				ft_size_args(char **tab);
 
 #endif

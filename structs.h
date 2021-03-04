@@ -17,4 +17,16 @@ typedef struct			s_commands
 	struct s_commands	*next;
 }						t_commands;
 
+/*
+*
+*/
+
+typedef struct			s_flags
+{
+	int		p_v : 1;
+	int		d_q : 1;
+	int		s_q : 1;
+	int		p_l : 1;
+}						t_flags;
+
 #endif

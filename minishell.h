@@ -27,8 +27,16 @@ void		*ec_malloc(unsigned int size);
  * command_parser.c to parse commands 
 */
 t_commands		*parse_command(char *line, t_commands *commands);
+char			**split_line_commands(char *line);
 char			**split_command(char *line);
 void			put_elements_command(char **tab, t_commands **cmd);
+
+
+/*
+* allocation_functions.c
+*/
+
+char		**resize_tab(char **old, char *chaine);
 
 /*
  * functions for tests 

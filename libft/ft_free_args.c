@@ -1,6 +1,6 @@
 # include "libft.h"
 
-void        free_args(char **args)
+void        ft_free_args(char **args)
 {
     int     i;
 
