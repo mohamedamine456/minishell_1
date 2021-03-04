@@ -83,7 +83,7 @@ char			**remove_backslash(char **tab)
 				fl.d_q++;
 			if (tab[i][j] == '\'' && fl.b_s == 0)
 				fl.s_q++;
-			if (!((tab[i][j] == '\'' || tab[i][j] == '\"' || tab[i][j] == '\\') && fl.b_s == 1))
+			if (!((tab[i][j] == '\'' || tab[i][j] == '\"' || tab[i][j] == '\\') && fl.b_s == 1) || (fl.d_q % 2 != 0 || fl.s_q % 2 != 0))
 			{
 				fl.b_s = 0;
 				str[k] = tab[i][j];
