@@ -1,0 +1,4 @@
+list functions for pipes (new, last, addback, addfront, size, clear)
+check (addback for command_list)
+free all allocation
+finish spliting commands by the end of the week

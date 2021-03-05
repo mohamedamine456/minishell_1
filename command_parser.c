@@ -5,7 +5,6 @@ t_commands      *parse_command(char *line, t_commands *commands)
     char    **tab_commands;
 
     tab_commands = split_line_commands(line);
-	//tab_commands = remove_backslash(tab_commands);
 	print_commands(tab_commands);
     // commands = last_command(commands);
     // commands = new_command();
@@ -25,17 +24,12 @@ char			**split_line_commands(char *line)
 
     i = 0;
 	j = 0;
-	fl = (t_flags){0, 0, 0, 0, 0};
+	fl = (t_flags){0, 0, 0, 0, 0, 0};
 	tab = allocat_tab();
 	while (line[i] != '\0')
 	{
 		if (line[i] == '\\' && fl.d_q % 2 == 0 && fl.s_q % 2 == 0)
-		{
-			if (fl.b_s == 1)
-				fl.b_s = 0;
-			else
-				fl.b_s = 1;
-		}
+			fl.b_s = fl.b_s == 1 ? 0 : 1;
 		if (line[i] == '\"' && fl.b_s == 0)
 			fl.d_q++;
 		if (line[i] == '\'' && fl.b_s == 0)
@@ -50,31 +44,56 @@ char			**split_line_commands(char *line)
 			fl.b_s = 0;
 		i++;
 	}
-	tab = resize_tab(tab, ft_substr(line, j, i));
+	tab = resize_tab(tab, ft_substr(line, j, i - j));
 	fl.p_v++;
 	return (tab);
 }
 
-t_commands		*split_command(char *cmd_str, t_commands *commands)
+t_commands		*split_command(char **tab_cmd, t_commands *commands)
 {
-	t_commands	*cmd;
+	char	**tab;
+	int		i;
+
+	i = 0;
+	while (tab_cmd[i] != NULL)
+	{
+		tab = split_pipes(tab_cmd[i]);
+		i++;
+	}
+	return (commands);	
+}
+
+char			**split_pipes(char *cmd)
+{
+	char		**tab;
 	int			i;
 	int			j;
 	t_flags		fl;
 
 	i = 0;
 	j = 0;
-	fl = (t_flags){0, 0, 0, 0, 0};
-	cmd = last_command(commands);
-	cmd->next = new_command();
-	cmd = cmd->next;
-	while (cmd_str[i] != '\0')
+	fl = (t_flags){0, 0, 0, 0, 0, 0};
+	tab = allocat_tab();
+	while (cmd[i] != '\0')
 	{
-		if (cmd_str[i] == '\\')
-			fl.b_s = 1;
-		i++;
+		if (cmd[i] == '\\' && fl.d_q % 2 == 0 && fl.s_q % 2 == 0)
+			fl.b_s = fl.b_s == 1 ? 0 : 1;
+		if (cmd[i] == '\'' && fl.b_s == 0)
+			fl.s_q++;
+		if (cmd[i] == '\"' && fl.b_s == 0)
+			fl.d_q++;
+		if (fl.s_q % 2 == 0 && fl.d_q % 2 == 0 && cmd[i] == '|' && fl.b_s == 0)
+		{
+			tab = resize_tab(tab, ft_substr(cmd, j, i - j));
+			j = i + 1;
+		}
+		if ((cmd[i] == '|' || cmd[i] == '\'' || cmd[i] == '\"') && fl.b_s == 1)
+			fl.b_s = 0;
+			i++;
 	}
-}
+	tab = resize_tab(tab, ft_substr(cmd, j, i - j));
+	return (tab);
+} 
 
 void			put_elements_command(char **tab, t_commands **cmd)
 {
