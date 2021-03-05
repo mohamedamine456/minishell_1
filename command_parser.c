@@ -5,7 +5,7 @@ t_commands      *parse_command(char *line, t_commands *commands)
     char    **tab_commands;
 
     tab_commands = split_line_commands(line);
-	tab_commands = remove_backslash(tab_commands);
+	//tab_commands = remove_backslash(tab_commands);
 	print_commands(tab_commands);
     // commands = last_command(commands);
     // commands = new_command();
@@ -55,50 +55,25 @@ char			**split_line_commands(char *line)
 	return (tab);
 }
 
-char			**remove_backslash(char **tab)
+t_commands		*split_command(char *cmd_str, t_commands *commands)
 {
-	char	**new;
-	int		i;
-	int		j;
-	int		k;
-	t_flags fl;
-	char	*str;
+	t_commands	*cmd;
+	int			i;
+	int			j;
+	t_flags		fl;
 
 	i = 0;
-	new = (char **)malloc(sizeof(char *) * (ft_size_args(tab) + 1));
-	while (tab[i] != NULL)
+	j = 0;
+	fl = (t_flags){0, 0, 0, 0, 0};
+	cmd = last_command(commands);
+	cmd->next = new_command();
+	cmd = cmd->next;
+	while (cmd_str[i] != '\0')
 	{
-		fl = (t_flags){0, 0, 0, 0, 0};
-		new[i] = (char *)malloc(ft_strlen(tab[i]) + 1);
-		j = 0;
-		k = 0;
-		while (tab[i][j] != '\0')
-		{
-			if (tab[i][j] == '\\')
-			{
-				if (fl.b_s == 1)
-					fl.b_s = 0;
-				else
-					fl.b_s = 1;
-			}
-			if (tab[i][j] == '\"' && fl.b_s == 0)
-				fl.d_q++;
-			if (tab[i][j] == '\'' && fl.b_s == 0)
-				fl.s_q++;
-			if (!((tab[i][j] == '\'' || tab[i][j] == '\"' || tab[i][j] == '\\') && fl.b_s == 1) || (fl.d_q % 2 != 0 || fl.s_q % 2 != 0))
-			{
-				fl.b_s = 0;
-				new[i][k] = tab[i][j];
-				k++;
-			}
-			j++;
-		}
-		new[i][k] = '\0';
+		if (cmd_str[i] == '\\')
+			fl.b_s = 1;
 		i++;
 	}
-	new[i] = NULL;
-	ft_free_args(tab);
-	return(new);
 }
 
 void			put_elements_command(char **tab, t_commands **cmd)
