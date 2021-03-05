@@ -5,7 +5,7 @@ t_commands *parse_command(char *line, t_commands *commands)
 	char **tab_commands;
 
 	tab_commands = split_line_commands(line);
-	commands = split_command(tab_commands, commands);
+	split_command(tab_commands, &commands);
 	print_commands(tab_commands);
 	// commands = last_command(commands);
 	// commands = new_command();
@@ -50,7 +50,7 @@ char		**split_line_commands(char *line)
 	return (tab);
 }
 
-t_commands	*split_command(char **tab_cmd, t_commands *commands)
+void	split_command(char **tab_cmd, t_commands **commands)
 {
 	char **tab;
 	int i;
@@ -59,9 +59,9 @@ t_commands	*split_command(char **tab_cmd, t_commands *commands)
 	while (tab_cmd[i] != NULL)
 	{
 		tab = split_pipes(tab_cmd[i]);
+		//put_elements_command(tab, commands);		// i'm here
 		i++;
 	}
-	return (commands);
 }
 
 char		**split_pipes(char *cmd)
@@ -96,10 +96,10 @@ char		**split_pipes(char *cmd)
 	return (tab);
 }
 
-void put_elements_command(char **tab, t_commands **cmd)
-{
-	(*cmd)->name = ft_strdup(tab[0] != NULL ? tab[0] : "");
-	(*cmd)->arguments = (char **)malloc(sizeof(char *) * 2);
-	(*cmd)->arguments[0] = ft_strdup(tab[1] != NULL ? tab[1] : "");
-	(*cmd)->arguments[1] = NULL;
-}
+// void put_elements_command(char **tab, t_commands **cmd)
+// {
+// 	int		size;
+
+// 	size = size_commands(*cmd);
+// 	(*cmd)->name = size > 0 ? ft_strdup(tab[0]) : NULL;
+// }
