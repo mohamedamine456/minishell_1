@@ -62,6 +62,7 @@ void	split_command(char **tab_cmd, t_commands **commands)
 		tab = split_pipes(tab_cmd[i]);
 		put_elements_command(tab, commands);
 		i++;
+		ft_free_args(tab);
 	}
 }
 
@@ -155,7 +156,6 @@ void	put_pipes_to_command(char *pipe_cmd, t_commands **cmd)
 {
 	char	**tab;
 	int		op;
-	t_pipes	*last;
 	t_pipes	*new;
 
 	new = new_pipe();
@@ -172,6 +172,7 @@ void	put_pipes_to_command(char *pipe_cmd, t_commands **cmd)
 	else if (tab[2] != NULL && op == 1)
 		put_args_to_pipe(&new, tab + 2);
 	addback_pipes(&((*cmd)->piped), new);
+	ft_free_args(tab);
 }
 
 void	put_args_to_pipe(t_pipes **pipe, char **args)
