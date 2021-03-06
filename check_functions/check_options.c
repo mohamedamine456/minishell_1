@@ -2,5 +2,5 @@
 
 int		is_option(char *str)
 {
-	return (1);
+	return (0);
 }

@@ -5,7 +5,7 @@ int     main(int argc, char **argv, char **env)
 	char	*command_line;
     t_commands  *commands;
 
-    commands = NULL;
+    commands = new_command();
     if (argc == 1 && argv != NULL && env != NULL)
     {
         while (TRUE)

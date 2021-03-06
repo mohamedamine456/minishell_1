@@ -5,7 +5,7 @@ t_commands *parse_command(char *line, t_commands *commands)
 	char	**tab_commands;
 
 	tab_commands = split_line_commands(line);
-	//split_command(tab_commands, &commands);
+	split_command(tab_commands, &commands);
 	print_commands(tab_commands);
 	// commands = last_command(commands);
 	// commands = new_command();
@@ -122,6 +122,7 @@ void	put_simple_command(char *simple_cmd, t_commands **cmd)
 		put_args(cmd, tab + 1);
 	else if (op == 1 && tab[2] != NULL)
 		put_args(cmd, tab + 2);
+	ft_free_args(tab);
 }
 
 void	put_args(t_commands **cmd, char **args)
