@@ -41,7 +41,7 @@ char		**split_line_commands(char *line)
 			j = i + 1;
 			fl.p_v++;
 		}
-		if ((line[i] == ';' || line[i] == '\'' || line[i] == '\"') && fl.b_s == 1)
+		if ((line[i] == ';' || line[i] == '\'' || line[i] == '\"' || line[i] != '\\') && fl.b_s == 1)
 			fl.b_s = 0;
 		i++;
 	}

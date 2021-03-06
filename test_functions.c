@@ -87,10 +87,11 @@ void		print_commands(char **tab)
 	{
 		while (tab[i] != NULL)
 		{
-			write(1, "\n>>>>> command <<<<<\n", 21);
-			write(1, tab[i], ft_strlen(tab[i]));
-			write(1, "\n>>>>>>> end <<<<<<<", 21);
-			write(1, "\n", 1);
+			printf("Command %d : [%s]\n", i + 1, tab[i]);
+			// write(1, "\n>>>>> command <<<<<\n", 21);
+			// write(1, tab[i], ft_strlen(tab[i]));
+			// write(1, "\n>>>>>>> end <<<<<<<", 21);
+			// write(1, "\n", 1);
 			i++;
 		}	
 	}
