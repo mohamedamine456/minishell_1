@@ -8,7 +8,7 @@ t_commands      *new_command()
     command->name = NULL;
     command->options = NULL;
     command->arguments = NULL;
-    command->piped = NULL;      // allocat it
+    command->piped = new_pipe();      // allocat it
     command->redirect = NULL;
     command->next = NULL;
     return (command);

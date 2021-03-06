@@ -35,6 +35,7 @@ void			put_elements_command(char **tab, t_commands **cmd);
 char			**remove_backslash(char **tab);
 void			put_simple_command(char *simple_cmd, t_commands **cmd);
 void			put_args_to_command(t_commands **cmd, char **args);
+void			put_pipes_to_command(char *pipe_cmd, t_commands **cmd);
 void			put_args_to_pipe(t_pipes **pipe, char **args);
 
 /*
@@ -52,5 +53,6 @@ int         check_line_errors(char *command);
 int         parse_command_line(char	*command_line);
 void		print_env_variables(char **env);
 void		print_commands(char **tab);
+void		print_command_parts(t_commands *command);
 
 #endif

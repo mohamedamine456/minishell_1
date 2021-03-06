@@ -6,7 +6,8 @@ t_commands *parse_command(char *line, t_commands *commands)
 
 	tab_commands = split_line_commands(line);
 	split_command(tab_commands, &commands);
-	print_commands(tab_commands);
+	print_command_parts(commands);
+	//print_commands(tab_commands);
 	// commands = last_command(commands);
 	// commands = new_command();
 	// tab_elements = split_command(line);
@@ -59,7 +60,7 @@ void	split_command(char **tab_cmd, t_commands **commands)
 	while (tab_cmd[i] != NULL)
 	{
 		tab = split_pipes(tab_cmd[i]);
-		put_elements_command(tab, commands);		// i'm here
+		put_elements_command(tab, commands);
 		i++;
 	}
 }
@@ -99,6 +100,7 @@ char		**split_pipes(char *cmd)
 void	put_elements_command(char **tab, t_commands **cmd)
 {
 	t_commands	*new_cmd;
+	t_commands	*tmp_cmd;
 	int			i;
 
 	i = 1;
@@ -109,7 +111,8 @@ void	put_elements_command(char **tab, t_commands **cmd)
 	{
 		put_pipes_to_command(tab[i], &new_cmd);
 		i++;
-	}	
+	}
+	*cmd = new_cmd;
 }
 
 void	put_simple_command(char *simple_cmd, t_commands **cmd)
@@ -153,8 +156,12 @@ void	put_pipes_to_command(char *pipe_cmd, t_commands **cmd)
 {
 	char	**tab;
 	int		op;
-	t_pipes	*last_pipe;
+	t_pipes	*last;
+	t_pipes	*new;
 
+	last = (*cmd)->piped;
+	last = last_pipe(last);
+	new = new_pipe();
 	tab = ft_split(pipe_cmd, ' ');
 	if (tab[0] != NULL)
 		(*cmd)->piped->name = ft_strdup(tab[0]);
@@ -164,9 +171,10 @@ void	put_pipes_to_command(char *pipe_cmd, t_commands **cmd)
 		op = 1;
 	}
 	else if (tab[1] != NULL && op == 0)
-		put_args_to_pipe(&((*cmd)->piped), tab + 1);
+		put_args_to_pipe(&new, tab + 1);
 	else if (tab[2] != NULL && op == 1)
-		put_args_to_pipe(&((*cmd)->piped), tab + 2);
+		put_args_to_pipe(&new, tab + 2);
+	last->next = new;
 }
 
 void	put_args_to_pipe(t_pipes **pipe, char **args)
