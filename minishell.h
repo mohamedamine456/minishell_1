@@ -34,8 +34,8 @@ char			**split_pipes(char *cmd);
 void			put_elements_command(char **tab, t_commands **cmd);
 char			**remove_backslash(char **tab);
 void			put_simple_command(char *simple_cmd, t_commands **cmd);
-void			put_args(t_commands **cmd, char **args);
-
+void			put_args_to_command(t_commands **cmd, char **args);
+void			put_args_to_pipe(t_pipes **pipe, char **args);
 
 /*
 * allocation_functions.c

@@ -96,3 +96,57 @@ void		print_commands(char **tab)
 		}	
 	}
 }
+
+void	print_args(char **args)
+{
+	int	i = 0;
+
+	while (args[i] != NULL)
+	{
+		printf("%s ", args[i]);
+		i++;
+		if (args[i] != NULL)
+			printf(", ");
+	}
+}
+
+void	print_command_parts(t_commands *command)
+{
+	int	i = 0;
+
+	while (command != NULL)
+	{
+		printf("Command N %d : [[", i + 1);
+		if (command->name != NULL)
+			printf("Name : %s; ", command->name);
+		if (command->options != NULL)
+			printf("Options : %s; ", command->options);
+		else
+			printf("No options; ");
+		if (command->arguments != NULL)
+		{
+			printf("Arguments : (");
+			print_args(command->arguments);
+			printf(")");
+		}
+		while (command->piped != NULL)
+		{
+			printf("{Pipe : ");
+			if (command->piped->name != NULL)
+				printf("Name : %s; ", command->piped->name);
+			if (command->piped->options != NULL)
+				printf("Options : %s;", command->piped->options);
+			if (command->piped->args != NULL)
+			{
+				printf("Arguments: (");
+				print_args(command->piped->args);
+				printf(")");
+			}
+			printf("}");
+			command->piped = command->piped->next;
+		}
+		printf("]]\n");
+		command = command->next;
+		i++;
+	}
+}
