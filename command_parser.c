@@ -149,7 +149,7 @@ void	put_args(t_commands **cmd, char **args)
 	(*cmd)->arguments[i] = NULL;
 }
 
-// void	put_pipes_to_command(char *pipe_cmd, t_commands **cmd)
-// {
-
-// }
+void	put_pipes_to_command(char *pipe_cmd, t_commands **cmd)
+{
+	
+}

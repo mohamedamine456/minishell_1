@@ -21,5 +21,10 @@ void            addfront_commands(t_commands **commands, t_commands *new);
 */
 
 int				size_pipes(t_pipes *pipes);
+t_pipes			*new_pipe();
+t_pipes			*last_pipe(t_pipes *pipes);
+void			addback_pipes(t_pipes **pipes, t_pipes *new);
+void			addfront_pipes(t_pipes **pipes, t_pipes *new);
+void			clear_pipes(t_pipes **pipes);
 
 #endif

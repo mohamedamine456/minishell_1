@@ -6,7 +6,6 @@ void        clear_commands(t_commands **commands)
     t_commands *cmd2;
 
     cmd1 = *commands;
-
     while (cmd1 != NULL)
     {
         cmd2 = cmd1->next;
@@ -18,6 +17,7 @@ void        clear_commands(t_commands **commands)
             ft_free_args(cmd1->arguments);
         if (cmd1->redirect != NULL)
             free(cmd1->redirect);
+        free(cmd1);
         cmd1 = NULL;
         cmd1 = cmd2;
     }
