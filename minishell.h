@@ -16,6 +16,7 @@
 # include "libft/libft.h"
 # include "commands_list/lists.h"
 # include "get_next_line/get_next_line.h"
+# include "check_functions/check_functions.h"
 # include <fcntl.h>
 # define TRUE 1
 # define FALSE 0
@@ -32,6 +33,8 @@ void			split_command(char **tab_cmd, t_commands **commands);
 char			**split_pipes(char *cmd);
 void			put_elements_command(char **tab, t_commands **cmd);
 char			**remove_backslash(char **tab);
+void			put_simple_command(char *simple_cmd, t_commands **cmd);
+void			put_args(t_commands **cmd, char **args);
 
 
 /*
@@ -40,12 +43,6 @@ char			**remove_backslash(char **tab);
 
 char		**resize_tab(char **old, char *chaine);
 char		**allocat_tab();
-
-/*
-*	check_flags.c
-*/
-
-int			is_flag(char c);
 
 /*
  * functions for tests 

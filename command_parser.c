@@ -2,10 +2,10 @@
 
 t_commands *parse_command(char *line, t_commands *commands)
 {
-	char **tab_commands;
+	char	**tab_commands;
 
 	tab_commands = split_line_commands(line);
-	split_command(tab_commands, &commands);
+	//split_command(tab_commands, &commands);
 	print_commands(tab_commands);
 	// commands = last_command(commands);
 	// commands = new_command();
@@ -59,7 +59,7 @@ void	split_command(char **tab_cmd, t_commands **commands)
 	while (tab_cmd[i] != NULL)
 	{
 		tab = split_pipes(tab_cmd[i]);
-		//put_elements_command(tab, commands);		// i'm here
+		put_elements_command(tab, commands);		// i'm here
 		i++;
 	}
 }
@@ -96,10 +96,46 @@ char		**split_pipes(char *cmd)
 	return (tab);
 }
 
-// void put_elements_command(char **tab, t_commands **cmd)
-// {
-// 	int		size;
+void	put_elements_command(char **tab, t_commands **cmd)
+{
+	t_commands	*new_cmd;
 
-// 	size = size_commands(*cmd);
-// 	(*cmd)->name = size > 0 ? ft_strdup(tab[0]) : NULL;
-// }
+	if (tab[0] != NULL)
+		put_simple_command(tab[0], &new_cmd);
+}
+
+void	put_simple_command(char *simple_cmd, t_commands **cmd)
+{
+	char	**tab;
+	int		op;
+
+	op = 0;
+	tab = ft_split(simple_cmd, ' ');
+	if (tab[0] != NULL)
+		(*cmd)->name = ft_strdup(tab[0]);
+	if (tab[1] != NULL && is_option(tab[1]))
+	{
+		(*cmd)->options = ft_strdup(tab[1]);
+		op = 1;
+	}
+	else if(tab[1] != NULL)
+		put_args(cmd, tab + 1);
+	else if (op == 1 && tab[2] != NULL)
+		put_args(cmd, tab + 2);
+}
+
+void	put_args(t_commands **cmd, char **args)
+{
+	int	i;
+	int	size;
+
+	i = 0;
+	size = ft_size_args(args);
+	(*cmd)->arguments = (char **)malloc(sizeof(char *) * (size + 1));
+	while (args[i]!= NULL)
+	{
+		(*cmd)->arguments[i] = ft_strdup(args[i]);
+		i++;
+	}
+	(*cmd)->arguments[i] = NULL;
+}

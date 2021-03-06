@@ -1,4 +1,4 @@
-#include "minishell.h"
+#include "check_functions.h"
 
 /*
 *	This function to check if there is a '\' before ';' or not
