@@ -21,8 +21,8 @@
 # define TRUE 1
 # define FALSE 0
 
-void		fatal(char *error);
-void		*ec_malloc(unsigned int size);
+void			fatal(char *error);
+void			*ec_malloc(unsigned int size);
 
 /**
  * command_parser.c to parse commands 
@@ -42,17 +42,17 @@ void			put_args_to_pipe(t_pipes **pipe, char **args);
 * allocation_functions.c
 */
 
-char		**resize_tab(char **old, char *chaine);
-char		**allocat_tab();
+char			**resize_tab(char **old, char *chaine);
+char			**allocat_tab();
 
 /*
- * functions for tests 
+* functions for tests 
 */
 
-int         check_line_errors(char *command);
-int         parse_command_line(char	*command_line);
-void		print_env_variables(char **env);
-void		print_commands(char **tab);
-void		print_command_parts(t_commands *command);
+int         	check_line_errors(char *command);
+int         	parse_command_line(char	*command_line);
+void			print_env_variables(char **env);
+void			print_commands(char **tab);
+void			print_command_parts(t_commands *command);
 
 #endif
