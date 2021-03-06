@@ -99,9 +99,17 @@ char		**split_pipes(char *cmd)
 void	put_elements_command(char **tab, t_commands **cmd)
 {
 	t_commands	*new_cmd;
+	int			i;
 
+	i = 1;
+	new_cmd = new_command();
 	if (tab[0] != NULL)
 		put_simple_command(tab[0], &new_cmd);
+	// while (tab[i] != NULL)
+	// {
+	// 	put_pipes_to_command(tab[i], &new_cmd);
+	// 	i++;
+	// }	
 }
 
 void	put_simple_command(char *simple_cmd, t_commands **cmd)
@@ -140,3 +148,8 @@ void	put_args(t_commands **cmd, char **args)
 	}
 	(*cmd)->arguments[i] = NULL;
 }
+
+// void	put_pipes_to_command(char *pipe_cmd, t_commands **cmd)
+// {
+
+// }
