@@ -116,36 +116,36 @@ void	print_command_parts(t_commands *command)
 
 	while (command != NULL)
 	{
-		printf("Command N %d : [[", i + 1);
+		printf("Command N %d : [[ ", i + 1);
 		if (command->name != NULL)
-			printf("Name : %s; ", command->name);
+			printf("Name : %s ; ", command->name);
 		if (command->options != NULL)
-			printf("Options : %s; ", command->options);
+			printf("Options : %s ; ", command->options);
 		else
-			printf("No options; ");
+			printf("No options ; ");
 		if (command->arguments != NULL)
 		{
-			printf("Arguments : (");
+			printf("Arguments : ( ");
 			print_args(command->arguments);
-			printf(")");
+			printf(" ) ");
 		}
 		while (command->piped != NULL)
 		{
-			printf("{Pipe : ");
+			printf("{ Pipe : ");
 			if (command->piped->name != NULL)
-				printf("Name : %s; ", command->piped->name);
+				printf("Name : %s ; ", command->piped->name);
 			if (command->piped->options != NULL)
-				printf("Options : %s;", command->piped->options);
+				printf("Options : %s ;", command->piped->options);
 			if (command->piped->args != NULL)
 			{
 				printf("Arguments: (");
 				print_args(command->piped->args);
-				printf(")");
+				printf(" ) ");
 			}
-			printf("}");
+			printf(" } ");
 			command->piped = command->piped->next;
 		}
-		printf("]]\n");
+		printf(" ]]\n");
 		command = command->next;
 		i++;
 	}
