@@ -97,3 +97,8 @@ char		**split_pipes(char *cmd)
 	tab = resize_tab(tab, ft_substr(cmd, j, i - j));
 	return (tab);
 }
+
+char		**split_redirections(char *part)
+{
+	
+}

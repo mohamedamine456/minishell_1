@@ -13,3 +13,7 @@
 	- tomorrow work on directions and finish some unfinished work and functions
 	- check with multiple example to see if there is a segfault or nor
 	- an empty command ( should fix that)
+
+
+
+- after spliting with ';' and spliting with '|' each part would be split by '>' , '<' or '>>' from put_elements_command function
