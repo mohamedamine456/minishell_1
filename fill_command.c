@@ -11,7 +11,7 @@ void	put_elements_command(char **tab, t_commands **cmd)
 		put_simple_command(tab[0], &new_cmd);
 	while (tab[i] != NULL)
 	{
-		put_pipes_to_command(tab[i], &new_cmd);
+		put_pipes_to_command(tab[i], &new_cmd); // use initialize_pipe function
 		i++;
 	}
 	addback_commands(cmd, new_cmd);
