@@ -9,7 +9,7 @@ int main(void)
 	int i = 0;
 	t_flags fl = (t_flags){0, 0, 0, 0, 0, 0};
 
-	str = ft_strdup("echo -n hello world | grep h ; echo -p good morning > file1 | grep n");
+	str = ft_strdup("echo -n hello world | grep h ; echo -p good morning > \"file file\" | grep n");
 	while (str[i] != '\0')
 	{
 		if (str[i] == '\\' && fl.d_q % 2 == 0 && fl.s_q % 2 == 0)
