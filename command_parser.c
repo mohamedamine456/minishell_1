@@ -59,10 +59,13 @@ void	split_command(char **tab_cmd, t_commands **commands)
 	i = 0;
 	while (tab_cmd[i] != NULL)
 	{
-		tab = split_pipes(tab_cmd[i]);
-		put_elements_command(tab, commands);
+		if (ft_strcmp("", tab_cmd[i]))
+		{
+			tab = split_pipes(tab_cmd[i]);
+			put_elements_command(tab, commands);
+			ft_free_args(tab);
+		}
 		i++;
-		ft_free_args(tab);
 	}
 }
 
