@@ -64,6 +64,7 @@ void	put_pipes_to_command(char *pipe_cmd, t_commands **cmd)
 	int		op;
 	t_pipes	*new;
 
+	op = 0;
 	new = new_pipe();
 	tab = ft_split(pipe_cmd, ' ');
 	if (tab[0] != NULL)

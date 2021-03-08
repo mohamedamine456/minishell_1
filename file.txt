@@ -1,2 +1,2 @@
-echo -n "hello world" | grep "h"; echo -p "good morning" | grep "n"
+echo -n "hello world" | grep "h" ; echo -p "good morning" | grep "n"
 echo "hello world" | grep "h"; echo "good morning" | grep "n"; echo "blablabla" | grep "bla" | grep "b"
