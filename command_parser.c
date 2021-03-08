@@ -33,11 +33,8 @@ char		**split_line_commands(char *line)
 		if (line[i] == '\\')
 			fl.b_s = fl.b_s == 1 ? 0 : 1;
 		if (line[i] == '\"' && fl.b_s == 0 && fl.s_q % 2 == 0)
-		{
 			fl.d_q++;
-			if (fl.d_q % 2 == 0)
-				fl.b_s = 0;
-		}
+			//fl.b_s = fl.d_q % 2 == 0 ? 0 : fl.b_s;			// inside the previous condition
 		if (line[i] == '\'' && fl.b_s == 0 && fl.d_q % 2 == 0)
 			fl.s_q++;
 		if (fl.s_q % 2 == 0 && fl.d_q % 2 == 0 && line[i] == ';' && fl.b_s == 0)
