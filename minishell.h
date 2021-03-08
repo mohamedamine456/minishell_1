@@ -45,7 +45,6 @@ void			split_redirections(char *part);	//for try
 */
 
 char			**resize_tab(char **old, char *chaine);
-char			**allocat_tab();
 
 /*
 * functions for tests 

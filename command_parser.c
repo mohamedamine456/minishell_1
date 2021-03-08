@@ -27,7 +27,7 @@ char		**split_line_commands(char *line)
 	i = 0;
 	j = 0;
 	fl = (t_flags){0, 0, 0, 0, 0, 0};
-	tab = allocat_tab();
+	tab = NULL;
 	while (line[i] != '\0')
 	{
 		if (line[i] == '\\' && fl.d_q % 2 == 0 && fl.s_q % 2 == 0)
@@ -79,7 +79,7 @@ char		**split_pipes(char *cmd)
 	i = 0;
 	j = 0;
 	fl = (t_flags){0, 0, 0, 0, 0, 0};
-	tab = allocat_tab();
+	tab = NULL;
 	while (cmd[i] != '\0')
 	{
 		if (cmd[i] == '\\' && fl.d_q % 2 == 0 && fl.s_q % 2 == 0)
@@ -112,8 +112,8 @@ void	split_redirections(char *part)
 	i = 0;
 	j = 0;
 	fl = (t_flags){0, 0, 0, 0, 0, 0};
-	tab_redir = allocat_tab();
-	tab_cmd_pipe = allocat_tab();
+	tab_redir = NULL;
+	tab_cmd_pipe = NULL;
 	while (part[i] != '\0')
 	{
 		if (part[i] == '\\' && fl.d_q % 2 == 0 && fl.s_q % 2 == 0)

@@ -7,7 +7,10 @@ char		**resize_tab(char **old, char *chaine)
 	int		len;
 
 	i = 0;
-	len = ft_size_args(old);
+	if (old == NULL)
+		len = 0;
+	else
+		len = ft_size_args(old);
 	new = (char **)malloc(sizeof(char *) * (len +  2));
 	while (i < len)
 	{
@@ -19,13 +22,4 @@ char		**resize_tab(char **old, char *chaine)
 	ft_free_args(old);
 	free(chaine);
 	return (new);
-}
-
-char		**allocat_tab()
-{
-	char **tab;
-
-	tab = (char **)malloc(sizeof(char *));
-	tab[0] = NULL;
-	return (tab);
 }
