@@ -30,7 +30,7 @@ void	put_simple_command(char *simple_cmd, t_commands **cmd)
 	tab = ft_split(simple_cmd, ' ');
 	if (tab[0] != NULL)
 		(*cmd)->name = ft_strdup(tab[0]);
-	if (tab[1] != NULL && is_option(tab[1]))
+	if (tab[1] != NULL && is_option(tab[1], (*cmd)->name))
 	{
 		(*cmd)->options = ft_strdup(tab[1]);
 		op = 1;
@@ -68,7 +68,7 @@ void	put_pipes_to_command(char *pipe_cmd, t_commands **cmd)
 	tab = ft_split(pipe_cmd, ' ');
 	if (tab[0] != NULL)
 		new->name = ft_strdup(tab[0]);
-	if (tab[1] != NULL && is_option(tab[1]))
+	if (tab[1] != NULL && is_option(tab[1], (*cmd)->name))
 	{
 		new->options = ft_strdup(tab[1]);
 		op = 1;

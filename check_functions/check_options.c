@@ -1,6 +1,15 @@
 #include "check_functions.h"
 
-int		is_option(char *str)
+/*
+* this function to check if the given string is an option or not
+*/
+
+int		is_option(char *str, char *name)
 {
+	int		i;
+
+	i = 1;
+	if (!ft_strcmp(name, "echo") && !ft_strcmp(str, "-n"))
+		return (1);
 	return (0);
 }
