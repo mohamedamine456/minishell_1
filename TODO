@@ -11,11 +11,11 @@
 - check leaks on pipe ==> still have some leaks
 - 06/03/2021
 	- tomorrow work on directions and finish some unfinished work and functions
-	- check with multiple example to see if there is a segfault or nor
-	- an empty command ( should fix that)
+	- check with multiple example to see if there is a segfault or not: check it every day
+	- an empty command (should fix that)
 
 
 
 - after spliting with ';' and spliting with '|' each part would be split by '>' , '<' or '>>' from put_elements_command function
 
-look at allocation_function you can combin 2 functions to 1
+- look at allocation_function you can combin 2 functions to 1

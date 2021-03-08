@@ -113,6 +113,7 @@ void	print_args(char **args)
 void	print_command_parts(t_commands *command)
 {
 	int	i = 0;
+	t_pipes *pip;
 
 	while (command != NULL)
 	{
@@ -129,21 +130,22 @@ void	print_command_parts(t_commands *command)
 			print_args(command->arguments);
 			printf(" ) ");
 		}
-		while (command->piped != NULL)
+		pip = command->piped;
+		while (pip != NULL)
 		{
 			printf("{ Pipe : ");
-			if (command->piped->name != NULL)
-				printf("Name : %s ; ", command->piped->name);
-			if (command->piped->options != NULL)
-				printf("Options : %s ;", command->piped->options);
-			if (command->piped->args != NULL)
+			if (pip->name != NULL)
+				printf("Name : %s ; ", pip->name);
+			if (pip->options != NULL)
+				printf("Options : %s ;", pip->options);
+			if (pip->args != NULL)
 			{
 				printf("Arguments: (");
-				print_args(command->piped->args);
+				print_args(pip->args);
 				printf(" ) ");
 			}
 			printf(" } ");
-			command->piped = command->piped->next;
+			pip = pip->next;
 		}
 		printf(" ]]\n");
 		command = command->next;

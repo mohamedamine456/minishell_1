@@ -4,6 +4,7 @@ int     main(int argc, char **argv, char **env)
 {
 	char	*command_line;
     t_commands  *commands;
+    //int     fd = open("file.txt", O_RDONLY);
 
     commands = NULL;
     if (argc == 1 && argv != NULL && env != NULL)

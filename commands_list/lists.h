@@ -26,6 +26,5 @@ t_pipes			*last_pipe(t_pipes *pipes);
 void			addback_pipes(t_pipes **pipes, t_pipes *new);
 void			addfront_pipes(t_pipes **pipes, t_pipes *new);
 void			clear_pipes(t_pipes **pipes);
-t_pipes			*initialize_pipe(t_pipes *pipe);
 
 #endif
