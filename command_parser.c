@@ -124,7 +124,7 @@ void	split_redirections(char *part)
 			fl.s_q++;
 		if (fl.d_q % 2 == 0 && fl.s_q % 2 == 0 && fl.b_s == 0)
 		{
-			if (part[i] == '>' || part[i] =='<')
+			if (part[i] == '>' || part[i] == '<')
 			{
 				tab_redir = resize_tab(tab_redir, ft_substr(part, i + 2, next_space(part + i + 2)));
 				printf("[[%s]]\n", tab_redir[0]);
