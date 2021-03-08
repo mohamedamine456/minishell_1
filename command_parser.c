@@ -30,11 +30,15 @@ char		**split_line_commands(char *line)
 	tab = NULL;
 	while (line[i] != '\0')
 	{
-		if (line[i] == '\\' && fl.d_q % 2 == 0 && fl.s_q % 2 == 0)
+		if (line[i] == '\\')
 			fl.b_s = fl.b_s == 1 ? 0 : 1;
-		if (line[i] == '\"' && fl.b_s == 0)
+		if (line[i] == '\"' && fl.b_s == 0 && fl.s_q % 2 == 0)
+		{
 			fl.d_q++;
-		if (line[i] == '\'' && fl.b_s == 0)
+			if (fl.d_q % 2 == 0)
+				fl.b_s = 0;
+		}
+		if (line[i] == '\'' && fl.b_s == 0 && fl.d_q % 2 == 0)
 			fl.s_q++;
 		if (fl.s_q % 2 == 0 && fl.d_q % 2 == 0 && line[i] == ';' && fl.b_s == 0)
 		{
@@ -46,6 +50,8 @@ char		**split_line_commands(char *line)
 			fl.b_s = 0;
 		i++;
 	}
+	// if (fl.d_q % 2 != 0 || fl.s_q % 2 != 0)
+	// 	write(1, "\nQuotes needed\n", 16);
 	tab = resize_tab(tab, ft_substr(line, j, i - j));
 	fl.p_v++;
 	return (tab);
@@ -84,9 +90,9 @@ char		**split_pipes(char *cmd)
 	{
 		if (cmd[i] == '\\' && fl.d_q % 2 == 0 && fl.s_q % 2 == 0)
 			fl.b_s = fl.b_s == 1 ? 0 : 1;
-		if (cmd[i] == '\'' && fl.b_s == 0)
+		if (cmd[i] == '\'' && fl.b_s == 0 && fl.d_q % 2 == 0)
 			fl.s_q++;
-		if (cmd[i] == '\"' && fl.b_s == 0)
+		if (cmd[i] == '\"' && fl.b_s == 0 && fl.s_q % 2 == 0)
 			fl.d_q++;
 		if (fl.s_q % 2 == 0 && fl.d_q % 2 == 0 && cmd[i] == '|' && fl.b_s == 0)
 		{
@@ -118,9 +124,9 @@ void	split_redirections(char *part)
 	{
 		if (part[i] == '\\' && fl.d_q % 2 == 0 && fl.s_q % 2 == 0)
 			fl.b_s = fl.b_s == 1 ? 0 : 1;
-		if (part[i] == '\"' && fl.b_s == 0)
+		if (part[i] == '\"' && fl.b_s == 0 && fl.s_q % 2 == 0)
 			fl.d_q++;
-		if (part[i] == '\'' && fl.b_s == 0)
+		if (part[i] == '\'' && fl.b_s == 0 && fl.d_q % 2 == 0)
 			fl.s_q++;
 		if (fl.d_q % 2 == 0 && fl.s_q % 2 == 0 && fl.b_s == 0)
 		{

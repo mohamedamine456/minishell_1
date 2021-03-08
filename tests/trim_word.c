@@ -23,9 +23,9 @@ int main(void)
 			n_s = next_space(str + i + 2);
 			result = ft_substr(str, i, n_s + 2);
 			ft_memmove(str + i, str + i + n_s + 2, ft_strlen(str + i) - n_s - 2);
-			str[i + n_s + 2] = '\0';
+			str[ft_strlen(str) - n_s - 2] = '\0';
 		}
 		i++;
 	}
-	printf("str = %s, result = %s", str, result);
+	printf("str = [[ %s ]]\nresult = [[ %s ]]", str, result);
 }

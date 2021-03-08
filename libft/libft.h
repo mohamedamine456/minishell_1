@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <ctype.h>
+# include "../structs.h"
 
 int				ft_strlen(const char *s);
 void			ft_putnbr(int n);
