@@ -27,7 +27,7 @@ void	put_simple_command(char *simple_cmd, t_commands **cmd)
 	int		op;
 
 	op = 0;
-	tab = ft_split(simple_cmd, ' ');
+	tab = ft_split(simple_cmd, ' ');		// not the best split
 	if (tab[0] != NULL)
 		(*cmd)->name = ft_strdup(tab[0]);
 	if (tab[1] != NULL && is_option(tab[1], (*cmd)->name))
@@ -66,7 +66,7 @@ void	put_pipes_to_command(char *pipe_cmd, t_commands **cmd)
 
 	op = 0;
 	new = new_pipe();
-	tab = ft_split(pipe_cmd, ' ');
+	tab = ft_split(pipe_cmd, ' ');			// not the best split
 	if (tab[0] != NULL)
 		new->name = ft_strdup(tab[0]);
 	if (tab[1] != NULL && is_option(tab[1], (*cmd)->name))
