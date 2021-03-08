@@ -14,7 +14,7 @@ void	put_elements_command(char **tab, t_commands **cmd)
 	}
 	while (tab[i] != NULL)
 	{
-		//split_redirections(tab[i]);
+		split_redirections(tab[i]);
 		put_pipes_to_command(tab[i], &new_cmd); // use initialize_pipe function
 		i++;
 	}

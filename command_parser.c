@@ -125,7 +125,11 @@ void	split_redirections(char *part)
 		if (fl.d_q % 2 == 0 && fl.s_q % 2 == 0 && fl.b_s == 0)
 		{
 			if (part[i] == '>' || part[i] =='<')
-				printf("redirection\n");
+			{
+				tab_redir = resize_tab(tab_redir, ft_substr(part, i + 2, next_space(part + i + 2)));
+				printf("[[%s]]\n", tab_redir[0]);
+				j = i + 1;
+			}
 		}
 		if (part[i] != '\\' && fl.b_s == 1)
 			fl.b_s = 0;
