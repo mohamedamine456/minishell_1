@@ -103,10 +103,8 @@ void	print_args(char **args)
 
 	while (args[i] != NULL)
 	{
-		printf("%s ", args[i]);
+		printf("|%s| - ", args[i]);
 		i++;
-		if (args[i] != NULL)
-			printf(", ");
 	}
 }
 
@@ -119,25 +117,27 @@ void	print_command_parts(t_commands *command)
 	{
 		printf("Command N %d : [[ ", i + 1);
 		if (command->name != NULL)
-			printf("Name : %s - ", command->name);
+			printf("Name : |%s| * ", command->name);
 		if (command->options != NULL)
-			printf("Options : %s - ", command->options);
+			printf("Options : |%s| * ", command->options);
 		else
-			printf("No options - ");
+			printf("No options * ");
 		if (command->arguments != NULL)
 		{
-			printf("Arguments : ( ");
+			printf("\n\t\t{ Arguments :  ");
 			print_args(command->arguments);
-			printf(" ) ");
+			printf(" } ");
 		}
+		if (command->redirect != NULL)
+			print_redirections(command->redirect);
 		pip = command->piped;
 		while (pip != NULL)
 		{
-			printf("{ Pipe : ");
+			printf("\n\t\t{ Pipe : ");
 			if (pip->name != NULL)
-				printf("Name : %s - ", pip->name);
+				printf("Name : |%s| * ", pip->name);
 			if (pip->options != NULL)
-				printf("Options : %s -", pip->options);
+				printf("Options : |%s| * ", pip->options);
 			if (pip->args != NULL)
 			{
 				printf("Arguments: (");
@@ -159,16 +159,16 @@ void	print_redirections(char **tab_redir)
 	int i;
 
 	i = 0;
-	printf("\n[[ Redirections: ");
+	printf("\n\t\t{ Redirections : ");
 	if (tab_redir == NULL)
 		printf("No Redirections.");
 	else
 	{
 		while (tab_redir[i] != NULL)
 		{
-			printf(" %s ", tab_redir[i]);
+			printf(" |%s| - ", tab_redir[i]);
 			i++;
 		}
 	}
-	printf(" ]]\n");
+	printf(" }");
 }

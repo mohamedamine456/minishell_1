@@ -10,7 +10,6 @@ void	put_elements_command(char **tab, t_commands **cmd)
 	if (tab[0] != NULL)
 	{
 		split_redirections(ft_strdup(tab[0]), &new_cmd);
-		print_redirections(new_cmd->redirect);
 		put_simple_command(tab[0], &new_cmd);
 	}
 	while (tab[i] != NULL)
