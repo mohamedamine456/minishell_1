@@ -22,6 +22,7 @@ int				ft_strlen(const char *s);
 void			ft_putnbr(int n);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
 int				ft_strcmp(const char *s1, const char *s2);
+char			*ft_strstr(const char *haystack, const char *needle);
 int				char_in_string(char c, char *str);
 void			*ft_memmove(void *dest, const void *src, size_t n);
 size_t			ft_strlcpy(char *dst, const char *src, size_t dstsize);
