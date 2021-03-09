@@ -16,7 +16,9 @@ void	clear_pipes(t_pipes **pipes)
 		if (pipe1->args != NULL)
 			ft_free_args(pipe1->args);
 		if (pipe1->redirect != NULL)
-			free(pipe1->redirect);
+			ft_free_args(pipe1->redirect);
+		if (pipe1->input != NULL)
+			ft_free_args(pipe1->input);
 		free(pipe1);
 		pipe1 = NULL;
 		pipe1 = pipe2;

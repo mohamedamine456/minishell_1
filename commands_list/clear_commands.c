@@ -15,8 +15,12 @@ void        clear_commands(t_commands **commands)
             free(cmd1->options);
         if (cmd1->arguments != NULL)
             ft_free_args(cmd1->arguments);
+        if (cmd1->piped != NULL)
+            clear_pipes(&(cmd1->piped));
         if (cmd1->redirect != NULL)
-            free(cmd1->redirect);
+            ft_free_args(cmd1->redirect);
+        if (cmd1->input != NULL)
+            ft_free_args(cmd1->input);
         free(cmd1);
         cmd1 = NULL;
         cmd1 = cmd2;

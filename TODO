@@ -24,6 +24,8 @@ instead of splitting by redirections think the best way is to trim the redirecti
 
 - 08/03/2021
 - keep working on the redirections
-- test next_space function
+- test next_space function: {{Fixed}}
 - use it to split words
-- finish parsing before thursday
+- finish parsing before thursday: On Worked
+
+- remove redirections from command after putting them in the struct
