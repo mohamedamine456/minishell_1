@@ -24,6 +24,7 @@ int main(void)
 			result = ft_substr(str, i, n_s + 1);
 			ft_memmove(str + i, str + i + n_s + 1, ft_strlen(str + i) - n_s - 1);
 			str[ft_strlen(str) - n_s - 1] = '\0';
+			i += n_s;
 		}
 		i++;
 	}

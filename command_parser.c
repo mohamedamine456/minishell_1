@@ -105,11 +105,15 @@ void	split_redirections(char *part, t_commands **new_cmd)
 	int		i;
 	int		n_s;
 	t_flags fl;
+	int		j;
+	char	*new_name;
 
 	i = 0;
+	j = 0;
 	n_s = 0;
 	fl = (t_flags){0, 0, 0, 0, 0, 0};
 	tab_redir = NULL;
+	new_name = ft_strdup("");
 	while (part[i] != '\0')
 	{
 		if (part[i] == '\\' && fl.d_q % 2 == 0 && fl.s_q % 2 == 0)
@@ -122,17 +126,20 @@ void	split_redirections(char *part, t_commands **new_cmd)
 		{
 			if (part[i] == '>' || part[i] == '<')
 			{
+				j = j == 0 ? j : j + i;
 				n_s = next_space(part + i + 1);
 				tab_redir = resize_tab(tab_redir, ft_substr(part, i + 1, n_s));
+				new_name = ft_strjoin(new_name, ft_substr(part, j, i));
+				printf("\n\n [[ %s ]] \n\n", new_name);
+				i += n_s;
+				j = i + 1;
 			}
 		}
 		if (part[i] != '\\' && fl.b_s == 1)
 			fl.b_s = 0;
 		i++;
 	}
-	//print_redirections(tab_redir);
 	(*new_cmd)->redirect = tab_redir;
-	// ft_free_args(tab_redir);
-	// tab_redir = NULL;
+	//put_simple_command(part, new_cmd);
 	free(part);
 }
