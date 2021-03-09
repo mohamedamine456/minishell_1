@@ -10,6 +10,7 @@ t_commands      *new_command()
     command->arguments = NULL;
     command->piped = NULL;      // allocat it
     command->redirect = NULL;
+    command->input = NULL;
     command->next = NULL;
     return (command);
 }

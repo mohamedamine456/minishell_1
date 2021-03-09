@@ -56,5 +56,6 @@ void			print_env_variables(char **env);
 void			print_commands(char **tab);
 void			print_command_parts(t_commands *command);
 void			print_redirections(char **tab_redir);
+void			print_inputs(char **tab_input);
 
 #endif

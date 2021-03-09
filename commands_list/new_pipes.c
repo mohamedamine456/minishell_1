@@ -9,6 +9,7 @@ t_pipes		*new_pipe()
 	pipe->options = NULL;
 	pipe->args = NULL;
 	pipe->redirect = NULL;
+	pipe->input = NULL;
 	pipe->next = NULL;
 	return (pipe);
 }

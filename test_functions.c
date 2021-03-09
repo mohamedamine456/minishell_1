@@ -130,6 +130,8 @@ void	print_command_parts(t_commands *command)
 		}
 		if (command->redirect != NULL)
 			print_redirections(command->redirect);
+		if (command->input != NULL)
+			print_inputs(command->input);
 		pip = command->piped;
 		while (pip != NULL)
 		{
@@ -167,6 +169,25 @@ void	print_redirections(char **tab_redir)
 		while (tab_redir[i] != NULL)
 		{
 			printf(" |%s| - ", tab_redir[i]);
+			i++;
+		}
+	}
+	printf(" }");
+}
+
+void	print_inputs(char **tab_input)
+{
+	int i;
+
+	i = 0;
+	printf("\n\t\t{ Inputs : ");
+	if (tab_input == NULL)
+		printf("No Redirections.");
+	else
+	{
+		while (tab_input[i] != NULL)
+		{
+			printf(" |%s| - ", tab_input[i]);
 			i++;
 		}
 	}
