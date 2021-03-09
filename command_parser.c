@@ -141,5 +141,8 @@ void	split_redirections(char *part, t_commands **new_cmd)
 	}
 	(*new_cmd)->redirect = tab_redir;
 	(*new_cmd)->input = tab_input;
+	// part = remove_tab_from_string(part, tab_redir);
+	// part = remove_tab_from_string(part, tab_input);
+	// printf("\n\n\n [[ %s ]] \n\n\n", part);
 	free(part);
 }

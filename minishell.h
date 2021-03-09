@@ -57,4 +57,10 @@ void			print_command_parts(t_commands *command);
 void			print_redirections(char **tab_redir);
 void			print_inputs(char **tab_input);
 
+/*
+*	remove_tab_from_string.c
+*/
+
+char	*remove_tab_from_string(char *str, char **tab);
+
 #endif

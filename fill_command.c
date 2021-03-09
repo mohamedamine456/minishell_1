@@ -10,6 +10,8 @@ void	put_elements_command(char **tab, t_commands **cmd)
 	if (tab[0] != NULL)
 	{
 		split_redirections(ft_strdup(tab[0]), &new_cmd);
+		tab[0] = remove_tab_from_string(tab[0], new_cmd->redirect);
+		tab[0] = remove_tab_from_string(tab[0], new_cmd->input);
 		put_simple_command(tab[0], &new_cmd);
 	}
 	while (tab[i] != NULL)

@@ -9,7 +9,7 @@ int ft_strstri(const char *haystack, const char *needle)
 
 	i = -1;
 	if (*needle == '\0' || *haystack == '\0')
-		return (0);
+		return (-1);
 	len = ft_strlen(haystack);
 	while (ft_strlen((char *)needle) + (++i) <= len)
 	{
@@ -27,5 +27,5 @@ int ft_strstri(const char *haystack, const char *needle)
 			}
 		}
 	}
-	return (0);
+	return (-1);
 }

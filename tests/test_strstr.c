@@ -11,4 +11,5 @@ int main()
 
 	index = ft_strstri(str1, str2);
 	printf("First index of [ %s ] in [ %s ] is: [ %d ]", str2, str1, index);
+	return (0);
 }
