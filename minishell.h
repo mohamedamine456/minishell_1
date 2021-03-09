@@ -38,7 +38,7 @@ void			put_args_to_command(t_commands **cmd, char **args);
 void			put_pipes_to_command(char *pipe_cmd, t_commands **cmd);
 void			put_args_to_pipe(t_pipes **pipe, char **args);
 //char			**split_redirections(char *part);
-void			split_redirections(char *part);	//for try
+void			split_redirections(char *part, t_commands **new_cmd);	//for try
 
 /*
 * allocation_functions.c
@@ -55,5 +55,6 @@ int         	parse_command_line(char	*command_line);
 void			print_env_variables(char **env);
 void			print_commands(char **tab);
 void			print_command_parts(t_commands *command);
+void			print_redirections(char **tab_redir);
 
 #endif

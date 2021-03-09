@@ -20,12 +20,16 @@ int main(void)
 			fl.d_q++;
 		if ((str[i] == '>' || str[i] == '<') && fl.d_q % 2 == 0 && fl.s_q % 2 == 0 && fl.b_s == 0)
 		{
-			n_s = next_space(str + i + 2);
-			result = ft_substr(str, i, n_s + 2);
-			ft_memmove(str + i, str + i + n_s + 2, ft_strlen(str + i) - n_s - 2);
-			str[ft_strlen(str) - n_s - 2] = '\0';
+			n_s = next_space(str + i + 1);
+			result = ft_substr(str, i, n_s + 1);
+			ft_memmove(str + i, str + i + n_s + 1, ft_strlen(str + i) - n_s - 1);
+			str[ft_strlen(str) - n_s - 1] = '\0';
 		}
 		i++;
 	}
 	printf("str = [[ %s ]]\nresult = [[ %s ]]", str, result);
+	free(str);
+	free(result);
+	//sleep(10);
+	return (0);
 }

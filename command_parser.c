@@ -8,11 +8,6 @@ t_commands *parse_command(char *line, t_commands *commands)
 	split_command(tab_commands, &commands);
 	print_command_parts(commands);
 	//print_commands(tab_commands);
-	// commands = last_command(commands);
-	// commands = new_command();
-	// tab_elements = split_command(line);
-	// put_elements_command(tab_elements, &commands);
-	//printf("\n%s, %s, %d, %s\n", commands->name, commands->options, commands->id_command_pipe, commands->redirect);
 	ft_free_args(tab_commands);
 	return (commands);
 }
@@ -104,19 +99,17 @@ char		**split_pipes(char *cmd)
 	return (tab);
 }
 
-void	split_redirections(char *part)
+void	split_redirections(char *part, t_commands **new_cmd)
 {
 	char	**tab_redir;
-	char	**tab_cmd_pipe;
 	int		i;
-	int		j;
+	int		n_s;
 	t_flags fl;
 
 	i = 0;
-	j = 0;
+	n_s = 0;
 	fl = (t_flags){0, 0, 0, 0, 0, 0};
 	tab_redir = NULL;
-	tab_cmd_pipe = NULL;
 	while (part[i] != '\0')
 	{
 		if (part[i] == '\\' && fl.d_q % 2 == 0 && fl.s_q % 2 == 0)
@@ -129,13 +122,17 @@ void	split_redirections(char *part)
 		{
 			if (part[i] == '>' || part[i] == '<')
 			{
-				tab_redir = resize_tab(tab_redir, ft_substr(part, i + 2, next_space(part + i + 2)));
-				printf("[[%s]]\n", tab_redir[0]);
-				j = i + 1;
+				n_s = next_space(part + i + 1);
+				tab_redir = resize_tab(tab_redir, ft_substr(part, i + 1, n_s));
 			}
 		}
 		if (part[i] != '\\' && fl.b_s == 1)
 			fl.b_s = 0;
 		i++;
 	}
+	//print_redirections(tab_redir);
+	(*new_cmd)->redirect = tab_redir;
+	// ft_free_args(tab_redir);
+	// tab_redir = NULL;
+	free(part);
 }

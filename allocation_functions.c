@@ -2,16 +2,16 @@
 
 char		**resize_tab(char **old, char *chaine)
 {
-	char	**new;
-	int		i;
-	int		len;
+	char **new;
+	int i;
+	int len;
 
 	i = 0;
 	if (old == NULL)
 		len = 0;
 	else
 		len = ft_size_args(old);
-	new = (char **)malloc(sizeof(char *) * (len +  2));
+	new = (char **)malloc(sizeof(char *) * (len + 2));
 	while (i < len)
 	{
 		new[i] = ft_strdup(old[i]);

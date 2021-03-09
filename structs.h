@@ -11,7 +11,7 @@ typedef struct			s_pipes
 	char				*name;
 	char				*options;
 	char				**args;
-	char				*redirect;
+	char				**redirect;
 	//char				*input;
 	struct s_pipes		*next;
 }						t_pipes;
@@ -26,7 +26,7 @@ typedef struct			s_commands
 	char				*options;
 	char				**arguments;
 	t_pipes				*piped;
-	char				*redirect;
+	char				**redirect;
 	//char				*input;
 	struct s_commands	*next;
 }						t_commands;

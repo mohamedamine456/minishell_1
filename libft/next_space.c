@@ -3,9 +3,11 @@
 int		next_space(char *str)
 {
 	int		i;
+	char	*tmp;
 	t_flags	fl;
 
 	i = 0;
+	tmp = NULL;
 	fl = (t_flags){0, 0, 0, 0, 0, 0};
 	while (str[i] != '\0')
 	{
@@ -16,7 +18,15 @@ int		next_space(char *str)
 		if (str[i] == '\'' && fl.b_s == 0 && fl.d_q % 2 == 0)
 			fl.s_q++;
 		if (str[i] == ' ' && fl.s_q % 2 == 0 && fl.d_q % 2 == 0 && fl.b_s == 0)
-			return (i);
+		{
+			tmp = ft_substr(str, 0, i);
+			if (ft_strcmp(tmp, ""))
+			{
+				free(tmp);
+				break ;
+			}
+			free(tmp);
+		}
 		i++;
 	}
 	return (i);
