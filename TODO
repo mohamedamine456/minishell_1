@@ -29,3 +29,6 @@ instead of splitting by redirections think the best way is to trim the redirecti
 - finish parsing before thursday: On Worked
 
 - remove redirections from command after putting them in the struct
+
+09/03/2021:
+- write remove spaces function the one you writed not working
