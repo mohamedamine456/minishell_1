@@ -67,7 +67,7 @@ void	split_command(char **tab_cmd, t_commands **commands)
 	}
 }
 
-char		**split_pipes(char *cmd)
+char		**split_pipes(char *str_cmd)
 {
 	char **tab;
 	int i;
@@ -78,24 +78,24 @@ char		**split_pipes(char *cmd)
 	j = 0;
 	fl = (t_flags){0, 0, 0, 0, 0, 0};
 	tab = NULL;
-	while (cmd[i] != '\0')
+	while (str_cmd[i] != '\0')
 	{
-		if (cmd[i] == '\\' && fl.d_q % 2 == 0 && fl.s_q % 2 == 0)
+		if (str_cmd[i] == '\\' && fl.d_q % 2 == 0 && fl.s_q % 2 == 0)
 			fl.b_s = fl.b_s == 1 ? 0 : 1;
-		if (cmd[i] == '\'' && fl.b_s == 0 && fl.d_q % 2 == 0)
+		if (str_cmd[i] == '\'' && fl.b_s == 0 && fl.d_q % 2 == 0)
 			fl.s_q++;
-		if (cmd[i] == '\"' && fl.b_s == 0 && fl.s_q % 2 == 0)
+		if (str_cmd[i] == '\"' && fl.b_s == 0 && fl.s_q % 2 == 0)
 			fl.d_q++;
-		if (fl.s_q % 2 == 0 && fl.d_q % 2 == 0 && cmd[i] == '|' && fl.b_s == 0)
+		if (fl.s_q % 2 == 0 && fl.d_q % 2 == 0 && str_cmd[i] == '|' && fl.b_s == 0)
 		{
-			tab = resize_tab(tab, ft_substr(cmd, j, i - j));
+			tab = resize_tab(tab, ft_substr(str_cmd, j, i - j));
 			j = i + 1;
 		}
-		if ((cmd[i] == '|' || cmd[i] == '\'' || cmd[i] == '\"') && fl.b_s == 1)
+		if ((str_cmd[i] == '|' || str_cmd[i] == '\'' || str_cmd[i] == '\"') && fl.b_s == 1)
 			fl.b_s = 0;
 		i++;
 	}
-	tab = resize_tab(tab, ft_substr(cmd, j, i - j));
+	tab = resize_tab(tab, ft_substr(str_cmd, j, i - j));
 	return (tab);
 }
 
@@ -141,8 +141,5 @@ void	split_redirections(char *part, t_commands **new_cmd)
 	}
 	(*new_cmd)->redirect = tab_redir;
 	(*new_cmd)->input = tab_input;
-	// part = remove_tab_from_string(part, tab_redir);
-	// part = remove_tab_from_string(part, tab_input);
-	// printf("\n\n\n [[ %s ]] \n\n\n", part);
 	free(part);
 }

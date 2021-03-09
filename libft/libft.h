@@ -35,5 +35,6 @@ char			*ft_substr(char const *s, unsigned int start, size_t len);
 void			ft_free_args(char **args);
 int				ft_size_args(char **tab);
 int				next_space(char *str);
+char			*remove_spaces(char *str);
 
 #endif
