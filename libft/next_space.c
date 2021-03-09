@@ -27,6 +27,8 @@ int		next_space(char *str)
 			}
 			free(tmp);
 		}
+		if (str[i] != '\\' && fl.b_s == 1)
+			fl.b_s = 0;
 		i++;
 	}
 	return (i);
