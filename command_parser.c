@@ -44,8 +44,6 @@ char		**split_line_commands(char *line)
 			fl.b_s = 0;
 		i++;
 	}
-	// if (fl.d_q % 2 != 0 || fl.s_q % 2 != 0)
-	// 	write(1, "\nQuotes needed\n", 16);
 	tab = resize_tab(tab, ft_substr(line, j, i - j));
 	fl.p_v++;
 	return (tab);
