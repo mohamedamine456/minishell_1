@@ -1,5 +1,9 @@
 # include "minishell.h"
 
+/**
+ *  This function Takes parts of command and put them in
+*/
+
 void	put_elements_command(char **tab, t_commands **cmd)
 {
 	t_commands	*new_cmd;

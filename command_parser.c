@@ -1,5 +1,14 @@
 #include "minishell.h"
 
+/*
+* This function takes line from the main function
+* remove_spaces : to remove additional spaces from the line
+* split_line_commands: splits the line to commands based on ';'
+* split_command : split a command to main command and pipes
+* print_command_parts : just to print the list of commands
+* ft_free_args : to free all items in a table of strings
+*/
+
 t_commands *parse_command(char *line, t_commands *commands)
 {
 	char	**tab_commands;
@@ -8,11 +17,17 @@ t_commands *parse_command(char *line, t_commands *commands)
 	tab_commands = split_line_commands(line);
 	split_command(tab_commands, &commands);
 	print_command_parts(commands);
-	//print_commands(tab_commands);
 	ft_free_args(tab_commands);
 	free(line);
 	return (commands);
 }
+
+/**
+ * This function split a line to commands by ';'
+ * it does skip ';' if it is prefixed by '\' or it is inside a ""
+ * all this function do is take a line and return a table of commands
+ * i used substr to split command
+*/
 
 char		**split_line_commands(char *line)
 {
@@ -49,6 +64,13 @@ char		**split_line_commands(char *line)
 	return (tab);
 }
 
+/**
+ * this function to plit all the command in the table from the previous function
+ * and split each command in the table with pipe : "split_pipes" doeas that
+ * after spliting a command with pipes
+ * put element_command take cre of putting those parts in the list
+*/
+
 void	split_command(char **tab_cmd, t_commands **commands)
 {
 	char **tab;
@@ -66,6 +88,11 @@ void	split_command(char **tab_cmd, t_commands **commands)
 		i++;
 	}
 }
+
+/**
+ * This funtion to split a given command with pipes 
+ * it also skip the '|' inside "" or '|' prefixed by \
+*/
 
 char		**split_pipes(char *str_cmd)
 {
@@ -99,6 +126,9 @@ char		**split_pipes(char *str_cmd)
 	return (tab);
 }
 
+/**
+ * This function to split commands and pipes with  redirections and put them in the list
+*/
 void	split_redirections(char *part, t_commands **new_cmd)
 {
 	char	**tab_redir;
@@ -143,3 +173,5 @@ void	split_redirections(char *part, t_commands **new_cmd)
 	(*new_cmd)->input = tab_input;
 	free(part);
 }
+
+// see fil_command.c file
