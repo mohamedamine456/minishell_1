@@ -4,11 +4,13 @@ t_commands *parse_command(char *line, t_commands *commands)
 {
 	char	**tab_commands;
 
+	line = remove_spaces(ft_strdup(line));
 	tab_commands = split_line_commands(line);
 	split_command(tab_commands, &commands);
 	print_command_parts(commands);
 	//print_commands(tab_commands);
 	ft_free_args(tab_commands);
+	free(line);
 	return (commands);
 }
 

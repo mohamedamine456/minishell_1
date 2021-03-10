@@ -25,6 +25,9 @@ char	*remove_tab_from_string(char *str, char **tab)
 			}
 			k++;
 		}
+		tmp = ft_substr(str, i, ft_strlen(str) - i);
+		new = ft_strjoin(new, tmp);
+		free(tmp);
 		free(str);
 		return (new);
 	}

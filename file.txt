@@ -1,4 +1,6 @@
- echo "hello" > file > file1 > "file 2" > file\ \ 4
+<  file7 > file8 echo "hello" >  file9 <  file5
+
+echo "hello" > file > file1 > "file 2" > file\ \ 4
 
 echo "\'" ; echo \\; echo \;\"; echo \\\\\; "\\\"" ; echo
 
@@ -9,4 +11,6 @@ echo -n "hello world" | grep "h" ; echo -p "good morning" | grep "n" > file
 echo "hello" > file > file1 > "file 2" < file5 < file6 > file9 < file10
 < file7 > file8 echo "hello" > file > file1 > "file 2" < file5 < file6 > file9
 
-<file7 >file8 echo "hello" >file "world" >file1 >"file 2" <file5 < file6 > file9 "world"
+<    file7 >   file8   echo "hello" >  file   "world" >   file1 >  "file 2"   <   file5 <   file6 >   file9   "world" > file  | grep "n"; echo "blablabla" | grep "bla" | grep "b"
+
+<  file7 > file8 echo "hello" >  file9 <  file5

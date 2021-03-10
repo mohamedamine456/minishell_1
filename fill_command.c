@@ -12,7 +12,6 @@ void	put_elements_command(char **tab, t_commands **cmd)
 		split_redirections(ft_strdup(tab[0]), &new_cmd);
 		tab[0] = remove_tab_from_string(tab[0], new_cmd->redirect);
 		tab[0] = remove_tab_from_string(tab[0], new_cmd->input);
-		tab[0] = remove_spaces(tab[0]);
 		put_simple_command(tab[0], &new_cmd);
 	}
 	while (tab[i] != NULL)
