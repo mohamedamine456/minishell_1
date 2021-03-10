@@ -63,4 +63,9 @@ void			print_inputs(char **tab_input);
 
 char	*remove_tab_from_string(char *str, char **tab);
 
+/**
+ * write_history.c 
+*/
+void			write_history(char *line);
+
 #endif

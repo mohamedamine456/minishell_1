@@ -1,0 +1,5 @@
+<    file7 >   file8   echo "hello" >  file   "world" >   file1 >  "file 2"   <   file5 <   file6 >   file9   "world" > file  | grep "n"; echo "blablabla" | grep "bla" | grep "b"
+echo -n "hello world" | grep "h" ; echo -p "good morning" | grep "n"
+echo "hello world" | grep "h"; echo "good morning" | grep "n"; echo "blablabla" >file | grep "bla" | grep "b" > file
+echo -n "hello world" | grep "h" ; echo -p "good morning" | grep "n" > file
+echo "hello world" > file | grep ls > file2
