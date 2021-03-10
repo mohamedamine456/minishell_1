@@ -1,5 +1,10 @@
 # include "libft.h"
 
+/**
+ * This function tkes a string and return the index of the next space in the string
+ * it does askip if the first characters are spaces
+*/
+
 int		next_space(char *str)
 {
 	int		i;

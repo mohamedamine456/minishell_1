@@ -1,5 +1,9 @@
 #include "lists.h"
 
+/**
+ * This Funtion create a new element of t_commands type
+*/
+
 t_commands      *new_command()
 {
     t_commands *command;

@@ -1,5 +1,9 @@
 #include "lists.h"
 
+/**
+ * This Funtion clear t_commands list from all items
+*/
+
 void        clear_commands(t_commands **commands)
 {
     t_commands *cmd1;

@@ -1,5 +1,9 @@
 # include "lists.h"
 
+/**
+ * This Funtion create a new element of t_pipes type
+*/
+
 t_pipes		*new_pipe()
 {
 	t_pipes		*pipe;

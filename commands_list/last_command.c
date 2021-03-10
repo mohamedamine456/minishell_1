@@ -1,5 +1,9 @@
 # include "lists.h"
 
+/**
+ * This Funtion returns the last elemt from t_commands list given
+*/
+
 t_commands  *last_command(t_commands *commands)
 {
     if (commands != NULL)

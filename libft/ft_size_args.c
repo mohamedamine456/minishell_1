@@ -1,5 +1,9 @@
 # include "libft.h"
 
+/**
+ * count the size of table of strings
+*/
+
 int		ft_size_args(char **tab)
 {
 	int		i;

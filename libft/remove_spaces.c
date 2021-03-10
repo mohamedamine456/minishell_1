@@ -1,5 +1,9 @@
 # include "libft.h"
 
+/**
+ * This Function Remove Additional spaces from a string
+*/
+
 char	*remove_spaces(char *str)
 {
 	int		i;

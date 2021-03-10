@@ -1,5 +1,9 @@
 #include "libft.h"
 
+/**
+ * Same as strstr but it returns the index of the first character of needle in the haystack 
+*/
+
 int ft_strstri(const char *haystack, const char *needle)
 {
 	int i;

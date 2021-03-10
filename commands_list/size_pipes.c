@@ -1,5 +1,9 @@
 # include "lists.h"
 
+/**
+ * This Funtion count the size of t_pipes list given
+*/
+
 int		size_pipes(t_pipes *pipes)
 {
 	int		i;

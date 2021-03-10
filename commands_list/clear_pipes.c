@@ -1,5 +1,9 @@
 #include "lists.h"
 
+/**
+ * This Funtion clear t_pipes list from all items
+*/
+
 void	clear_pipes(t_pipes **pipes)
 {
 	t_pipes	*pipe1;

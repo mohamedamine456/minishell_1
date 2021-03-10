@@ -1,5 +1,9 @@
 #include "lists.h"
 
+/**
+ * This Funtion add new element to the end of t_pipes list
+*/
+
 void	addback_pipes(t_pipes **pipes, t_pipes *new)
 {
 	t_pipes	*pipe;
