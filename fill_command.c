@@ -1,7 +1,8 @@
 # include "minishell.h"
 
 /**
- *  This function Takes parts of command and put them in
+ * This function Takes parts of command and put them in the struct 
+ * !!! still need some protection
 */
 
 void	put_elements_command(char **tab, t_commands **cmd)
@@ -27,6 +28,10 @@ void	put_elements_command(char **tab, t_commands **cmd)
 	addback_commands(cmd, new_cmd);
 }
 
+/**
+ * take the first part of the command and put it in the list 
+*/
+
 void	put_simple_command(char *simple_cmd, t_commands **cmd)
 {
 	char	**tab;
@@ -48,6 +53,10 @@ void	put_simple_command(char *simple_cmd, t_commands **cmd)
 	ft_free_args(tab);
 }
 
+/**
+ * take table of strings and put it in the command list
+*/
+
 void	put_args_to_command(t_commands **cmd, char **args)
 {
 	int	i;
@@ -63,6 +72,10 @@ void	put_args_to_command(t_commands **cmd, char **args)
 	}
 	(*cmd)->arguments[i] = NULL;
 }
+
+/**
+ * Take a pipe and put it into the list
+*/
 
 void	put_pipes_to_command(char *pipe_cmd, t_commands **cmd)
 {
@@ -87,6 +100,10 @@ void	put_pipes_to_command(char *pipe_cmd, t_commands **cmd)
 	addback_pipes(&((*cmd)->piped), new);
 	ft_free_args(tab);
 }
+
+/**
+ * take table of strings and put it in the pipe list
+*/
 
 void	put_args_to_pipe(t_pipes **pipe, char **args)
 {

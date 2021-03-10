@@ -1,5 +1,9 @@
 #include "minishell.h"
 
+/**
+ * This function to simply add a string to table of strings 
+*/
+
 char		**resize_tab(char **old, char *chaine)
 {
 	char **new;

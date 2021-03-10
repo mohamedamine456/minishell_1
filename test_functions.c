@@ -1,5 +1,9 @@
 # include "minishell.h"
 
+/**
+ * All functions here just for test i use them to print results 
+*/
+
 // int		read_command_line(char **command_line)
 // {
 // 	char	*buffer;

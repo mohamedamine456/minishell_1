@@ -12,7 +12,7 @@
 
 #include "minishell.h"
 
-
+// This is not the main used
 
 int main(int argc, char **argv, char **env)
 {

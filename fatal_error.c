@@ -12,6 +12,10 @@
 
 #include "minishell.h"
 
+/**
+ * This function take a string and print it as an error and quit the programm 
+*/
+
 void		fatal(char *error)
 {
 	char	*error_message;
@@ -23,6 +27,10 @@ void		fatal(char *error)
 	free(error_message);
 	exit(-1);
 }
+
+/**
+ * Function to protect  malloc 
+*/
 
 void		*ec_malloc(unsigned int size)
 {

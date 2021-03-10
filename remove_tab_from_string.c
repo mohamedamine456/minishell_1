@@ -1,5 +1,9 @@
 # include "minishell.h"
 
+/**
+ * This function takes a string and atable of strings and remove elements of the table from the string
+*/
+
 char	*remove_tab_from_string(char *str, char **tab)
 {
 	int	i;
