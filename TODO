@@ -37,3 +37,6 @@ instead of splitting by redirections think the best way is to trim the redirecti
 - i ll put redirections into pipes and clean all parts of command from spaces...
 - split args with another function wich depend on {"} {'} and space
 - i should fix the leaks
+
+
+segfault in this part : echo atr | tr -d a | > allo
