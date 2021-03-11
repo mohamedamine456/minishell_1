@@ -22,7 +22,7 @@ int		next_space(char *str)
 			fl.d_q++;
 		if (str[i] == '\'' && fl.b_s == 0 && fl.d_q % 2 == 0)
 			fl.s_q++;
-		if (str[i] == ' ' && fl.s_q % 2 == 0 && fl.d_q % 2 == 0 && fl.b_s == 0)
+		if (ft_is_space(str[i]) && fl.s_q % 2 == 0 && fl.d_q % 2 == 0 && fl.b_s == 0)
 		{
 			tmp = ft_substr(str, 0, i);
 			if (ft_strcmp(tmp, ""))

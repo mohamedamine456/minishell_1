@@ -52,3 +52,11 @@ echo "hello" > file1 "hello" | grep ls > file
 < file echo "hello" > file1 "hello" | grep ls > file2 < file3
 < file echo "hello" > file1 "hello" | grep ls > file2 < file3
 < file echo "hello" > file1 "hello" | grep ls > file2 < file3
+fewfl;ewkf 
+welfke;
+fksjfl;kdf ,fdls;f ;,df; ,sdl;f kgjsg 
+echo "\'" ; echo \\; echo \;\"; echo \\\\\; "\\\"" ; echo		"hello"
+echo "\'" ; echo \\; echo \;\"; echo \\\\\; "\\\"" ; echo	"h"
+echo "\'" ; echo \\; echo \;\"; echo \\\\\; "\\\"" ; echo	"h"
+echo "\'" ; echo \\; echo \;\"; echo \\\\\; "\\\"" ; echo	"h"
+echo "\'" ; echo \\; echo \;\"; echo \\\\\; "\\\"" ; echo	"h"

@@ -22,6 +22,7 @@ int				ft_strlen(const char *s);
 void			ft_putnbr(int n);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
 int				ft_strcmp(const char *s1, const char *s2);
+int				ft_is_space(char c);
 char			*ft_strstr(const char *haystack, const char *needle);
 int				ft_strstri(const char *haystack, const char *needle);
 int				char_in_string(char c, char *str);
@@ -36,5 +37,6 @@ void			ft_free_args(char **args);
 int				ft_size_args(char **tab);
 int				next_space(char *str);
 char			*remove_spaces(char *str);
+char			**ft_split_white_spaces(char *str);
 
 #endif
