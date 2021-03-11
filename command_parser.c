@@ -154,9 +154,18 @@ void	split_redirections(char *part, t_commands **new_cmd)
 		{
 			if (part[i] == '>')
 			{
-				n_s = next_space(part + i + 1);
-				tab_redir = resize_tab(tab_redir, ft_substr(part, i, n_s + 1));
-				i += n_s;
+				if (part[i + 1] == '>')
+				{
+					n_s = next_space(part + i + 2);
+					tab_redir = resize_tab(tab_redir, ft_substr(part, i, n_s + 2));
+					i += n_s + 1;
+				}
+				else
+				{
+					n_s = next_space(part + i + 1);
+					tab_redir = resize_tab(tab_redir, ft_substr(part, i, n_s + 1));
+					i += n_s;
+				}
 			}
 			if (part[i] == '<')
 			{

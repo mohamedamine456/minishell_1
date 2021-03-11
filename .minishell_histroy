@@ -60,3 +60,19 @@ echo "\'" ; echo \\; echo \;\"; echo \\\\\; "\\\"" ; echo	"h"
 echo "\'" ; echo \\; echo \;\"; echo \\\\\; "\\\"" ; echo	"h"
 echo "\'" ; echo \\; echo \;\"; echo \\\\\; "\\\"" ; echo	"h"
 echo "\'" ; echo \\; echo \;\"; echo \\\\\; "\\\"" ; echo	"h"
+echo "hello">file
+echo "\\'"
+echo "hello world" >> file
+echo "hello world" >>file
+echo "hello world" >>file 
+echo "hello world" >> file
+n_s = next_space(part + i + 1);
+				tab_redir = resize_tab(tab_redir, ft_substr(part, i, n_s + 1));
+				i += n_s;
+echo "hello world" >>file 
+echo "hello world" >> file
+echo "hello world" >> file
+echo "hello world" >>file
+echo "hello world" > file
+echo "hello world" >file
+echo "hello world">file

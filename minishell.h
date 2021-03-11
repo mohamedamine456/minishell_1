@@ -39,6 +39,7 @@ void			put_pipes_to_command(char *pipe_cmd, t_commands **cmd);
 void			put_args_to_pipe(t_pipes **pipe, char **args);
 void			split_redirections(char *part, t_commands **new_cmd);
 void			split_pipes_redirections(char *part, t_pipes **new_pipe);
+void			split_cmd_redirection(char *part, t_commands **new_cmd);
 
 /*
 * allocation_functions.c
