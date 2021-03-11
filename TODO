@@ -30,5 +30,9 @@ instead of splitting by redirections think the best way is to trim the redirecti
 
 - remove redirections from command after putting them in the struct
 
-09/03/2021:
+09/03/2021: --------------
 - write remove spaces function the one you writed not working
+
+11-03-2021:
+- i ll put redirections into pipes and clean all parts of command from spaces...
+- split args with another function wich depend on {"} {'} and space
