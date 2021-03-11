@@ -3,15 +3,12 @@ echo -n "hello world" | grep "h" ; echo -p "good morning" | grep "n"
 echo "hello world" | grep "h"; echo "good morning" | grep "n"; echo "blablabla" >file | grep "bla" | grep "b" > file
 echo -n "hello world" | grep "h" ; echo -p "good morning" | grep "n" > file
 echo "hello world" > file | grep ls > file2
-√
 <  file7 > file8 echo "hello" >  file9 <  file5
 
 <  file7 > file8 echo "hello" >  file9 <  file5
 <  file7 > file8 echo "hello" >  file9 <  file5 | grep ls > file77 < file55   > file898
 < file echo "hello" > file1 "hello" | grep ls > file2 < file3
-if (command->redirect != NULL)
-			print_redirections(command->redirect);
-		if (command->input != NULL)
+
 < file echo "hello" > file1 "hello" | grep ls > file2 < file3
 < file echo "hello" > file1 "hello" | grep ls > file2 < file3
 < file echo "hello" > file1 "hello" | grep ls > file2 < file3
@@ -39,8 +36,6 @@ echo "hello" > file > file1 > "file 2" > file\ \ 4
 echo "\'" ; echo \\; echo \;\"; echo \\\\\; "\\\"" ; echo
 
 < file echo "hello" > file1 "hello" | grep ls > file2 < file3
-"
-p pip
 < file echo "hello" > file1 "hello" | grep ls > file2 < file3
 < file echo "hello" > file1 "hello" | grep ls > file2 < file3
 echo "hello" > file1 "hello" | grep ls
@@ -52,9 +47,6 @@ echo "hello" > file1 "hello" | grep ls > file
 < file echo "hello" > file1 "hello" | grep ls > file2 < file3
 < file echo "hello" > file1 "hello" | grep ls > file2 < file3
 < file echo "hello" > file1 "hello" | grep ls > file2 < file3
-fewfl;ewkf 
-welfke;
-fksjfl;kdf ,fdls;f ;,df; ,sdl;f kgjsg 
 echo "\'" ; echo \\; echo \;\"; echo \\\\\; "\\\"" ; echo		"hello"
 echo "\'" ; echo \\; echo \;\"; echo \\\\\; "\\\"" ; echo	"h"
 echo "\'" ; echo \\; echo \;\"; echo \\\\\; "\\\"" ; echo	"h"
@@ -66,9 +58,7 @@ echo "hello world" >> file
 echo "hello world" >>file
 echo "hello world" >>file 
 echo "hello world" >> file
-n_s = next_space(part + i + 1);
-				tab_redir = resize_tab(tab_redir, ft_substr(part, i, n_s + 1));
-				i += n_s;
+
 echo "hello world" >>file 
 echo "hello world" >> file
 echo "hello world" >> file
@@ -76,3 +66,393 @@ echo "hello world" >>file
 echo "hello world" > file
 echo "hello world" >file
 echo "hello world">file
+echo "hello"
+echo "hello" | grep "h" > file
+echo "hello world" > file
+echo "hello world" > file
+echo "hello wordl" > file | grep ls >file1
+
+echo "hello world" | grep "h"; echo "good morning" | grep "n"; echo "blablabla" >file | grep "bla" | grep "b" > file
+echo "hello world" | grep "h"; echo "good morning" | grep "n"; echo "blablabla" >file | grep "bla" | grep "b" > file
+< file echo "hello" > file1 "hello" | grep ls > file2 < file3
+<  file7 > file8 echo "hello" >  file9 <  file5 | grep ls > file77 < file55   > file898
+echo "hello" > file > file1 > "file 2" > file\ \ 4
+echo "\'" ; echo \\; echo \;\"; echo \\\\\; "\\\"" ; echo
+echo -n "hello world" | grep "h" ; echo -p "good morning" | grep "n"
+echo "hello world" | grep "h"; echo "good morning" | grep "n"; echo "blablabla" >file | grep "bla" | grep "b" > file
+echo -n "hello world" | grep "h" ; echo -p "good morning" | grep "n" > file
+echo -n "hello world" | grep "h" ; echo -p "good morning" | grep "n" > file
+echo -n "hello world" | grep "h" ; echo -p "good morning" | grep "n" > file
+echo "hello world" | grep "h"; echo "good morning" | grep "n"; echo "blablabla" >file | grep "bla" | grep "b" > file
+echo "hello world" | grep "h"; echo "good morning" | grep "n"; echo "blablabla" >file | grep "bla" | grep "b" > file
+echo "hello world" | grep "h"; echo "good morning" | grep "n"; echo "blablabla" >file | grep "bla" | grep "b" > file
+echo "hello world" | grep "h"; echo "good morning" | grep "n"; echo "blablabla" >file | grep "bla" | grep "b" > file
+echo "hello world" | grep "h"; echo "good morning" | grep "n"; echo "blablabla" >file | grep "bla" | grep "b" > file
+echo "hello world" | grep "h"; echo "good morning" | grep "n"; echo "blablabla" >file | grep "bla" | grep "b" > file
+echo "hello world" | grep "h"; echo "good morning" | grep "n"; echo "blablabla" >file | grep "bla" | grep "b" > file
+echo "hello world" | grep "h"; echo "good morning" | grep "n"; echo "blablabla" >file | grep "bla" | grep "b" > file
+echo "hello world" | grep "h"; echo "good morning" | grep "n"; echo "blablabla" >file | grep "bla" | grep "b" > file
+echo "\'" ; echo \\; echo \;\"; echo \\\\\; "\\\"" ; echo	"h"
+< file echo "hello" > file1 "hello" | grep ls > file2 < file3
+
+<  file7 > file8 echo "hello" >  file9 <  file5 | grep ls > file77 < file55   > file898
+
+echo "hello" > file > file1 > "file 2" > file\ \ 4
+
+echo "\'" ; echo \\; echo \;\"; echo \\\\\; "\\\"" ; echo
+
+echo -n "hello world" | grep "h" ; echo -p "good morning" | grep "n"
+echo "hello world" | grep "h"; echo "good morning" | grep "n"; echo "blablabla" >file | grep "bla" | grep "b" > file
+echo -n "hello world" | grep "h" ; echo -p "good morning" | grep "n" > file
+
+echo "hello" > file > file1 > "file 2" < file5 < file6 > file9 < file10
+< file7 > file8 echo "hello" > file > file1 > "file 2" < file5 < file6 > file9
+
+<    file7 >   file8   echo "hello" >  file   "world" >   file1 >  "file 2"   <   file5 <   file6 >   file9   "world" > file  | grep "n"; echo "blablabla" | grep "bla" | grep "b"
+
+<  file7 > file8 echo "hello" >  file9 <  file5
+
+
+<    file7 >   file8   echo "hello" >  file   "world" >   file1 >  "file 2"   <   file5 <   file6 >   file9   "world" > file  | grep "n"; echo "blablabla" | grep "bla" | grep "b"
+echo -n "hello world" | grep "h" ; echo -p "good morning" | grep "n"
+echo "hello world" | grep "h"; echo "good morning" | grep "n"; echo "blablabla" >file | grep "bla" | grep "b" > file
+echo -n "hello world" | grep "h" ; echo -p "good morning" | grep "n" > file
+echo "hello world" > file | grep ls > file2
+<  file7 > file8 echo "hello" >  file9 <  file5
+
+<  file7 > file8 echo "hello" >  file9 <  file5
+<  file7 > file8 echo "hello" >  file9 <  file5 | grep ls > file77 < file55   > file898
+< file echo "hello" > file1 "hello" | grep ls > file2 < file3
+
+< file echo "hello" > file1 "hello" | grep ls > file2 < file3
+< file echo "hello" > file1 "hello" | grep ls > file2 < file3
+< file echo "hello" > file1 "hello" | grep ls > file2 < file3
+
+<  file7 > file8 echo "hello" >  file9 <  file5 | grep ls > file77 < file55   > file898
+
+echo "hello" > file > file1 > "file 2" > file\ \ 4
+
+echo "\'" ; echo \\; echo \;\"; echo \\\\\; "\\\"" ; echo
+
+< file echo "hello" > file1 "hello" | grep ls > file2 < file3
+
+<  file7 > file8 echo "hello" >  file9 <  file5 | grep ls > file77 < file55   > file898
+
+echo "hello" > file > file1 > "file 2" > file\ \ 4
+
+echo "\'" ; echo \\; echo \;\"; echo \\\\\; "\\\"" ; echo
+
+< file echo "hello" > file1 "hello" | grep ls > file2 < file3
+
+<  file7 > file8 echo "hello" >  file9 <  file5 | grep ls > file77 < file55   > file898
+
+echo "hello" > file > file1 > "file 2" > file\ \ 4
+
+echo "\'" ; echo \\; echo \;\"; echo \\\\\; "\\\"" ; echo
+
+
+
+
+
+< file echo "hello" > file1 "hello" | grep ls > file2 < file3
+< file echo "hello" > file1 "hello" | grep ls > file2 < file3
+< file echo "hello" > file1 "hello" | grep ls > file2 < file3
+echo "hello" > file1 "hello" | grep ls
+echo "hello" > file1 "hello" | grep ls
+echo "hello" > file1 "hello" | grep ls > file
+< file echo "hello" > file1 "hello" | grep ls > file2 < file3
+< file echo "hello" > file1 "hello" | grep ls > file2 < file3
+< file echo "hello" > file1 "hello" | grep ls > file2 < file3
+< file echo "hello" > file1 "hello" | grep ls > file2 < file3
+< file echo "hello" > file1 "hello" | grep ls > file2 < file3
+< file echo "hello" > file1 "hello" | grep ls > file2 < file3
+echo "\'" ; echo \\; echo \;\"; echo \\\\\; "\\\"" ; echo		"hello"
+echo "\'" ; echo \\; echo \;\"; echo \\\\\; "\\\"" ; echo	"h"
+echo "\'" ; echo \\; echo \;\"; echo \\\\\; "\\\"" ; echo	"h"
+echo "\'" ; echo \\; echo \;\"; echo \\\\\; "\\\"" ; echo	"h"
+echo "\'" ; echo \\; echo \;\"; echo \\\\\; "\\\"" ; echo	"h"
+echo "hello">file
+echo "\\'"
+echo "hello world" >> file
+echo "hello world" >>file
+echo "hello world" >>file 
+echo "hello world" >> file
+
+echo "hello world" >>file 
+echo "hello world" >> file
+echo "hello world" >> file
+echo "hello world" >>file
+echo "hello world" > file
+echo "hello world" >file
+echo "hello world">file
+echo "hello"
+echo "hello" | grep "h" > file
+echo "hello world" > file
+echo "hello world" > file
+echo "hello wordl" > file | grep ls >file1
+
+echo "hello world" | grep "h"; echo "good morning" | grep "n"; echo "blablabla" >file | grep "bla" | grep "b" > file
+echo "hello world" | grep "h"; echo "good morning" | grep "n"; echo "blablabla" >file | grep "bla" | grep "b" > file
+< file echo "hello" > file1 "hello" | grep ls > file2 < file3
+<  file7 > file8 echo "hello" >  file9 <  file5 | grep ls > file77 < file55   > file898
+echo "hello" > file > file1 > "file 2" > file\ \ 4
+echo "\'" ; echo \\; echo \;\"; echo \\\\\; "\\\"" ; echo
+echo -n "hello world" | grep "h" ; echo -p "good morning" | grep "n"
+echo "hello world" | grep "h"; echo "good morning" | grep "n"; echo "blablabla" >file | grep "bla" | grep "b" > file
+echo -n "hello world" | grep "h" ; echo -p "good morning" | grep "n" > file
+echo -n "hello world" | grep "h" ; echo -p "good morning" | grep "n" > file
+echo -n "hello world" | grep "h" ; echo -p "good morning" | grep "n" > file
+echo "hello world" | grep "h"; echo "good morning" | grep "n"; echo "blablabla" >file | grep "bla" | grep "b" > file
+echo "hello world" | grep "h"; echo "good morning" | grep "n"; echo "blablabla" >file | grep "bla" | grep "b" > file
+echo "hello world" | grep "h"; echo "good morning" | grep "n"; echo "blablabla" >file | grep "bla" | grep "b" > file
+echo "hello world" | grep "h"; echo "good morning" | grep "n"; echo "blablabla" >file | grep "bla" | grep "b" > file
+echo "hello world" | grep "h"; echo "good morning" | grep "n"; echo "blablabla" >file | grep "bla" | grep "b" > file
+echo "hello world" | grep "h"; echo "good morning" | grep "n"; echo "blablabla" >file | grep "bla" | grep "b" > file
+echo "hello world" | grep "h"; echo "good morning" | grep "n"; echo "blablabla" >file | grep "bla" | grep "b" > file
+echo "hello world" | grep "h"; echo "good morning" | grep "n"; echo "blablabla" >file | grep "bla" | grep "b" > file
+echo "hello world" | grep "h"; echo "good morning" | grep "n"; echo "blablabla" >file | grep "bla" | grep "b" > file
+echo "\'" ; echo \\; echo \;\"; echo \\\\\; "\\\"" ; echo	"h"
+< file echo "hello" > file1 "hello" | grep ls > file2 < file3
+
+<  file7 > file8 echo "hello" >  file9 <  file5 | grep ls > file77 < file55   > file898
+
+echo "hello" > file > file1 > "file 2" > file\ \ 4
+
+echo "\'" ; echo \\; echo \;\"; echo \\\\\; "\\\"" ; echo
+
+echo -n "hello world" | grep "h" ; echo -p "good morning" | grep "n"
+echo "hello world" | grep "h"; echo "good morning" | grep "n"; echo "blablabla" >file | grep "bla" | grep "b" > file
+echo -n "hello world" | grep "h" ; echo -p "good morning" | grep "n" > file
+
+echo "hello" > file > file1 > "file 2" < file5 < file6 > file9 < file10
+< file7 > file8 echo "hello" > file > file1 > "file 2" < file5 < file6 > file9
+
+<    file7 >   file8   echo "hello" >  file   "world" >   file1 >  "file 2"   <   file5 <   file6 >   file9   "world" > file  | grep "n"; echo "blablabla" | grep "bla" | grep "b"
+
+<  file7 > file8 echo "hello" >  file9 <  file5
+
+
+<    file7 >   file8   echo "hello" >  file   "world" >   file1 >  "file 2"   <   file5 <   file6 >   file9   "world" > file  | grep "n"; echo "blablabla" | grep "bla" | grep "b"
+echo -n "hello world" | grep "h" ; echo -p "good morning" | grep "n"
+echo "hello world" | grep "h"; echo "good morning" | grep "n"; echo "blablabla" >file | grep "bla" | grep "b" > file
+echo -n "hello world" | grep "h" ; echo -p "good morning" | grep "n" > file
+echo "hello world" > file | grep ls > file2
+<  file7 > file8 echo "hello" >  file9 <  file5
+
+<  file7 > file8 echo "hello" >  file9 <  file5
+<  file7 > file8 echo "hello" >  file9 <  file5 | grep ls > file77 < file55   > file898
+< file echo "hello" > file1 "hello" | grep ls > file2 < file3
+
+< file echo "hello" > file1 "hello" | grep ls > file2 < file3
+< file echo "hello" > file1 "hello" | grep ls > file2 < file3
+< file echo "hello" > file1 "hello" | grep ls > file2 < file3
+
+<  file7 > file8 echo "hello" >  file9 <  file5 | grep ls > file77 < file55   > file898
+
+echo "hello" > file > file1 > "file 2" > file\ \ 4
+
+echo "\'" ; echo \\; echo \;\"; echo \\\\\; "\\\"" ; echo
+
+< file echo "hello" > file1 "hello" | grep ls > file2 < file3
+
+<  file7 > file8 echo "hello" >  file9 <  file5 | grep ls > file77 < file55   > file898
+
+echo "hello" > file > file1 > "file 2" > file\ \ 4
+
+echo "\'" ; echo \\; echo \;\"; echo \\\\\; "\\\"" ; echo
+
+< file echo "hello" > file1 "hello" | grep ls > file2 < file3
+
+<  file7 > file8 echo "hello" >  file9 <  file5 | grep ls > file77 < file55   > file898
+
+echo "hello" > file > file1 > "file 2" > file\ \ 4
+
+echo "\'" ; echo \\; echo \;\"; echo \\\\\; "\\\"" ; echo<  file7 > file8 echo "hello" >  file9 <  file5 | grep ls > file77 < file55   > file898
+
+echo "hello" > file > file1 > "file 2" > file\ \ 4
+
+echo "\'" ; echo \\; echo \;\"; echo \\\\\; "\\\"" ; echo
+
+< file echo "hello" > file1 "hello" | grep ls > file2 < file3
+
+<  file7 > file8 echo "hello" >  file9 <  file5 | grep ls > file77 < file55   > file898
+
+echo "hello" > file > file1 > "file 2" > file\ \ 4
+
+echo "\'" ; echo \\; echo \;\"; echo \\\\\; "\\\"" ; echo
+
+< file echo "hello" > file1 "hello" | grep ls > file2 < file3
+
+<  file7 > file8 echo "hello" >  file9 <  file5 | grep ls > file77 < file55   > file898
+
+echo "hello" > file > file1 > "file 2" > file\ \ 4
+
+echo "\'" ; echo \\; echo \;\"; echo \\\\\; "\\\"" ; echo
+
+<  file7 > file8 echo "hello" >  file9 <  file5 | grep ls > file77 < file55   > file898
+
+echo "hello" > file > file1 > "file 2" > file\ \ 4
+
+echo "\'" ; echo \\; echo \;\"; echo \\\\\; "\\\"" ; echo
+
+< file echo "hello" > file1 "hello" | grep ls > file2 < file3
+
+<  file7 > file8 echo "hello" >  file9 <  file5 | grep ls > file77 < file55   > file898
+
+echo "hello" > file > file1 > "file 2" > file\ \ 4
+
+echo "\'" ; echo \\; echo \;\"; echo \\\\\; "\\\"" ; echo
+
+< file echo "hello" > file1 "hello" | grep ls > file2 < file3
+
+<  file7 > file8 echo "hello" >  file9 <  file5 | grep ls > file77 < file55   > file898
+
+echo "hello" > file > file1 > "file 2" > file\ \ 4
+
+echo "\'" ; echo \\; echo \;\"; echo \\\\\; "\\\"" ; echo<  file7 > file8 echo "hello" >  file9 <  file5 | grep ls > file77 < file55   > file898
+
+echo "hello" > file > file1 > "file 2" > file\ \ 4
+
+echo "\'" ; echo \\; echo \;\"; echo \\\\\; "\\\"" ; echo
+
+< file echo "hello" > file1 "hello" | grep ls > file2 < file3
+
+<  file7 > file8 echo "hello" >  file9 <  file5 | grep ls > file77 < file55   > file898
+
+echo "hello" > file > file1 > "file 2" > file\ \ 4
+
+echo "\'" ; echo \\; echo \;\"; echo \\\\\; "\\\"" ; echo
+
+< file echo "hello" > file1 "hello" | grep ls > file2 < file3
+
+<  file7 > file8 echo "hello" >  file9 <  file5 | grep ls > file77 < file55   > file898
+
+echo "hello" > file > file1 > "file 2" > file\ \ 4
+
+echo "\'" ; echo \\; echo \;\"; echo \\\\\; "\\\"" ; echo
+<  file7 > file8 echo "hello" >  file9 <  file5 | grep ls > file77 < file55   > file898
+
+echo "hello" > file > file1 > "file 2" > file\ \ 4
+
+echo "\'" ; echo \\; echo \;\"; echo \\\\\; "\\\"" ; echo
+
+< file echo "hello" > file1 "hello" | grep ls > file2 < file3
+
+<  file7 > file8 echo "hello" >  file9 <  file5 | grep ls > file77 < file55   > file898
+
+echo "hello" > file > file1 > "file 2" > file\ \ 4
+
+echo "\'" ; echo \\; echo \;\"; echo \\\\\; "\\\"" ; echo
+
+< file echo "hello" > file1 "hello" | grep ls > file2 < file3
+
+<  file7 > file8 echo "hello" >  file9 <  file5 | grep ls > file77 < file55   > file898
+
+echo "hello" > file > file1 > "file 2" > file\ \ 4
+
+echo "\'" ; echo \\; echo \;\"; echo \\\\\; "\\\"" ; echo<  file7 > file8 echo "hello" >  file9 <  file5 | grep ls > file77 < file55   > file898
+
+echo "hello" > file > file1 > "file 2" > file\ \ 4
+
+echo "\'" ; echo \\; echo \;\"; echo \\\\\; "\\\"" ; echo
+
+< file echo "hello" > file1 "hello" | grep ls > file2 < file3
+
+<  file7 > file8 echo "hello" >  file9 <  file5 | grep ls > file77 < file55   > file898
+
+echo "hello" > file > file1 > "file 2" > file\ \ 4
+
+echo "\'" ; echo \\; echo \;\"; echo \\\\\; "\\\"" ; echo
+
+< file echo "hello" > file1 "hello" | grep ls > file2 < file3
+
+<  file7 > file8 echo "hello" >  file9 <  file5 | grep ls > file77 < file55   > file898
+
+echo "hello" > file > file1 > "file 2" > file\ \ 4
+
+echo "\'" ; echo \\; echo \;\"; echo \\\\\; "\\\"" ; echo
+<  file7 > file8 echo "hello" >  file9 <  file5 | grep ls > file77 < file55   > file898
+
+echo "hello" > file > file1 > "file 2" > file\ \ 4
+
+echo "\'" ; echo \\; echo \;\"; echo \\\\\; "\\\"" ; echo
+
+< file echo "hello" > file1 "hello" | grep ls > file2 < file3
+
+<  file7 > file8 echo "hello" >  file9 <  file5 | grep ls > file77 < file55   > file898
+
+echo "hello" > file > file1 > "file 2" > file\ \ 4
+
+echo "\'" ; echo \\; echo \;\"; echo \\\\\; "\\\"" ; echo
+
+< file echo "hello" > file1 "hello" | grep ls > file2 < file3
+
+<  file7 > file8 echo "hello" >  file9 <  file5 | grep ls > file77 < file55   > file898
+
+echo "hello" > file > file1 > "file 2" > file\ \ 4
+
+echo "\'" ; echo \\; echo \;\"; echo \\\\\; "\\\"" ; echo<  file7 > file8 echo "hello" >  file9 <  file5 | grep ls > file77 < file55   > file898
+
+echo "hello" > file > file1 > "file 2" > file\ \ 4
+
+echo "\'" ; echo \\; echo \;\"; echo \\\\\; "\\\"" ; echo
+
+< file echo "hello" > file1 "hello" | grep ls > file2 < file3
+
+<  file7 > file8 echo "hello" >  file9 <  file5 | grep ls > file77 < file55   > file898
+
+echo "hello" > file > file1 > "file 2" > file\ \ 4
+
+echo "\'" ; echo \\; echo \;\"; echo \\\\\; "\\\"" ; echo
+
+< file echo "hello" > file1 "hello" | grep ls > file2 < file3
+
+<  file7 > file8 echo "hello" >  file9 <  file5 | grep ls > file77 < file55   > file898
+
+echo "hello" > file > file1 > "file 2" > file\ \ 4
+
+echo "\'" ; echo \\; echo \;\"; echo \\\\\; "\\\"" ; echo
+
+<  file7 > file8 echo "hello" >  file9 <  file5 | grep ls > file77 < file55   > file898
+
+echo "hello" > file > file1 > "file 2" > file\ \ 4
+
+echo "\'" ; echo \\; echo \;\"; echo \\\\\; "\\\"" ; echo
+
+< file echo "hello" > file1 "hello" | grep ls > file2 < file3
+
+<  file7 > file8 echo "hello" >  file9 <  file5 | grep ls > file77 < file55   > file898
+
+echo "hello" > file > file1 > "file 2" > file\ \ 4
+
+echo "\'" ; echo \\; echo \;\"; echo \\\\\; "\\\"" ; echo
+
+< file echo "hello" > file1 "hello" | grep ls > file2 < file3
+
+<  file7 > file8 echo "hello" >  file9 <  file5 | grep ls > file77 < file55   > file898
+
+echo "hello" > file > file1 > "file 2" > file\ \ 4
+
+echo "\'" ; echo \\; echo \;\"; echo \\\\\; "\\\"" ; echo<  file7 > file8 echo "hello" >  file9 <  file5 | grep ls > file77 < file55   > file898
+
+echo "hello" > file > file1 > "file 2" > file\ \ 4
+
+echo "\'" ; echo \\; echo \;\"; echo \\\\\; "\\\"" ; echo
+
+< file echo "hello" > file1 "hello" | grep ls > file2 < file3
+
+<  file7 > file8 echo "hello" >  file9 <  file5 | grep ls > file77 < file55   > file898
+
+echo "hello" > file > file1 > "file 2" > file\ \ 4
+
+echo "\'" ; echo \\; echo \;\"; echo \\\\\; "\\\"" ; echo
+
+< file echo "hello" > file1 "hello" | grep ls > file2 < file3
+
+<  file7 > file8 echo "hello" >  file9 <  file5 | grep ls > file77 < file55   > file898
+
+echo "hello" > file > file1 > "file 2" > file\ \ 4
+
+echo "\'" ; echo \\; echo \;\"; echo \\\\\; "\\\"" ; echo
+
+

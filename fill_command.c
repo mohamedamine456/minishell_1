@@ -21,7 +21,7 @@ void	put_elements_command(char **tab, t_commands **cmd)
 	}
 	while (tab[i] != NULL)
 	{
-		put_pipes_to_command(tab[i], &new_cmd); // use initialize_pipe function
+		put_pipes_to_command(ft_strdup(tab[i]), &new_cmd); // use initialize_pipe function
 		i++;
 	}
 	addback_commands(cmd, new_cmd);
@@ -37,7 +37,7 @@ void	put_simple_command(char *simple_cmd, t_commands **cmd)
 	int		op;
 
 	op = 0;
-	tab = ft_split(simple_cmd, ' ');		// not the best split
+	tab = ft_split_white_spaces(simple_cmd);		// not the best split
 	if (tab[0] != NULL)
 		(*cmd)->name = ft_strdup(tab[0]);
 	if (tab[1] != NULL && is_option(tab[1], (*cmd)->name))
@@ -85,10 +85,10 @@ void	put_pipes_to_command(char *pipe_cmd, t_commands **cmd)
 	op = 0;
 	pip = new_pipe();
 	split_pipes_redirections(ft_strdup(pipe_cmd), &pip);
-	pipe_cmd = remove_tab_from_string(ft_strdup(pipe_cmd), pip->redirect);
-	pipe_cmd = remove_tab_from_string(ft_strdup(pipe_cmd), pip->input);
+	pipe_cmd = remove_tab_from_string(pipe_cmd, pip->redirect);
+	pipe_cmd = remove_tab_from_string(pipe_cmd, pip->input);
 	pipe_cmd = remove_spaces(pipe_cmd);
-	tab = ft_split(pipe_cmd, ' ');			// not the best split
+	tab = ft_split_white_spaces(pipe_cmd);			// not the best split
 	if (tab[0] != NULL)
 		pip->name = ft_strdup(tab[0]);
 	if (tab[1] != NULL && is_option(tab[1], (*cmd)->name))
@@ -102,6 +102,7 @@ void	put_pipes_to_command(char *pipe_cmd, t_commands **cmd)
 		put_args_to_pipe(&pip, tab + 2);
 	addback_pipes(&((*cmd)->piped), pip);
 	ft_free_args(tab);
+	free(pipe_cmd);
 }
 
 /**

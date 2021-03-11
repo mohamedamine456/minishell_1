@@ -46,7 +46,6 @@ char		**split_line_commands(char *line)
 			fl.b_s = fl.b_s == 1 ? 0 : 1;
 		if (line[i] == '\"' && fl.b_s == 0 && fl.s_q % 2 == 0)
 			fl.d_q++;
-			//fl.b_s = fl.d_q % 2 == 0 ? 0 : fl.b_s;			// inside the previous condition
 		if (line[i] == '\'' && fl.b_s == 0 && fl.d_q % 2 == 0)
 			fl.s_q++;
 		if (fl.s_q % 2 == 0 && fl.d_q % 2 == 0 && line[i] == ';' && fl.b_s == 0)
@@ -129,6 +128,7 @@ char		**split_pipes(char *str_cmd)
 /**
  * This function to split commands and pipes with  redirections and put them in the list
 */
+
 void	split_redirections(char *part, t_commands **new_cmd)
 {
 	char	**tab_redir;
