@@ -61,11 +61,6 @@ int		parse_command_line(char	*command_line)
 		}
 		return (1);
 	}
-	// write(1, "\n-------------- command number: ", 33);
-	// ft_putnbr(nb_command);
-	// write(1, " ---------------\n", 18);
-	// write(1, command_line, ft_strlen(command_line));
-	// write(1, "\n-------------------------------------------------\n", 52);
 }
 
 void		print_env_variables(char **env)
@@ -117,6 +112,7 @@ void	print_command_parts(t_commands *command)
 	int	i = 0;
 	t_pipes *pip;
 
+	pip = NULL;
 	while (command != NULL)
 	{
 		printf("Command N %d : [[ ", i + 1);
@@ -150,6 +146,10 @@ void	print_command_parts(t_commands *command)
 				print_args(pip->args);
 				printf(" ) ");
 			}
+			if (pip->redirect != NULL)
+				print_redirections(pip->redirect);
+			if (pip->input != NULL)
+				print_inputs(pip->input);
 			printf(" } ");
 			pip = pip->next;
 		}

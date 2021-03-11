@@ -1,4 +1,6 @@
-<  file7 > file8 echo "hello" >  file9 <  file5
+< file echo "hello" > file1 "hello" | grep ls > file2 < file3
+
+<  file7 > file8 echo "hello" >  file9 <  file5 | grep ls > file77 < file55   > file898
 
 echo "hello" > file > file1 > "file 2" > file\ \ 4
 

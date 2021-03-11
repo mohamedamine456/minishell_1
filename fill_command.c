@@ -21,7 +21,6 @@ void	put_elements_command(char **tab, t_commands **cmd)
 	}
 	while (tab[i] != NULL)
 	{
-		//split_redirections(tab[i]);
 		put_pipes_to_command(tab[i], &new_cmd); // use initialize_pipe function
 		i++;
 	}
@@ -81,23 +80,27 @@ void	put_pipes_to_command(char *pipe_cmd, t_commands **cmd)
 {
 	char	**tab;
 	int		op;
-	t_pipes	*new;
+	t_pipes *pip;
 
 	op = 0;
-	new = new_pipe();
+	pip = new_pipe();
+	split_pipes_redirections(ft_strdup(pipe_cmd), &pip);
+	pipe_cmd = remove_tab_from_string(ft_strdup(pipe_cmd), pip->redirect);
+	pipe_cmd = remove_tab_from_string(ft_strdup(pipe_cmd), pip->input);
+	pipe_cmd = remove_spaces(ft_strdup(pipe_cmd));
 	tab = ft_split(pipe_cmd, ' ');			// not the best split
 	if (tab[0] != NULL)
-		new->name = ft_strdup(tab[0]);
+		pip->name = ft_strdup(tab[0]);
 	if (tab[1] != NULL && is_option(tab[1], (*cmd)->name))
 	{
-		new->options = ft_strdup(tab[1]);
+		pip->options = ft_strdup(tab[1]);
 		op = 1;
 	}
 	else if (tab[1] != NULL && op == 0)
-		put_args_to_pipe(&new, tab + 1);
+		put_args_to_pipe(&pip, tab + 1);
 	else if (tab[2] != NULL && op == 1)
-		put_args_to_pipe(&new, tab + 2);
-	addback_pipes(&((*cmd)->piped), new);
+		put_args_to_pipe(&pip, tab + 2);
+	addback_pipes(&((*cmd)->piped), pip);
 	ft_free_args(tab);
 }
 

@@ -3,3 +3,48 @@ echo -n "hello world" | grep "h" ; echo -p "good morning" | grep "n"
 echo "hello world" | grep "h"; echo "good morning" | grep "n"; echo "blablabla" >file | grep "bla" | grep "b" > file
 echo -n "hello world" | grep "h" ; echo -p "good morning" | grep "n" > file
 echo "hello world" > file | grep ls > file2
+√
+<  file7 > file8 echo "hello" >  file9 <  file5
+
+<  file7 > file8 echo "hello" >  file9 <  file5
+<  file7 > file8 echo "hello" >  file9 <  file5 | grep ls > file77 < file55   > file898
+< file echo "hello" > file1 "hello" | grep ls > file2 < file3
+if (command->redirect != NULL)
+			print_redirections(command->redirect);
+		if (command->input != NULL)
+< file echo "hello" > file1 "hello" | grep ls > file2 < file3
+< file echo "hello" > file1 "hello" | grep ls > file2 < file3
+< file echo "hello" > file1 "hello" | grep ls > file2 < file3
+
+<  file7 > file8 echo "hello" >  file9 <  file5 | grep ls > file77 < file55   > file898
+
+echo "hello" > file > file1 > "file 2" > file\ \ 4
+
+echo "\'" ; echo \\; echo \;\"; echo \\\\\; "\\\"" ; echo
+
+< file echo "hello" > file1 "hello" | grep ls > file2 < file3
+
+<  file7 > file8 echo "hello" >  file9 <  file5 | grep ls > file77 < file55   > file898
+
+echo "hello" > file > file1 > "file 2" > file\ \ 4
+
+echo "\'" ; echo \\; echo \;\"; echo \\\\\; "\\\"" ; echo
+
+< file echo "hello" > file1 "hello" | grep ls > file2 < file3
+
+<  file7 > file8 echo "hello" >  file9 <  file5 | grep ls > file77 < file55   > file898
+
+echo "hello" > file > file1 > "file 2" > file\ \ 4
+
+echo "\'" ; echo \\; echo \;\"; echo \\\\\; "\\\"" ; echo
+
+< file echo "hello" > file1 "hello" | grep ls > file2 < file3
+"
+p pip
+< file echo "hello" > file1 "hello" | grep ls > file2 < file3
+< file echo "hello" > file1 "hello" | grep ls > file2 < file3
+echo "hello" > file1 "hello" | grep ls
+echo "hello" > file1 "hello" | grep ls
+echo "hello" > file1 "hello" | grep ls > file
+< file echo "hello" > file1 "hello" | grep ls > file2 < file3
+< file echo "hello" > file1 "hello" | grep ls > file2 < file3

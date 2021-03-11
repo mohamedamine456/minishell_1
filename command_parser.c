@@ -174,4 +174,47 @@ void	split_redirections(char *part, t_commands **new_cmd)
 	free(part);
 }
 
-// see fil_command.c file
+void	split_pipes_redirections(char *part, t_pipes **new_pipe)
+{
+	char	**tab_redir;
+	char	**tab_input;
+	int		i;
+	int		n_s;
+	t_flags fl;
+
+	i = 0;
+	n_s = 0;
+	fl = (t_flags){0, 0, 0, 0, 0, 0};
+	tab_redir = NULL;
+	tab_input = NULL;
+	while (part[i] != '\0')
+	{
+		if (part[i] == '\\' && fl.d_q % 2 == 0 && fl.s_q % 2 == 0)
+			fl.b_s = fl.b_s == 1 ? 0 : 1;
+		if (part[i] == '\"' && fl.b_s == 0 && fl.s_q % 2 == 0)
+			fl.d_q++;
+		if (part[i] == '\'' && fl.b_s == 0 && fl.d_q % 2 == 0)
+			fl.s_q++;
+		if (fl.d_q % 2 == 0 && fl.s_q % 2 == 0 && fl.b_s == 0)
+		{
+			if (part[i] == '>')
+			{
+				n_s = next_space(part + i + 1);
+				tab_redir = resize_tab(tab_redir, ft_substr(part, i, n_s + 1));
+				i += n_s;
+			}
+			if (part[i] == '<')
+			{
+				n_s = next_space(part + i + 1);
+				tab_input = resize_tab(tab_input, ft_substr(part, i, n_s + 1));
+				i += n_s;
+			}
+		}
+		if (part[i] != '\\' && fl.b_s == 1)
+			fl.b_s = 0;
+		i++;
+	}
+	(*new_pipe)->redirect = tab_redir;
+	(*new_pipe)->input = tab_input;
+	free(part);
+}
