@@ -87,7 +87,7 @@ void	put_pipes_to_command(char *pipe_cmd, t_commands **cmd)
 	split_pipes_redirections(ft_strdup(pipe_cmd), &pip);
 	pipe_cmd = remove_tab_from_string(ft_strdup(pipe_cmd), pip->redirect);
 	pipe_cmd = remove_tab_from_string(ft_strdup(pipe_cmd), pip->input);
-	pipe_cmd = remove_spaces(ft_strdup(pipe_cmd));
+	pipe_cmd = remove_spaces(pipe_cmd);
 	tab = ft_split(pipe_cmd, ' ');			// not the best split
 	if (tab[0] != NULL)
 		pip->name = ft_strdup(tab[0]);

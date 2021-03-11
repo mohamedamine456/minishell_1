@@ -48,3 +48,7 @@ echo "hello" > file1 "hello" | grep ls
 echo "hello" > file1 "hello" | grep ls > file
 < file echo "hello" > file1 "hello" | grep ls > file2 < file3
 < file echo "hello" > file1 "hello" | grep ls > file2 < file3
+< file echo "hello" > file1 "hello" | grep ls > file2 < file3
+< file echo "hello" > file1 "hello" | grep ls > file2 < file3
+< file echo "hello" > file1 "hello" | grep ls > file2 < file3
+< file echo "hello" > file1 "hello" | grep ls > file2 < file3
