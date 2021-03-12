@@ -39,4 +39,5 @@ instead of splitting by redirections think the best way is to trim the redirecti
 - i should fix the leaks
 
 
-segfault in this part : echo atr | tr -d a | > allo
+segfault in this part : echo atr | tr -d a | > allo ===> {F*** Fixed}
+- leaks to fix ===> ...

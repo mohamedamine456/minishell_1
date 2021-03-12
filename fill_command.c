@@ -18,11 +18,11 @@ void	put_elements_command(char **tab, t_commands **cmd)
 		tab[0] = remove_tab_from_string(tab[0], new_cmd->redirect);
 		tab[0] = remove_tab_from_string(tab[0], new_cmd->input);
 		put_simple_command(tab[0], &new_cmd);
-	}
-	while (tab[i] != NULL)
-	{
-		put_pipes_to_command(ft_strdup(tab[i]), &new_cmd); // use initialize_pipe function
-		i++;
+		while (tab[i] != NULL)
+		{
+			put_pipes_to_command(ft_strdup(tab[i]), &new_cmd);
+			i++;
+		}
 	}
 	addback_commands(cmd, new_cmd);
 }
