@@ -41,3 +41,7 @@ instead of splitting by redirections think the best way is to trim the redirecti
 
 segfault in this part : echo atr | tr -d a | > allo ===> {F*** Fixed}
 - leaks to fix ===> ...
+
+- still have prob with this :  echo "14 + 19" > a > b > c|bc < a < b < c > e> f 
+
+and this too :  echo $? ; cd fwefwefw; echo $?; echo $? ;
