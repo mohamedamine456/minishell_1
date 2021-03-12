@@ -23,12 +23,14 @@ int		count_words(char *str)
 		{
 			if (!ft_is_space(str[i]) && (ft_is_space(str[i + 1]) || str[i + 1] == '\0'))
 				nb_words++;
+			if (str[i + 1] == '\0')		// in case all quotes are closed
+				return (nb_words);
 		}
 		if (str[i] != '\\' && fl.b_s == 1)
 			fl.b_s = 0;
 		i++;
 	}
-	return (nb_words);
+	return (nb_words + 1); // if a quote is not closed
 }
 
 int		is_word(char *str, int begin)
