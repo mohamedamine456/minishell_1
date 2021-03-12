@@ -117,7 +117,7 @@ char		**split_pipes(char *str_cmd)
 			tab = resize_tab(tab, ft_substr(str_cmd, j, i - j));
 			j = i + 1;
 		}
-		if ((str_cmd[i] == '|' || str_cmd[i] == '\'' || str_cmd[i] == '\"') && fl.b_s == 1)
+		if (str_cmd[i] != '\\' && fl.b_s == 1)
 			fl.b_s = 0;
 		i++;
 	}

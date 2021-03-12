@@ -4,7 +4,7 @@ int main()
 {
 	char **tab;
 
-	tab = ft_split_white_spaces("echo \"Hello World\" > file \"good morning\"");
+	tab = ft_split_white_spaces("echo \"\\\" + 5");
 	int	i = 0;
 
 	while (tab[i] != NULL)

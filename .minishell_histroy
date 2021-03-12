@@ -1462,3 +1462,38 @@ echo $? ; cd fwefwefw; echo $?; echo $? ;
 echo \ + 5 >> results
 echo 6 + 6 > a > b > c | bc < a < b < c > results; echo \ + 5 >> results 
 echo \ + 5 
+
+
+
+
+echo \ + 5
+
+echo a + b | > file
+
+echo \ + 5
+echo \ + 5 8
+echo \ + 5 \;
+echo \ + 5 \;;echo
+echo \+5 78
+echo "\" + 5 5
+echo "\" + 5 5
+if (str[i] != '\\' && fl.b_s == 1)
+			fl.b_s = 0;
+echo "\" + 5 5
+echo "\" + 5 5
+echo "\" + 5 5
+echo \ + 5
+echo 7
+echo \
+fl.b_s == 0 && fl.s_q % 2 == 0
+echo \ + 5
+echo "\" + 5
+echo "\" + 5
+echo "\ + 5
+echo "\ + 5"
+echo "\\" + 5
+echo "\" + 5
+echo "\\" + 5
+echo "\\\\" + 5
+echo \" + 5
+echo \\\ + 5
