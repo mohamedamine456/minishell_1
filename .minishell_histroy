@@ -1450,3 +1450,8 @@ export a=2 ; unset a | pwd ; true; echo $? ; cd fwefwefw; echo $?; echo $? ;
 true; echo $? ; echo $?'$?'"$?" ; fwefwe; echo $?$?'$?'"$?"; exit a 1| echo a;
 exit 1 2 | echo a ; echo a | exit a 1 ; echo a | exit ; exit 1 2 ; 
  echo a + b | > file cat | cat < file > file;
+echo "14 + 19" > a > b > c|bc < a < b < c > e> f  > file
+echo "14 + 19" > a > b > c|bc < a < b < c > e> f  > file
+echo "14 + 19" > a > b > c|bc < a < b < c > e> f  > file
+echo "14 + 19" > a > b > c|bc < a < b < c > e > f > file
+echo "14 + 19" > a > b > c|bc < a < b < c >e>f>file
