@@ -1455,3 +1455,10 @@ echo "14 + 19" > a > b > c|bc < a < b < c > e> f  > file
 echo "14 + 19" > a > b > c|bc < a < b < c > e> f  > file
 echo "14 + 19" > a > b > c|bc < a < b < c > e > f > file
 echo "14 + 19" > a > b > c|bc < a < b < c >e>f>file
+echo $?
+cd fwefwefw
+ echo $?
+echo $? ; cd fwefwefw; echo $?; echo $? ;
+echo \ + 5 >> results
+echo 6 + 6 > a > b > c | bc < a < b < c > results; echo \ + 5 >> results 
+echo \ + 5 
