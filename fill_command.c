@@ -39,16 +39,18 @@ void	put_simple_command(char *simple_cmd, t_commands **cmd)
 	op = 0;
 	tab = ft_split_white_spaces(simple_cmd);		// not the best split
 	if (tab[0] != NULL)
-		(*cmd)->name = ft_strdup(tab[0]);
-	if (tab[1] != NULL && is_option(tab[1], (*cmd)->name))
 	{
-		(*cmd)->options = ft_strdup(tab[1]);
-		op = 1;
+		(*cmd)->name = ft_strdup(tab[0]);
+		if (tab[1] != NULL && is_option(tab[1], (*cmd)->name))
+		{
+			(*cmd)->options = ft_strdup(tab[1]);
+			op = 1;
+		}
+		else if(tab[1] != NULL && op == 0)
+			put_args_to_command(cmd, tab + 1);
+		else if (op == 1 && tab[2] != NULL)
+			put_args_to_command(cmd, tab + 2);
 	}
-	else if(tab[1] != NULL && op == 0)
-		put_args_to_command(cmd, tab + 1);
-	else if (op == 1 && tab[2] != NULL)
-		put_args_to_command(cmd, tab + 2);
 	ft_free_args(tab);
 }
 
@@ -90,16 +92,18 @@ void	put_pipes_to_command(char *pipe_cmd, t_commands **cmd)
 	pipe_cmd = remove_spaces(pipe_cmd);
 	tab = ft_split_white_spaces(pipe_cmd);			// not the best split
 	if (tab[0] != NULL)
-		pip->name = ft_strdup(tab[0]);
-	if (tab[1] != NULL && is_option(tab[1], (*cmd)->name))
 	{
-		pip->options = ft_strdup(tab[1]);
-		op = 1;
+		pip->name = ft_strdup(tab[0]);
+		if (tab[1] != NULL && is_option(tab[1], (*cmd)->name))
+		{
+			pip->options = ft_strdup(tab[1]);
+			op = 1;
+		}
+		else if (tab[1] != NULL && op == 0)
+			put_args_to_pipe(&pip, tab + 1);
+		else if (tab[2] != NULL && op == 1)
+			put_args_to_pipe(&pip, tab + 2);
 	}
-	else if (tab[1] != NULL && op == 0)
-		put_args_to_pipe(&pip, tab + 1);
-	else if (tab[2] != NULL && op == 1)
-		put_args_to_pipe(&pip, tab + 2);
 	addback_pipes(&((*cmd)->piped), pip);
 	ft_free_args(tab);
 	free(pipe_cmd);
