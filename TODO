@@ -45,3 +45,7 @@ segfault in this part : echo atr | tr -d a | > allo ===> {F*** Fixed}
 - still have prob with this :  echo "14 + 19" > a > b > c|bc < a < b < c > e> f  > file --> {{Fixed}}
 
 and this too :  echo \ + 5 ==> {{Fixed}}
+
+- find a better way to check on option from args : 
+- write function that sort option and a args :
+- replace env variables
