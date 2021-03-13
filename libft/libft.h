@@ -38,5 +38,6 @@ int				ft_size_args(char **tab);
 int				next_space(char *str);
 char			*remove_spaces(char *str);
 char			**ft_split_white_spaces(char *str);
+t_flags			check_flags(t_flags fl, char c);
 
 #endif

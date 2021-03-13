@@ -42,12 +42,13 @@ char		**split_line_commands(char *line)
 	tab = NULL;
 	while (line[i] != '\0')
 	{
-		if (line[i] == '\\')
-			fl.b_s = fl.b_s == 1 ? 0 : 1;
-		if (line[i] == '\"' && fl.b_s == 0 && fl.s_q % 2 == 0)
-			fl.d_q++;
-		if (line[i] == '\'' && fl.b_s == 0 && fl.d_q % 2 == 0)
-			fl.s_q++;
+		// if (line[i] == '\\')
+		// 	fl.b_s = fl.b_s == 1 ? 0 : 1;
+		// if (line[i] == '\"' && fl.b_s == 0 && fl.s_q % 2 == 0)
+		// 	fl.d_q++;
+		// if (line[i] == '\'' && fl.b_s == 0 && fl.d_q % 2 == 0)
+		// 	fl.s_q++;
+		fl = check_flags(fl, line[i]);
 		if (fl.s_q % 2 == 0 && fl.d_q % 2 == 0 && line[i] == ';' && fl.b_s == 0)
 		{
 			tab = resize_tab(tab, ft_substr(line, j, i - j));
@@ -106,9 +107,9 @@ char		**split_pipes(char *str_cmd)
 	tab = NULL;
 	while (str_cmd[i] != '\0')
 	{
-		if (str_cmd[i] == '\\' && fl.d_q % 2 == 0 && fl.s_q % 2 == 0)
+		if (str_cmd[i] == '\\')
 			fl.b_s = fl.b_s == 1 ? 0 : 1;
-		if (str_cmd[i] == '\'' && fl.b_s == 0 && fl.d_q % 2 == 0)
+		if (str_cmd[i] == '\'')		// changed this {if (str_cmd[i] == '\'' && fl.b_s == 0 && fl.d_q % 2 == 0)}
 			fl.s_q++;
 		if (str_cmd[i] == '\"' && fl.b_s == 0 && fl.s_q % 2 == 0)
 			fl.d_q++;
