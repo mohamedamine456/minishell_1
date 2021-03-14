@@ -109,7 +109,7 @@ char		**split_pipes(char *str_cmd)
 	{
 		if (str_cmd[i] == '\\')
 			fl.b_s = fl.b_s == 1 ? 0 : 1;
-		if (str_cmd[i] == '\'')		// changed this {if (str_cmd[i] == '\'' && fl.b_s == 0 && fl.d_q % 2 == 0)}
+		if (str_cmd[i] == '\'' && fl.b_s == 0 && fl.s_q % 2 == 0)
 			fl.s_q++;
 		if (str_cmd[i] == '\"' && fl.b_s == 0 && fl.s_q % 2 == 0)
 			fl.d_q++;
@@ -145,7 +145,7 @@ void	split_redirections(char *part, t_commands **new_cmd)
 	tab_input = NULL;
 	while (part[i] != '\0')
 	{
-		if (part[i] == '\\' && fl.d_q % 2 == 0 && fl.s_q % 2 == 0)
+		if (part[i] == '\\')
 			fl.b_s = fl.b_s == 1 ? 0 : 1;
 		if (part[i] == '\"' && fl.b_s == 0 && fl.s_q % 2 == 0)
 			fl.d_q++;
