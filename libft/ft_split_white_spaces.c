@@ -90,9 +90,8 @@ char	**ft_split_white_spaces(char *str)
 			if (words[word] == NULL)
 				free_all(words, word);
 			words[word] = ft_substr(str, i, is_word(str, i));
-			i += is_word(str, i);
+			i += is_word(str, i) + 1;
 			word++;
-
 		}
 	}
 	words[word] = NULL;

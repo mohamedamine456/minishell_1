@@ -12,4 +12,7 @@ int main()
 		printf("|%s| - ", tab[i]);
 		i++;
 	}
+	ft_free_args(tab);
+	printf("Hello End");
+	sleep(10);
 }

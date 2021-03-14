@@ -181,7 +181,6 @@ void	split_redirections(char *part, t_commands **new_cmd)
 	}
 	(*new_cmd)->redirect = tab_redir;
 	(*new_cmd)->input = tab_input;
-	free(part);
 }
 
 void	split_pipes_redirections(char *part, t_pipes **new_pipe)
@@ -238,5 +237,5 @@ void	split_pipes_redirections(char *part, t_pipes **new_pipe)
 	}
 	(*new_pipe)->redirect = tab_redir;
 	(*new_pipe)->input = tab_input;
-	free(part);
+	free(part); //????
 }
