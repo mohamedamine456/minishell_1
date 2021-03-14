@@ -15,7 +15,7 @@ int     main(int argc, char **argv, char **env)
             if (get_next_line(0, &command_line) > 0)
             {
                 commands = parse_command(command_line, commands);
-                //write_history(command_line);  // to write the line in a file responsible for history
+                write_history(command_line);  // to write the line in a file responsible for history
                 write(1, "\n", 1);
                 free(command_line);
                 command_line = NULL;

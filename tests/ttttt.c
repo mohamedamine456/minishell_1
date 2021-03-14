@@ -8,31 +8,28 @@ int main()
 	tab = NULL;
 	tab = resize_tab(tab, ft_strdup("hello"));
 	tab = resize_tab(tab, ft_strdup("world"));
-	tab = resize_tab(tab, ft_strdup("good"));
-	tab = resize_tab(tab, ft_strdup("Morning"));
-	tab = resize_tab(tab, ft_strdup("HI"));
-	tab = resize_tab(tab, ft_strdup("Hey"));
 	tab = resize_tab(tab, ft_strdup("hello"));
 	tab = resize_tab(tab, ft_strdup("world"));
-	tab = resize_tab(tab, ft_strdup("Morning"));
+	tab = resize_tab(tab, ft_strdup("hello"));
 	tab = resize_tab(tab, ft_strdup("world"));
-	printf("%s\n", remove_tab_from_string(ft_strdup("Good Morning Hello Where Are You going Hi , hello world"), tab));
-	printf("Hello\n");
-	sleep(10);
-	// tab = resize_tab(tab, ft_strdup("Morning"));
-	// tab = resize_tab(tab, ft_strdup("world"));
-	// tab = resize_tab(tab, ft_strdup("Hello"));
-	// tab = resize_tab(tab, ft_strdup("world"));
-	// tab = resize_tab(tab, ft_strdup("Morning"));
-	// tab = resize_tab(tab, ft_strdup("world"));
-	// tab = resize_tab(tab, ft_strdup("hello"));
-	// tab = resize_tab(tab, ft_strdup("Hi"));
-	// tab = resize_tab(tab, ft_strdup("hello"));
-	// tab = resize_tab(tab, ft_strdup("world"));
-	// if (tab[0] == NULL)
-	// 	printf("non %d", ft_size_args(tab));
-	// else
-	// 	printf("yes %d", ft_size_args(tab));
+	tab = resize_tab(tab, ft_strdup("hello"));
+	tab = resize_tab(tab, ft_strdup("world"));
+	tab = resize_tab(tab, ft_strdup("hello"));
+	tab = resize_tab(tab, ft_strdup("world"));
+	tab = resize_tab(tab, ft_strdup("hello"));
+	tab = resize_tab(tab, ft_strdup("world"));
+	tab = resize_tab(tab, ft_strdup("hello"));
+	tab = resize_tab(tab, ft_strdup("world"));
+	tab = resize_tab(tab, ft_strdup("hello"));
+	tab = resize_tab(tab, ft_strdup("world"));
+	tab = resize_tab(tab, ft_strdup("hello"));
+	tab = resize_tab(tab, ft_strdup("world"));
+	tab = resize_tab(tab, ft_strdup("hello"));
+	tab = resize_tab(tab, ft_strdup("world"));
+	if (tab[0] == NULL)
+		printf("non %d", ft_size_args(tab));
+	else
+		printf("yes %d", ft_size_args(tab));
 	// char *str;
 	// int i = 0;
 	// int	bs = 0;

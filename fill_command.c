@@ -14,7 +14,7 @@ void	put_elements_command(char **tab, t_commands **cmd)
 	new_cmd = new_command();
 	if (tab[0] != NULL)
 	{
-		split_redirections(tab[0], &new_cmd);
+		split_redirections(ft_strdup(tab[0]), &new_cmd);
 		tab[0] = remove_tab_from_string(tab[0], new_cmd->redirect);
 		tab[0] = remove_tab_from_string(tab[0], new_cmd->input);
 		put_simple_command(tab[0], &new_cmd);
@@ -38,7 +38,7 @@ void	put_simple_command(char *simple_cmd, t_commands **cmd)
 
 	op = 0;
 	tab = ft_split_white_spaces(simple_cmd);		// not the best split
-	if (tab != NULL && tab[0] != NULL)
+	if (tab[0] != NULL)
 	{
 		(*cmd)->name = ft_strdup(tab[0]);
 		if (tab[1] != NULL && is_option(tab[1], (*cmd)->name))
