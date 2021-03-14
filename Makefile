@@ -10,7 +10,7 @@
 #                                                                              #
 # **************************************************************************** #
 
-SRC = fatal_error.c parsing_cleaning/*.c test_functions.c write_history.c check_functions/*.c libft/*.c get_next_line/get_next_line.c commands_list/*.c
+SRC = fatal_error.c parsing_cleaning/*.c tests/test_functions.c write_history.c check_functions/*.c libft/*.c get_next_line/get_next_line.c commands_list/*.c
 
 #SRCBONUS = 
 
