@@ -48,4 +48,4 @@ and this too :  echo \ + 5 ==> {{Fixed}}
 
 - find a better way to check on option from args : 
 - write function that sort option and a args :
-- replace env variables
+- replace env variables 

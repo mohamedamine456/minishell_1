@@ -1,4 +1,4 @@
-# include "minishell.h"
+# include "../minishell.h"
 
 /**
  * This function Takes parts of command and put them in the struct 

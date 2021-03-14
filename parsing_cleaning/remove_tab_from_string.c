@@ -1,4 +1,4 @@
-# include "minishell.h"
+# include "../minishell.h"
 
 /**
  * This function takes a string and atable of strings and remove elements of the table from the string
