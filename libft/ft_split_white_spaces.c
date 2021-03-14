@@ -48,8 +48,11 @@ int		is_word(char *str, int begin)
 			fl.d_q++;
 		if (str[i] == '\'' && fl.b_s == 0 && fl.d_q % 2 == 0)
 			fl.s_q++;
-		if (ft_is_space(str[i + 1]) && fl.b_s == 0 && fl.d_q % 2 == 0 && fl.s_q % 2 == 0)
-			break;
+		if (fl.b_s == 0 && fl.d_q % 2 == 0 && fl.s_q % 2 == 0)
+		{
+			if (ft_is_space(str[i + 1]) || str[i + 1] == '\0')
+				break ;
+		}
 		if (str[i] != '\\' && fl.b_s == 1)
 			fl.b_s = 0;
 		i++;
@@ -73,6 +76,7 @@ char	**ft_split_white_spaces(char *str)
 	int		i;
 	int		word;
 	int		nb_words;
+	int		word_size;
 
 	i = 0;
 	word = 0;
@@ -80,17 +84,20 @@ char	**ft_split_white_spaces(char *str)
 	words = (char **)malloc((nb_words + 1) * sizeof(char *));
 	if (str == NULL || words == NULL)
 		return (NULL);
-	while (str[i] != '\0' && word < nb_words)
+	while (str[i] != '\0')
 	{
 		if (ft_is_space(str[i]))
 			i++;
 		else
 		{
-			words[word] = (char *)malloc(is_word(str, i) + 1);
+			word_size = is_word(str, i);
+			// words[word] = (char *)malloc(word_size + 1);
+			// if (words[word] == NULL)
+			// 	free_all(words, word);
+			words[word] = ft_substr(str, i, word_size);
 			if (words[word] == NULL)
 				free_all(words, word);
-			words[word] = ft_substr(str, i, is_word(str, i));
-			i += is_word(str, i) + 1;
+			i += word_size + 1;
 			word++;
 		}
 	}

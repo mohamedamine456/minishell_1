@@ -1216,7 +1216,7 @@ echo "hello world" | grep "h"; echo "good morning" | grep "n"; echo "blablabla" 
 echo "\'" ; echo \\; echo \;\"; echo \\\\\; "\\\"" ; echo	"h"
 < file echo "hello" > file1 "hello" | grep ls > file2 < file3
 
-<  file7 > file8 echo "hello" >  file9 <  file5 | grep ls > file77 < file55   > file898
+<  file7 > file8 echo "hello" >  file9 <  file5 | grep ls > file77 < file55   > file898 ; echo Hello World > file 66 | grep ls
 
 echo "hello" > file > file1 > "file 2" > file\ \ 4
 
@@ -1299,3 +1299,10 @@ echo "hello" | grep "h" > file
 echo "hello world" > file
 echo "hello world" > file
 echo "hello wordl" > file | grep ls >file1
+
+
+
+
+
+
+

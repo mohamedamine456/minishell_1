@@ -237,5 +237,5 @@ void	split_pipes_redirections(char *part, t_pipes **new_pipe)
 	}
 	(*new_pipe)->redirect = tab_redir;
 	(*new_pipe)->input = tab_input;
-	free(part); //????
+	free(part);
 }

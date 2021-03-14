@@ -1,4 +1,0 @@
-echo \ + 5
-
-echo a + b | > file
-
