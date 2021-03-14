@@ -40,7 +40,7 @@ instead of splitting by redirections think the best way is to trim the redirecti
 
 
 segfault in this part : echo atr | tr -d a | > allo ===> {F*** Fixed}
-- leaks to fix ===> ...
+- leaks to fix ===> {{FIXED}} 14/03
 
 - still have prob with this :  echo "14 + 19" > a > b > c|bc < a < b < c > e> f  > file --> {{Fixed}}
 
@@ -49,3 +49,7 @@ and this too :  echo \ + 5 ==> {{Fixed}}
 - find a better way to check on option from args : 
 - write function that sort option and a args :
 - replace env variables 
+
+- write a function to clean all args and cmd->name from backslashes and quotes
+- use dispatch tables to clean
+- finish this monday
