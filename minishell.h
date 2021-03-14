@@ -12,40 +12,12 @@
 
 #ifndef MINISHELL_H
 # define MINISHELL_H
-# include "structs.h"
-# include "libft/libft.h"
-# include "commands_list/lists.h"
-# include "get_next_line/get_next_line.h"
-# include "check_functions/check_functions.h"
-# include <fcntl.h>
-# define TRUE 1
-# define FALSE 0
+# include "parsing_cleaning/parsing_cleaning.h"
 
 void			fatal(char *error);
 void			*ec_malloc(unsigned int size);
 
-/**
- * command_parser.c to parse commands 
-*/
-t_commands		*parse_command(char *line, t_commands *commands);
-char			**split_line_commands(char *line);
-void			split_command(char **tab_cmd, t_commands **commands);
-char			**split_pipes(char *cmd);
-void			put_elements_command(char **tab, t_commands **cmd);
-char			**remove_backslash(char **tab);
-void			put_simple_command(char *simple_cmd, t_commands **cmd);
-void			put_args_to_command(t_commands **cmd, char **args);
-void			put_pipes_to_command(char *pipe_cmd, t_commands **cmd);
-void			put_args_to_pipe(t_pipes **pipe, char **args);
-void			split_redirections(char *part, t_commands **new_cmd);
-void			split_pipes_redirections(char *part, t_pipes **new_pipe);
-void			split_cmd_redirection(char *part, t_commands **new_cmd);
 
-/*
-* allocation_functions.c
-*/
-
-char			**resize_tab(char **old, char *chaine);
 
 /*
 * functions for tests 
@@ -58,12 +30,6 @@ void			print_commands(char **tab);
 void			print_command_parts(t_commands *command);
 void			print_redirections(char **tab_redir);
 void			print_inputs(char **tab_input);
-
-/*
-*	remove_tab_from_string.c
-*/
-
-char	*remove_tab_from_string(char *str, char **tab);
 
 /**
  * write_history.c 
