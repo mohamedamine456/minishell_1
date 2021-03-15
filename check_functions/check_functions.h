@@ -16,4 +16,6 @@ int			is_option(char *str,char *name);
 
 int			check_redirection(char *str, int len);
 
+char		*clean_args(char *str);
+
 #endif

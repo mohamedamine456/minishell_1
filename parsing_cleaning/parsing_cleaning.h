@@ -39,6 +39,10 @@ char			**resize_tab(char **old, char *chaine);
 *	remove_tab_from_string.c
 */
 
-char	*remove_tab_from_string(char *str, char **tab);
+char			*remove_tab_from_string(char *str, char **tab);
+
+
+
+char			*clean_args(char *str);
 
 #endif
