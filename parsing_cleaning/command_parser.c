@@ -101,7 +101,6 @@ char		**split_pipes(char *str_cmd)
 	tab = NULL;
 	while (str_cmd[i] != '\0')
 	{
-
 		fl = check_flags(fl, str_cmd[i]);
 		if (fl.s_q % 2 == 0 && fl.d_q % 2 == 0 && str_cmd[i] == '|' && fl.b_s == 0)
 		{

@@ -13,12 +13,7 @@ int		count_words(char *str)
 		return (0);
 	while (str[i] != '\0')
 	{
-		if (str[i] == '\\')
-			fl.b_s = fl.b_s == 1 ? 0 : 1;
-		if (str[i] == '\"' && fl.b_s == 0 && fl.s_q % 2 == 0)
-			fl.d_q++;
-		if (str[i] == '\'' && fl.b_s == 0 && fl.d_q % 2 == 0)
-			fl.s_q++;
+		fl = check_flags(fl, str[i]);
 		if (fl.b_s == 0 && fl.d_q % 2 == 0 && fl.s_q % 2 == 0)
 		{
 			if (!ft_is_space(str[i]) && (ft_is_space(str[i + 1]) || str[i + 1] == '\0'))
@@ -42,12 +37,7 @@ int		is_word(char *str, int begin)
 	fl = (t_flags){0, 0, 0, 0, 0, 0};
 	while (str[i] != '\0')
 	{
-		if (str[i] == '\\')
-			fl.b_s = fl.b_s == 1 ? 0 : 1;
-		if (str[i] == '\"' && fl.b_s == 0 && fl.s_q % 2 == 0)
-			fl.d_q++;
-		if (str[i] == '\'' && fl.b_s == 0 && fl.d_q % 2 == 0)
-			fl.s_q++;
+		fl = check_flags(fl, str[i]);
 		if (ft_is_space(str[i + 1]) && fl.b_s == 0 && fl.d_q % 2 == 0 && fl.s_q % 2 == 0)
 			break;
 		if (str[i] != '\\' && fl.b_s == 1)

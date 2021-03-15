@@ -1,1 +1,3 @@
+echo 'hello\' "hello world"
+
 echo -n 'hello world' | grep "h" ; echo -p "good morning" | grep "n"

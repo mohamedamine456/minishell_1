@@ -15,7 +15,6 @@ char	*clean_args(char *str)
 		fatal("in ec_malloc() on memory allocation.");
 	while (i < len)
 	{
-		
 		fl = check_flags(fl, str[i]);
 		//if (str[i] == '\"' && fl.b_s == 0 && fl.s_q % 2 == 0)
 		i++;
