@@ -46,9 +46,9 @@ void	put_simple_command(char *simple_cmd, t_commands **cmd)
 			(*cmd)->options = ft_strdup(tab[1]);
 			op = 1;
 		}
-		else if(tab[1] != NULL && op == 0)
+		if(tab[1] != NULL && op == 0)
 			put_args_to_command(cmd, tab + 1);
-		else if (op == 1 && tab[2] != NULL)
+		if (op == 1 && tab[2] != NULL)
 			put_args_to_command(cmd, tab + 2);
 	}
 	ft_free_args(tab);
@@ -99,9 +99,9 @@ void	put_pipes_to_command(char *pipe_cmd, t_commands **cmd)
 			pip->options = ft_strdup(tab[1]);
 			op = 1;
 		}
-		else if (tab[1] != NULL && op == 0)
+		if (tab[1] != NULL && op == 0)
 			put_args_to_pipe(&pip, tab + 1);
-		else if (tab[2] != NULL && op == 1)
+		if (tab[2] != NULL && op == 1)
 			put_args_to_pipe(&pip, tab + 2);
 	}
 	addback_pipes(&((*cmd)->piped), pip);

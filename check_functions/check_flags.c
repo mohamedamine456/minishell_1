@@ -6,7 +6,24 @@
 
 int		is_flag(char c)
 {
-	if (c == '\\' || c == ';' || c == '\'' || c == '|' || c == '\"')
+	if (c == '\\' || c == ';' || c == '\'' || c == '|' || c == '\"' || c == '$')
 		return (1);
 	return (0);
+}
+
+
+t_flags		check_flags(t_flags fl, char c)
+{
+	if (c == '\\')
+	{
+		if (fl.b_s == 1)
+			fl.b_s = 0;
+		else
+			fl.b_s = 1;
+	}
+	if (c == '\"' && fl.b_s == 0 && fl.s_q % 2 == 0)
+		fl.d_q++;
+	if (c == '\'' && fl.b_s == 0 && fl.d_q % 2 == 0)
+		fl.s_q++;
+	return (fl);
 }

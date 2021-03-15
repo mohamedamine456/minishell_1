@@ -1,4 +1,1 @@
-echo \ + 5
-
-echo a + b | > file
-
+echo -n 'hello world' | grep "h" ; echo -p "good morning" | grep "n"

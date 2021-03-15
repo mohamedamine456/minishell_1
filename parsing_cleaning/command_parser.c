@@ -42,12 +42,6 @@ char		**split_line_commands(char *line)
 	tab = NULL;
 	while (line[i] != '\0')
 	{
-		// if (line[i] == '\\')
-		// 	fl.b_s = fl.b_s == 1 ? 0 : 1;
-		// if (line[i] == '\"' && fl.b_s == 0 && fl.s_q % 2 == 0)
-		// 	fl.d_q++;
-		// if (line[i] == '\'' && fl.b_s == 0 && fl.d_q % 2 == 0)
-		// 	fl.s_q++;
 		fl = check_flags(fl, line[i]);
 		if (fl.s_q % 2 == 0 && fl.d_q % 2 == 0 && line[i] == ';' && fl.b_s == 0)
 		{
@@ -107,12 +101,8 @@ char		**split_pipes(char *str_cmd)
 	tab = NULL;
 	while (str_cmd[i] != '\0')
 	{
-		if (str_cmd[i] == '\\')
-			fl.b_s = fl.b_s == 1 ? 0 : 1;
-		if (str_cmd[i] == '\'' && fl.b_s == 0 && fl.s_q % 2 == 0)
-			fl.s_q++;
-		if (str_cmd[i] == '\"' && fl.b_s == 0 && fl.s_q % 2 == 0)
-			fl.d_q++;
+
+		fl = check_flags(fl, str_cmd[i]);
 		if (fl.s_q % 2 == 0 && fl.d_q % 2 == 0 && str_cmd[i] == '|' && fl.b_s == 0)
 		{
 			tab = resize_tab(tab, ft_substr(str_cmd, j, i - j));
@@ -145,12 +135,7 @@ void	split_redirections(char *part, t_commands **new_cmd)
 	tab_input = NULL;
 	while (part[i] != '\0')
 	{
-		if (part[i] == '\\')
-			fl.b_s = fl.b_s == 1 ? 0 : 1;
-		if (part[i] == '\"' && fl.b_s == 0 && fl.s_q % 2 == 0)
-			fl.d_q++;
-		if (part[i] == '\'' && fl.b_s == 0 && fl.d_q % 2 == 0)
-			fl.s_q++;
+		fl = check_flags(fl, part[i]);
 		if (fl.d_q % 2 == 0 && fl.s_q % 2 == 0 && fl.b_s == 0)
 		{
 			if (part[i] == '>')
@@ -199,12 +184,7 @@ void	split_pipes_redirections(char *part, t_pipes **new_pipe)
 	tab_input = NULL;
 	while (part[i] != '\0')
 	{
-		if (part[i] == '\\' && fl.d_q % 2 == 0 && fl.s_q % 2 == 0)
-			fl.b_s = fl.b_s == 1 ? 0 : 1;
-		if (part[i] == '\"' && fl.b_s == 0 && fl.s_q % 2 == 0)
-			fl.d_q++;
-		if (part[i] == '\'' && fl.b_s == 0 && fl.d_q % 2 == 0)
-			fl.s_q++;
+		fl = check_flags(fl, part[i]);
 		if (fl.d_q % 2 == 0 && fl.s_q % 2 == 0 && fl.b_s == 0)
 		{
 			if (part[i] == '>')

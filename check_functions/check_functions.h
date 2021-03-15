@@ -7,7 +7,7 @@
 */
 
 int			is_flag(char c);
-
+t_flags		check_flags(t_flags fl, char c);
 /*
 *	check_options.c
 */
