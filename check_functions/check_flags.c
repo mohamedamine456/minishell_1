@@ -27,3 +27,29 @@ t_flags		check_flags(t_flags fl, char c)
 		fl.s_q++;
 	return (fl);
 }
+
+t_flags		clean_flags(t_flags fl, char c)
+{
+	if (c == '\\' && fl.s_q == 0)
+	{
+		if (fl.b_s == 1)
+			fl.b_s = 0;
+		else
+			fl.b_s = 1;
+	}
+	if (c == '\'')
+	{
+		if ((fl.b_s == 0 && fl.d_q == 0) || fl.s_q == 0)
+			fl.s_q = 1;
+		else
+			fl.s_q = 0;
+	}
+	if (c == '\"')
+	{
+		if ((fl.b_s == 0 && fl.s_q == 0) || fl.d_q == 0)
+			fl.d_q = 1;
+		else
+			fl.d_q = 0;
+	}
+	return (fl);
+}
