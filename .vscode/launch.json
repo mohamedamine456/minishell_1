@@ -4,6 +4,18 @@
             "name": "(lldb) Launch",
             "type": "cppdbg",
             "request": "launch",
+            "program": "${workspaceFolder}/tests/a.out",
+            "args": [],
+            "stopAtEntry": false,
+            "cwd": "${workspaceFolder}",
+            "environment": [],
+            "externalConsole": false,
+            "MIMode": "lldb"
+        },
+        {
+            "name": "(lldb) Launch",
+            "type": "cppdbg",
+            "request": "launch",
             "program": "${workspaceFolder}/Minishell",
             "args": [],
             "stopAtEntry": false,

@@ -19,20 +19,19 @@ char	*clean_args(char *str)
 	{
 		if (!is_flag(str[i]))
 			new[j++] = str[i];
-		clean_flags(fl, str[i]);
-		if (fl.s_q == 1)
-			new[j++] = str[i];
-		else if (fl.d_q == 1)
-		{
-			if (str[i] != '\\')
-				new[j++] = str[i];
-			else if (str[i] == '\\' && fl.b_s == 1 && str[i + 1] != '$' && str[i] != '`')
-				new[j++] = str[i];
-		}
 		else
 		{
-			if (str[i] == '\\' && fl.b_s == 0)
+			fl = check_flags(fl, str[i]);
+			if (str[i] == '"' && (fl.b_s == 1 || fl.s_q % 2 == 1))
 				new[j++] = str[i];
+			else if (str[i] == '\'' && (fl.b_s == 1 || fl.d_q % 2 == 1))
+				new[j++] = str[i];
+			else if (str[i] == '\\' && str[i + 1] != '"' && (fl.b_s == 1 || fl.s_q % 2 == 1 || (fl.b_s == 1 && fl.d_q % 2 == 0)))
+				new[j++] = str[i];
+			else if (str[i] == '$' || str[i] == ';' || str[i] == '|')
+				new[j++] = str[i];
+			if (str[i] != '\\' && fl.b_s == 1)
+				fl.b_s = 0;
 		}
 		i++;
 	}
