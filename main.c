@@ -7,6 +7,7 @@ int     main(int argc, char **argv, char **env)
     //int     fd = open("file", O_RDONLY);
 
     commands = NULL;
+    write(1, "\e[1;1H\e[2J", 11);
     if (argc == 1 && argv != NULL && env != NULL)
     {
         while (TRUE)

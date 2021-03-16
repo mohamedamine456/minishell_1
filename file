@@ -1,4 +1,13 @@
-\\\\
+
+
+<    "file7" >   'file8'   "e"'c'ho "he\"llo" >  fi"le"   "world" >   "file1 5" >  'fi"le 2'   <  fil'e'5 <   fil"e'"6 >   file9   "world" > file  | grep "n"; echo "blablabla" | grep "bla" | grep "b"
+echo -n "hello world" | grep "h" ; echo -p "good morning" | grep "n"
+echo "hello world" | grep "h"; echo "good morning" | grep "n"; echo "blablabla" >file | grep "bla" | grep "b" > file
+echo -n "hello world" | grep "h" ; echo -p "good morning" | grep "n" > file
+echo "hello world" > file | grep ls > file2
+<  file7 > file8 echo "hello" >  file9 <  file5
+
+
 
 echo 'hello\' "hello world"
 

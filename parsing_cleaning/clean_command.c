@@ -1,6 +1,6 @@
 # include "parsing_cleaning.h"
 
-void			clean_command(t_commands **new_cmd)
+void		clean_command(t_commands **new_cmd)
 {
 	t_pipes	*pip;
 
@@ -33,11 +33,11 @@ void			clean_command(t_commands **new_cmd)
 					pip->input = clean_args(pip->input);
 				pip = pip->next;
 			}
-		}	
+		}
 	}
 }
 
-char			**clean_args(char **args)
+char		**clean_args(char **args)
 {
 	int i;
 
