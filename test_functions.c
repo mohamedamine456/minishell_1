@@ -1,4 +1,4 @@
-# include "../minishell.h"
+# include "minishell.h"
 
 /**
  * All functions here just for test i use them to print results 

@@ -1,4 +1,4 @@
-#include "../minishell.h"
+# include "parsing_cleaning.h"
 
 /*
 * This function takes line from the main function

@@ -1,4 +1,4 @@
-#include "../minishell.h"
+#include "parsing_cleaning.h"
 
 /**
  * This function to simply add a string to table of strings 

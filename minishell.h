@@ -14,11 +14,6 @@
 # define MINISHELL_H
 # include "parsing_cleaning/parsing_cleaning.h"
 
-void			fatal(char *error);
-void			*ec_malloc(unsigned int size);
-
-
-
 /*
 * functions for tests 
 */
@@ -35,5 +30,9 @@ void			print_inputs(char **tab_input);
  * write_history.c 
 */
 void			write_history(char *line);
+
+
+
+void	print_command_parts(t_commands *command); ///remove it its just for test
 
 #endif

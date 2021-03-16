@@ -1,4 +1,4 @@
-# include "../minishell.h"
+# include "parsing_cleaning.h"
 
 /**
  * This function Takes parts of command and put them in the struct 
@@ -24,6 +24,7 @@ void	put_elements_command(char **tab, t_commands **cmd)
 			i++;
 		}
 	}
+	clean_command(&new_cmd);
 	addback_commands(cmd, new_cmd);
 }
 

@@ -43,6 +43,11 @@ char			*remove_tab_from_string(char *str, char **tab);
 
 
 
-char			*clean_args(char *str);
+char			*clean_str(char *str);
+
+
+void			clean_command(t_commands **new_cmd);
+
+char			**clean_args(char **args);
 
 #endif

@@ -49,7 +49,7 @@ and this too :  echo \ + 5 ==> {{Fixed}}
 - find a better way to check on option from args : 
 - write function that sort option and a args :
 - replace env variables 
-
-- write a function to clean all args and cmd->name from backslashes and quotes
-- use dispatch tables to clean
+-----------------------------
+- write a function to clean all args and cmd->name from backslashes and quotes ==> {{Fixed but need tests from someone}}
+- use dispatch tables to clean ==> {{On Load}}
 - finish this monday

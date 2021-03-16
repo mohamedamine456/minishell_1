@@ -1,6 +1,6 @@
-# include "../minishell.h"
+# include "parsing_cleaning.h"
 
-char	*clean_args(char *str)
+char	*clean_str(char *str)
 {
 	char	*new;
 	int		i;

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "minishell.h"
+#include "check_functions.h"
 
 /**
  * This function take a string and print it as an error and quit the programm 
