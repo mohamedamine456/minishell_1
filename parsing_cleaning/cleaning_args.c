@@ -26,13 +26,15 @@ char	*clean_args(char *str)
 				new[j++] = str[i];
 			else if (str[i] == '\'' && (fl.b_s == 1 || fl.d_q % 2 == 1))
 				new[j++] = str[i];
-			else if (str[i] == '\\' && str[i + 1] != '"' && (fl.b_s == 1 || fl.s_q % 2 == 1 || (fl.b_s == 1 && fl.d_q % 2 == 0)))
+			else if (str[i] == '\\' && ((fl.b_s == 0 && fl.d_q % 2 == 0) || fl.s_q % 2 == 1))
+				new[j++] = str[i];
+			else if (str[i] == '\\' && fl.b_s == 1 && fl.d_q % 2 == 1 && str[i + 1] != '"' && str[i + 1] != '`' && str[i + 1] != '$')
 				new[j++] = str[i];
 			else if (str[i] == '$' || str[i] == ';' || str[i] == '|')
 				new[j++] = str[i];
-			if (str[i] != '\\' && fl.b_s == 1)
-				fl.b_s = 0;
 		}
+		if (str[i] != '\\' && fl.b_s == 1)
+				fl.b_s = 0;
 		i++;
 	}
 	new[j] = '\0';

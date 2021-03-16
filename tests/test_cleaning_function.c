@@ -8,7 +8,7 @@ int main(int argv, char **argc)
 	char *str;
 	char *line;
 	//int     fd = open("file", O_RDONLY);
-
+	write(1, "\e[1;1H\e[2J", 11);
 	while (TRUE)
 	{
 		write(1, "Minishell $> ", 13);
