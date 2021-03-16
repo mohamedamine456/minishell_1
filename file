@@ -5,3 +5,6 @@ echo 'hello\' "hello world"
 echo -n 'hello world' | grep "h" ; echo -p "good morning" | grep "n"
 
 echo \'hello 'world\' \'good\'
+
+
+gcc test_cleaning_function.c ../check_functions/*.c ../libft/*.c ../parsing_cleaning/cleaning_args.c  -g ../get_next_line/*.c
