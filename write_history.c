@@ -10,4 +10,5 @@ void	write_history(char *line)
 	write(fd, line, ft_strlen(line));
 	write(fd, "\n", 1);
 	close(fd);
+	// check if commit works
 }
