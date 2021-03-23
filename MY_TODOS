@@ -53,3 +53,8 @@ and this too :  echo \ + 5 ==> {{Fixed}}
 - write a function to clean all args and cmd->name from backslashes and quotes ==> {{Fixed but need tests from someone}}
 - use dispatch tables to clean ==> {{On Load}}
 - finish this monday
+
+
+
+- work on dollar sign 
+- work on option write function that check if it is an option or not
