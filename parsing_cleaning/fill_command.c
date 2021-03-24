@@ -24,7 +24,7 @@ void	put_elements_command(char **tab, t_commands **cmd)
 			i++;
 		}
 	}
-	clean_command(&new_cmd);
+	//clean_command(&new_cmd);
 	addback_commands(cmd, new_cmd);
 }
 

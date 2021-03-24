@@ -9,11 +9,11 @@ int		is_option(char *str, char *name)
 	int		i;
 
 	i = 1;
-	if (!ft_strcmp(name, "echo") && !ft_strcmp(str, "-n"))
+	if (!ft_strcmp(clean_str(ft_strdup(name)), "echo") && !ft_strcmp(clean_str(ft_strdup(str)), "-n"))
 		return (1);
-    else if (!ft_strcmp(name, "export") && !ft_strcmp(str, "-p"))
+    else if (!ft_strcmp(clean_str(ft_strdup(name)), "export") && !ft_strcmp(clean_str(ft_strdup(str)), "-p"))
         return (1);
-    else if (!ft_strcmp(name, "unset") && (!ft_strcmp(str, "-f") || !ft_strcmp(str, "-v")))
+    else if (!ft_strcmp(clean_str(ft_strdup(name)), "unset") && (!ft_strcmp(clean_str(ft_strdup(str)), "-f") || !ft_strcmp(clean_str(ft_strdup(str)), "-v")))
         return (1);
 	return (0);
 }
