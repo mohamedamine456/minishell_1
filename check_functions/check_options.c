@@ -11,5 +11,9 @@ int		is_option(char *str, char *name)
 	i = 1;
 	if (!ft_strcmp(name, "echo") && !ft_strcmp(str, "-n"))
 		return (1);
+    else if (!ft_strcmp(name, "export") && !ft_strcmp(str, "-p"))
+        return (1);
+    else if (!ft_strcmp(name, "unset") && (!ft_strcmp(str, "-f") || !ft_strcmp(str, "-v")))
+        return (1);
 	return (0);
 }
