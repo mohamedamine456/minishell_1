@@ -36,21 +36,22 @@ void	put_simple_command(char *simple_cmd, t_commands **cmd)
 {
 	char	**tab;
 	int		op;
+    int     i;
 
 	op = 0;
+    i = 1;
 	tab = ft_split_white_spaces(simple_cmd);		// not the best split
 	if (tab[0] != NULL)
 	{
 		(*cmd)->name = ft_strdup(tab[0]);
-		if (tab[1] != NULL && is_option(tab[1], (*cmd)->name))
-		{
-			(*cmd)->options = ft_strdup(tab[1]);
-			op = 1;
-		}
-		if(tab[1] != NULL && op == 0)
-			put_args_to_command(cmd, tab + 1);
-		if (op == 1 && tab[2] != NULL)
-			put_args_to_command(cmd, tab + 2);
+		(*cmd)->options = ft_strdup("");
+        while (tab[i] != NULL && is_option(tab[i], (*cmd)->name))
+        {
+            (*cmd)->options = ft_strjoin((*cmd)->options, tab[i]);
+            i++;
+        }
+        if (tab[i] != NULL)
+            put_args_to_command(cmd, tab + i);
 	}
 	ft_free_args(tab);
 }
