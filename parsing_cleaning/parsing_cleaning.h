@@ -47,7 +47,10 @@ char			*clean_str(char *str);
 
 
 void			clean_command(t_commands **new_cmd);
-
 char			**clean_args(char **args);
+
+void            replace_env(t_commands **new_cmd);
+char            **replace_args(char **args);
+
 
 #endif
