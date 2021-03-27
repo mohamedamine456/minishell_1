@@ -19,8 +19,7 @@ char        *replace_str(char *str, char **envp)
     return (new_str);
 }
 
-/*
- * char	*trim_env(char *str, int *i, int *j)
+char	*trim_env(char *str, int *i, int *j)
 {
 	t_flags	fl;
 	char	*tmp;
@@ -31,22 +30,25 @@ char        *replace_str(char *str, char **envp)
 		fl = check_flags(fl, str[*i]);
 		if (fl.s_q % 2 == 0 && fl.b_s == 0 && str[*i] == '$')
 		{
-			(*j)++;
-			while (str[*j + *i] != '\0')
+			while (str[*j + *i + 1] != '\0')
 			{
-				if (!ft_isalnum(str[*i + *j]))
+				if (!ft_isalnum(str[*i + *j + 1]))
 				{
-					tmp = ft_substr(str, *i, *j);
+					tmp = ft_substr(str, *i + 1, *j);
 					return (tmp);
 				}
 				(*j)++;
+			}
+			if (str[*j + *i + 1] == '\0')
+			{
+				tmp = ft_substr(str, *i + 1, *j);
+				return (tmp);
 			}
 		}
 		(*i)++;
 	}
 	return (ft_strdup(""));
 }
-*/
 
 char	*search_env(char *str, char **envp)
 {
