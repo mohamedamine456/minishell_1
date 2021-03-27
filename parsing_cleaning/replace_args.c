@@ -3,18 +3,24 @@
 char        *replace_str(char *str, char **envp)
 {
     char    *new_str;
-	char	*tmp_env;
+	char	*tmp;
 	int		i;
 	int		j;
 
 	i = 0;
 	j = 0;
 	new_str = NULL;
+	tmp = NULL;
 	if (str == NULL || envp == NULL)
 		return (NULL);
-    new_str = search_env(str, envp);
-    if (new_str == NULL)
-		new_str = ft_strdup("");
+	tmp = trim_env(str, &i, &j);
+    tmp = search_env(tmp, envp);
+    if (tmp == NULL)
+		tmp = ft_strdup("");
+	new_str = ft_substr(str, 0, i);
+	new_str = ft_strjoin(new_str, tmp);
+	tmp = ft_substr(str, i + j + 1, ft_strlen(str) - j - i);
+	new_str = ft_strjoin(new_str, tmp);
 	free(str);
     return (new_str);
 }
