@@ -13,18 +13,20 @@ char        *replace_str(char *str, char **envp)
 	tmp = NULL;
 	if (str == NULL || envp == NULL)
 		return (NULL);
-	tmp = trim_env(str, &i, &j);
+	//tmp = trim_env(str, &i, &j);
+	tmp = str;
     tmp = search_env(tmp, envp);
     if (tmp == NULL)
 		tmp = ft_strdup("");
-	new_str = ft_substr(str, 0, i);
-	new_str = ft_strjoin(new_str, tmp);
-	tmp = ft_substr(str, i + j + 1, ft_strlen(str) - j - i);
-	new_str = ft_strjoin(new_str, tmp);
+	//new_str = ft_substr(str, 0, i);
+	//new_str = ft_strjoin(new_str, tmp);
+	//tmp = ft_substr(str, i + j + 1, ft_strlen(str) - j - i);
+	//new_str = ft_strjoin(new_str, tmp);
 	free(str);
-    return (new_str);
+    return (tmp);
 }
 
+/*
 char	*trim_env(char *str, int *i, int *j)
 {
 	t_flags	fl;
@@ -55,7 +57,7 @@ char	*trim_env(char *str, int *i, int *j)
 	}
 	return (ft_strdup(""));
 }
-
+*/
 char	*search_env(char *str, char **envp)
 {
 	int		i;
