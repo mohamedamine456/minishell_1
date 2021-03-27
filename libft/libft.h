@@ -6,7 +6,7 @@
 /*   By: mlachheb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 09:17:25 by mlachheb          #+#    #+#             */
-/*   Updated: 2021/02/11 11:06:10 by mlachheb         ###   ########.fr       */
+/*   Updated: 2021/03/27 10:49:31 by mlachheb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ void			ft_putnbr(int n);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
 int				ft_strcmp(const char *s1, const char *s2);
 int				ft_is_space(char c);
+int				ft_isalnum(int c);
 char			*ft_strstr(const char *haystack, const char *needle);
 int				ft_strstri(const char *haystack, const char *needle);
 int				char_in_string(char c, char *str);

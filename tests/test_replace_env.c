@@ -6,8 +6,12 @@
 int main(int argv, char **argc, char **envp)
 {
 	char *str;
-
-	str = replace_str(ft_strdup("OP"), envp);
+	str = replace_str(ft_strdup("LESS"), envp);
 	printf("%s\n", str);
+	//free(str);
+	while (1)
+	{
+		continue ;
+	}	
 	return (0);
 }

@@ -53,5 +53,6 @@ void            replace_env(t_commands **new_cmd);
 char            **replace_args(char **args);
 char			*replace_str(char *str, char **envp);
 char			*search_env(char *str, char **envp);
+char			*trim_env(char *str, int *i, int *j);
 
 #endif
