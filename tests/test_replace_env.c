@@ -57,13 +57,34 @@ char	*alpha_char_test(char *str, int *i, char **envp)
 
 }
 
+char	*trim_replace(char *str, char **envp)
+{
+	t_flags	fl;
+	int		i;
+	//char	*(*func[])(char *, int *) = {special_char, alpha_char, digit_char};
+
+	fl = (t_flags){0, 0, 0, 0, 0, 0};
+	i = 0;
+	while (str[i] != '\0')
+	{
+		fl = check_flags(fl, str[i]);
+		if (fl.s_q % 2 == 0 && fl.b_s == 0 && str[i] == '$')
+		{
+			if (ft_isalnum(str[i + 1]) || char_in_string(str[i + 1], "#?*@"))
+				str = alpha_char_test(str, &i, envp);
+		}
+		i++;
+	}
+	return (str);
+}
+
 int main(int argv, char **argc, char **envp)
 {
 	char	*str;
 	int		i;
 
 	i = 25;
-	str = alpha_char_test(ft_strdup("hello world$LESS  fjkdhsf$PATH"), &i, envp);
+	str = trim_replace(ft_strdup("hello world$LESS  fjkdhsf$PATH$USER $LSCOLORS"), envp);
 	printf("%s\n", str);
 	//free(str);
 	while (1)
