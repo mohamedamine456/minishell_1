@@ -21,12 +21,26 @@ char	*special_char(char *str, int *i)
 char	*alpha_char(char *str, int *i)
 {
 	int		j;
+	char	*new_str;
+	char	*tmp;
 
-	j = 0;
+	j = 1;
 	while (str[*i + j] != '\0')
 	{
-		if (str[*i + j]
+		if (!ft_isalnum(str[*i + j]))
+			break ;
+		j++;
 	}
+	new_str = ft_substr(str, 0, *i);
+	tmp = ft_substr(str, *i + 1	, j);
+	tmp = search_env(tmp, NULL);		//replace NULL with envp variables
+	new_str = ft_strjoin(new_str, tmp);
+	free(tmp);
+	tmp = ft_substr(str, *i + j + 1, ft_strlen(str) - *i - j - 1);
+	new_str = ft_strjoin(new_str, tmp);
+	// free them all
+	return (new_str);
+
 }
 
 char	*digit_char(char *str, int *i)
