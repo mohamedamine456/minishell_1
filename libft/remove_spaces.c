@@ -18,7 +18,7 @@ char	*remove_spaces(char *str)
 	new = ft_strdup("");
 	while (str[i] != '\0')
 	{
-		if (ft_is_space(str[i]))
+		if (ft_isspace(str[i]))
 			i++;
 		else
 		{

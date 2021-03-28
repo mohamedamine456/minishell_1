@@ -1,0 +1,48 @@
+# include "parsing_cleaning.h"
+
+char	*special_char(char *str, int *i)
+{
+	char	*new_str;
+	char	*tmp;
+	char	*variable;
+
+	new_str = ft_substr(str, 0, *i);
+	tmp = ft_substr(str, *i + 2, ft_strlen(str) - *i - 2);
+	//variable = special_variable(str[*i + 1]);
+	new_str = ft_strjoin(new_str, variable);
+	new_str = ft_strjoin(new_str, tmp);
+	free(str);
+	free(tmp);
+	*i += ft_strlen(variable) - 1;
+	free(variable);
+	return(new_str);
+}
+
+char	*alpha_char(char *str, int *i)
+{
+	int		j;
+
+	j = 0;
+	while (str[*i + j] != '\0')
+	{
+		if (str[*i + j]
+	}
+}
+
+char	*digit_char(char *str, int *i)
+{
+	char	*new_str;
+	char	*tmp;
+	char	*variable;
+
+	new_str = ft_substr(str, 0, *i);
+	tmp = ft_substr(str, *i + 2, ft_strlen(str) - *i - 2);
+	//variable = digit_variable([*i + 1]);
+	new_str = ft_strjoin(new_str, variable);
+	new_str = ft_strjoin(new_str, tmp);
+	free(str);
+	free(tmp);
+	*i += ft_strlen(variable) - 1;
+	free(variable);
+	return(new_str);
+}

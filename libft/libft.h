@@ -6,7 +6,7 @@
 /*   By: mlachheb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 09:17:25 by mlachheb          #+#    #+#             */
-/*   Updated: 2021/03/27 10:49:31 by mlachheb         ###   ########.fr       */
+/*   Updated: 2021/03/28 12:47:02 by mlachheb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,10 @@ int				ft_strlen(const char *s);
 void			ft_putnbr(int n);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
 int				ft_strcmp(const char *s1, const char *s2);
-int				ft_is_space(char c);
+int				ft_isspace(char c);
 int				ft_isalnum(int c);
+int				ft_isalpha(int c);
+int				ft_isdigit(int c);
 char			*ft_strstr(const char *haystack, const char *needle);
 int				ft_strstri(const char *haystack, const char *needle);
 int				char_in_string(char c, char *str);
@@ -40,5 +42,6 @@ int				next_space(char *str);
 char			*remove_spaces(char *str);
 char			**ft_split_white_spaces(char *str);
 t_flags			check_flags(t_flags fl, char c);
+int				char_to_func(char c);
 
 #endif

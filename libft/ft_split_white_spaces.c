@@ -16,7 +16,7 @@ int		count_words(char *str)
 		fl = check_flags(fl, str[i]);
 		if (fl.b_s == 0 && fl.d_q % 2 == 0 && fl.s_q % 2 == 0)
 		{
-			if (!ft_is_space(str[i]) && (ft_is_space(str[i + 1]) || str[i + 1] == '\0'))
+			if (!ft_isspace(str[i]) && (ft_isspace(str[i + 1]) || str[i + 1] == '\0'))
 				nb_words++;
 			if (str[i + 1] == '\0')		// in case all quotes are closed
 				return (nb_words);
@@ -38,7 +38,7 @@ int		is_word(char *str, int begin)
 	while (str[i] != '\0')
 	{
 		fl = check_flags(fl, str[i]);
-		if (ft_is_space(str[i + 1]) && fl.b_s == 0 && fl.d_q % 2 == 0 && fl.s_q % 2 == 0)
+		if (ft_isspace(str[i + 1]) && fl.b_s == 0 && fl.d_q % 2 == 0 && fl.s_q % 2 == 0)
 			break;
 		if (str[i] != '\\' && fl.b_s == 1)
 			fl.b_s = 0;
@@ -72,7 +72,7 @@ char	**ft_split_white_spaces(char *str)
 		return (NULL);
 	while (str[i] != '\0' && word < nb_words)
 	{
-		if (ft_is_space(str[i]))
+		if (ft_isspace(str[i]))
 			i++;
 		else
 		{

@@ -3,61 +3,36 @@
 char        *replace_str(char *str, char **envp)
 {
     char    *new_str;
-	char	*tmp;
-	int		i;
-	int		j;
 
-	i = 0;
-	j = 0;
 	new_str = NULL;
-	tmp = NULL;
 	if (str == NULL || envp == NULL)
 		return (NULL);
-	//tmp = trim_env(str, &i, &j);
-	tmp = str;
-    tmp = search_env(tmp, envp);
-    if (tmp == NULL)
-		tmp = ft_strdup("");
-	//new_str = ft_substr(str, 0, i);
-	//new_str = ft_strjoin(new_str, tmp);
-	//tmp = ft_substr(str, i + j + 1, ft_strlen(str) - j - i);
-	//new_str = ft_strjoin(new_str, tmp);
+	new_str = trim_replace(str, NULL);
 	free(str);
-    return (tmp);
+    return (new_str);
 }
 
-/*
-char	*trim_env(char *str, int *i, int *j)
+char	*trim_replace(char *str, char **envp)
 {
 	t_flags	fl;
-	char	*tmp;
+	int		i;
+	char	*(*func[])(char *, int *) = {special_char, alpha_char, digit_char};
 
 	fl = (t_flags){0, 0, 0, 0, 0, 0};
-	while (str[*i + *j] != '\0')
+	i = 0;
+	while (str[i] != '\0')
 	{
-		fl = check_flags(fl, str[*i]);
-		if (fl.s_q % 2 == 0 && fl.b_s == 0 && str[*i] == '$')
+		fl = check_flags(fl, str[i]);
+		if (fl.s_q % 2 == 0 && fl.b_s == 0 && str[i] == '$')
 		{
-			while (str[*j + *i + 1] != '\0')
-			{
-				if (!ft_isalnum(str[*i + *j + 1]))
-				{
-					tmp = ft_substr(str, *i + 1, *j);
-					return (tmp);
-				}
-				(*j)++;
-			}
-			if (str[*j + *i + 1] == '\0')
-			{
-				tmp = ft_substr(str, *i + 1, *j);
-				return (tmp);
-			}
+			if (ft_isalnum(str[i + 1]) || char_in_string(str[i + 1], "#?*@"))
+				str = func[char_to_func(str[i + 1])](str, &i);
 		}
-		(*i)++;
+		i++;
 	}
-	return (ft_strdup(""));
+	return (str);
 }
-*/
+
 char	*search_env(char *str, char **envp)
 {
 	int		i;
