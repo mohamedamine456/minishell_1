@@ -59,5 +59,6 @@ char	*search_env(char *str, char **envp)
 		}
 		i++;
 	}
+	free(str);
 	return (new_str);
 }

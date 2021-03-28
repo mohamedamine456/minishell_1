@@ -1,9 +1,0 @@
-echo : [-n]
-pwd : [-L | -P]
-cd : ???
-export: ???
-unset: ???
-env : [-iv] [-P altpath] [-S string] [-u name]
-exit : ???
-
-other commands : ask about all the commands

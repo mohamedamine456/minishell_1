@@ -29,6 +29,7 @@ char	*search_env(char *str, char **envp)
 		}
 		i++;
 	}
+	free(str);
 	return (new_str);
 }
 
@@ -47,12 +48,16 @@ char	*alpha_char_test(char *str, int *i, char **envp)
 	}
 	new_str = ft_substr(str, 0, *i);
 	tmp = ft_substr(str, *i + 1	, j);
-	tmp = search_env(tmp, envp);		//replace NULL with envp variables
+	tmp = search_env(tmp, envp);
+	if (tmp == NULL)
+		tmp = ft_strdup("");
 	new_str = ft_strjoin(new_str, tmp);
 	free(tmp);
 	tmp = ft_substr(str, *i + j + 1, ft_strlen(str) - *i - j - 1);
 	new_str = ft_strjoin(new_str, tmp);
 	// free them all
+	free(tmp);
+	free(str);
 	return (new_str);
 
 }
@@ -84,7 +89,7 @@ int main(int argv, char **argc, char **envp)
 	int		i;
 
 	i = 25;
-	str = trim_replace(ft_strdup("hello world$LESS  fjkdhsf$PATH$USER $LSCOLORS"), envp);
+	str = trim_replace(ft_strdup("$ $ADMIN $LESS$USER$PATH$LESS$USER"), envp);
 	printf("%s\n", str);
 	//free(str);
 	while (1)

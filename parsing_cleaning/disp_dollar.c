@@ -34,11 +34,15 @@ char	*alpha_char(char *str, int *i)
 	new_str = ft_substr(str, 0, *i);
 	tmp = ft_substr(str, *i + 1	, j);
 	tmp = search_env(tmp, NULL);		//replace NULL with envp variables
+	if (tmp == NULL)
+		tmp = ft_strdup("");
 	new_str = ft_strjoin(new_str, tmp);
 	free(tmp);
 	tmp = ft_substr(str, *i + j + 1, ft_strlen(str) - *i - j - 1);
 	new_str = ft_strjoin(new_str, tmp);
 	// free them all
+	free(str);
+	free(tmp);
 	return (new_str);
 
 }
