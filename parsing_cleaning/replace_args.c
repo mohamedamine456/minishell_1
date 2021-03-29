@@ -27,6 +27,11 @@ char	*trim_replace(char *str, char **envp)
 		{
 			if (ft_isalnum(str[i + 1]) || char_in_string(str[i + 1], "#?*@"))
 				str = func[char_to_func(str[i + 1])](str, &i);
+			else if (char_in_string(str[i + 1], "\'\"") && fl.d_q % 2 == 0)
+			{
+				str = ft_strjoin(ft_substr(str, 0, i), ft_substr(str, i + 1, ft_strlen(str) - i - 1));
+				i--;
+			}
 		}
 		i++;
 	}

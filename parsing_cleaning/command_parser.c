@@ -9,7 +9,7 @@
 * ft_free_args : to free all items in a table of strings
 */
 
-t_commands *parse_command(char *line, t_commands *commands)
+t_commands *parse_command(char *line, t_commands *commands, char **envp)
 {
 	char	**tab_commands;
 

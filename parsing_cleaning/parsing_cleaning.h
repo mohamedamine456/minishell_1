@@ -13,7 +13,7 @@
  * command_parser.c to parse commands 
 */
 
-t_commands		*parse_command(char *line, t_commands *commands);
+t_commands		*parse_command(char *line, t_commands *commands, char **envp);
 char			**split_line_commands(char *line);
 void			split_command(char **tab_cmd, t_commands **commands);
 char			**split_pipes(char *cmd);

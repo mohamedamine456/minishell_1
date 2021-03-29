@@ -77,6 +77,11 @@ char	*trim_replace(char *str, char **envp)
 		{
 			if (ft_isalnum(str[i + 1]) || char_in_string(str[i + 1], "#?*@"))
 				str = alpha_char_test(str, &i, envp);
+			else if (char_in_string(str[i + 1], "\'\"") && fl.d_q % 2 == 0)
+			{
+				str = ft_strjoin(ft_substr(str, 0, i), ft_substr(str, i + 1, ft_strlen(str) -i - 1));
+				i--;
+			}
 		}
 		i++;
 	}
@@ -89,7 +94,7 @@ int main(int argv, char **argc, char **envp)
 	int		i;
 
 	i = 25;
-	str = trim_replace(ft_strdup("$ $ADMIN $LESS$USER$PATH$LESS$USER"), envp);
+	str = trim_replace(ft_strdup("$\"PATH\""), envp);
 	printf("%s\n", str);
 	//free(str);
 	while (1)
