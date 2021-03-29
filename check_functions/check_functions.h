@@ -1,5 +1,8 @@
 #ifndef CHECK_FUNCTIONS_H
 # define CHECK_FUNCTIONS_H
+# define ECHO_OPTIONS "n"
+# define PWD_OPTIONS "LP"
+# define ENV_OPTIONS "iPSuv"
 # include "../libft/libft.h"
 # include "../minishell.h"
 
@@ -9,6 +12,7 @@
 
 int			is_flag(char c);
 t_flags		check_flags(t_flags fl, char c);
+
 /*
 *	check_options.c
 */

@@ -9,11 +9,17 @@ int		is_option(char *str, char *name)
 	int		i;
 
 	i = 1;
-	if (!ft_strcmp(clean_str(ft_strdup(name)), "echo") && !ft_strcmp(clean_str(ft_strdup(str)), "-n"))
-		return (1);
-    else if (!ft_strcmp(clean_str(ft_strdup(name)), "export") && !ft_strcmp(clean_str(ft_strdup(str)), "-p"))
-        return (1);
-    else if (!ft_strcmp(clean_str(ft_strdup(name)), "unset") && (!ft_strcmp(clean_str(ft_strdup(str)), "-f") || !ft_strcmp(clean_str(ft_strdup(str)), "-v")))
-        return (1);
-	return (0);
+	if (str[0] != '-')
+		return (0);
+	while (str[i] != '\0')
+	{
+		if (!ft_strcmp("echo", clean_str(ft_strdup(name))) && !char_in_string(str[i], ECHO_OPTIONS))
+			return (0);
+		else if (!ft_strcmp("pwd", clean_str(ft_strdup(name))) && !char_in_string(str[i], PWD_OPTIONS))
+			return (0);
+		else if (!ft_strcmp("env", clean_str(ft_strdup(name))) && !char_in_string(str[i], ENV_OPTIONS))
+			return (0);
+		i++;
+	}
+	return (1);
 }
