@@ -16,7 +16,8 @@ char	*trim_replace(char *str, char **envp)
 {
 	t_flags	fl;
 	int		i;
-	char	*(*func[])(char *, int *) = {special_char, alpha_char, digit_char};
+
+	char *(*func[])(char *, int *) = {special_char, alpha_char, digit_char};
 
 	fl = (t_flags){0, 0, 0, 0, 0, 0};
 	i = 0;
