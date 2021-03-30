@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <string.h>
 #include <unistd.h>
-#define ECHO "echo"
+#define ECHO "echo env export"
+# define tab "echo hello world"
 #define SPACE 32
 
 int		compare(char *str)
@@ -16,9 +17,10 @@ int main()
 	char space;
 	char *str = "echo";
 	space = (char)32;
-	if (space == SPACE)
+	/*if (space == SPACE)
 		printf("space");
 	if (compare(str))
-		printf("echo");
+		printf("echo");*/
+	printf("%s", tab);
 	return (0);
 }

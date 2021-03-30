@@ -6,7 +6,7 @@
 /*   By: mlachheb <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/02/09 09:17:25 by mlachheb          #+#    #+#             */
-/*   Updated: 2021/03/28 12:47:02 by mlachheb         ###   ########.fr       */
+/*   Updated: 2021/03/29 11:56:29 by mlachheb         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,5 +43,6 @@ char			*remove_spaces(char *str);
 char			**ft_split_white_spaces(char *str);
 t_flags			check_flags(t_flags fl, char c);
 int				char_to_func(char c);
+int				ft_str_in_args(char *str, char **args);
 
 #endif
